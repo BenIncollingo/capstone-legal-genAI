@@ -19,29 +19,29 @@ For now the frontend calls the backend through a test route (`/api/data/test`) t
 ```
 project-root/  
     backend/  
-    server.js  
-    package.json  
-    src/  
-      routes/  
-        index.js  
-        data.routes.js  
-      services/  
-        data.service.js
+        server.js  
+        package.json  
+        src/  
+          routes/  
+            index.js  
+            data.routes.js  
+          services/  
+            data.service.js
 
-  frontend/
-    package.json
-    src/
-      api/
-        data.api.js
-      components/
-        DataButton.jsx
-        DataButton.css
-      pages/
-        Home.jsx
-      styles/
-        global.css
-      App.js
-      index.js
+    frontend/
+        package.json
+        src/
+          api/
+            data.api.js
+          components/
+            DataButton.jsx
+            DataButton.css
+          pages/
+            Home.jsx
+          styles/
+            global.css
+          App.js
+          index.js
 ```
 
 ---
