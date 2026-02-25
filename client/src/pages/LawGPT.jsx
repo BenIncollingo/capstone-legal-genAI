@@ -1,10 +1,10 @@
 import { useMemo, useState } from "react";
 
 const CONVERSATIONS = [
-  { title: "Contract law basics", when: "Today" },
-  { title: "Employment rights", when: "Yesterday" },
-  { title: "Small business incorporation", when: "Feb 8" },
-  { title: "Intellectual property", when: "Feb 7" },
+  { title: "example chat 1", when: "Today" },
+  { title: "example chat 2", when: "Yesterday" },
+  { title: "example chat 3", when: "Feb 8" },
+  { title: "example chat 4", when: "Feb 7" },
 ];
 
 const SUGGESTIONS = [
@@ -31,7 +31,7 @@ const SUGGESTIONS = [
 ];
 
 export default function Assistant() {
-  const [sidebarOpen, setSidebarOpen] = useState(true); // desktop default open
+  const [sidebarOpen, setSidebarOpen] = useState(false); // desktop default open
   const [activeIdx, setActiveIdx] = useState(0);
   const [message, setMessage] = useState("");
 
@@ -285,17 +285,6 @@ export default function Assistant() {
           </div>
         </div>
       </div>
-
-      {/* Desktop: optional collapse toggle */}
-      <button
-        type="button"
-        onClick={() => setSidebarOpen((v) => !v)}
-        className="hidden lg:fixed lg:left-3 lg:top-3 lg:z-50 lg:inline-flex lg:h-10 lg:w-10 lg:items-center lg:justify-center lg:rounded-lg lg:bg-white lg:shadow-sm lg:hover:bg-zinc-50"
-        aria-label="Toggle sidebar"
-        title="Toggle sidebar"
-      >
-        ☰
-      </button>
     </div>
   );
 }
