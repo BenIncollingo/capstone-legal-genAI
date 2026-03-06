@@ -1,25 +1,23 @@
 import React, { use, useState } from 'react';
 
-function buttonAction() {
-  alert("Information was submitted.");
-}
 
 export default function SignIn() {
-  const {username, setUsername} = useState('Hello');
-  const {password, setPassword} = useState('');
-  const [form, setForm] = useState({
-    email: '',
-    password: ''
-  });
-  const handleChange = (e) => {
-    // extracting name and value from target
-    const {name, value} = e.target;
-    setForm( (prevData) => ({
-      ...prevData,
-      [name]: value
-  }))
+  const [username, setUsername] = useState('');
+  const [password, setPassword] = useState('');
 
+  const handleSubmit = (e) => {
+    e.preventDefault();
+
+    // Check if login credentials actually have values inside
+    if (!username || !password ) {
+      alert("Please enter a username and a password.");
+      return;
+    }
+
+    console.log('Login attempt with:', { username, password });
   };
+
+
   return (
     <div className="flex flex-col min-h-screen bg-gray-50">
       <header className="bg-blue-500 p-4 font-mono text-white">Lawbot</header>
@@ -29,23 +27,23 @@ export default function SignIn() {
         
         <main className="flex-1 flex justify-center items-center p-8 w-full order-2 md:order-1">
           <div className="w-full max-w-sm">
-            <form className="bg-white shadow-md rounded-lg px-8 pt-6 pb-8 mb-4 border border-gray-100">
+            <form onSubmit={handleSubmit} className="bg-white shadow-md rounded-lg px-8 pt-6 pb-8 mb-4 border border-gray-100">
               <div className="mb-4">
                 <label className="block text-gray-700 text-sm font-bold mb-2" htmlFor="username">
                   Username
                 </label>
-                <input className="shadow appearance-none border rounded w-full py-2 px-3 text-gray-700 leading-tight focus:outline-none focus:ring-2 focus:ring-blue-500" id="username" type="text" placeholder="Username" onChange={handleChange} required />
+                <input className="shadow appearance-none border rounded w-full py-2 px-3 text-gray-700 leading-tight focus:outline-none focus:ring-2 focus:ring-blue-500" id="username" type="text" placeholder="Username" onChange={(e) => setUsername(e.target.value)} required />
               </div>
               <div className="mb-6">
                 <label className="block text-gray-700 text-sm font-bold mb-2" htmlFor="password">
                   Password
                 </label>
-                <input className="shadow appearance-none border border-red-500 rounded w-full py-2 px-3 text-gray-700 mb-2 leading-tight focus:outline-none focus:ring-2 focus:ring-red-500" id="password" type="password" placeholder="******************" onChange={handleChange} required />
-                <p className="text-red-500 text-xs italic">Please choose a password.</p>
+                <input className="shadow appearance-none border border-red-500 rounded w-full py-2 px-3 text-gray-700 mb-2 leading-tight focus:outline-none focus:ring-2 focus:ring-red-500" id="password" type="password" placeholder="" onChange={(e) => setPassword(e.target.value)} required />
+                <p className="text-red-500 text-xs italic" hidden>Wrong Password</p>
               </div>
               
               <div className="flex items-center justify-between gap-4">
-                <button className="bg-blue-500 hover:bg-blue-700 text-white font-bold py-2 px-6 rounded focus:outline-none whitespace-nowrap" type="button" onClick={buttonAction}>
+                <button className="bg-blue-500 hover:bg-blue-700 text-white font-bold py-2 px-6 rounded focus:outline-none whitespace-nowrap" type="button" onClick={handleSubmit}>
                   Sign In
                 </button>
                 <a className="inline-block align-baseline font-bold text-sm text-blue-500 hover:text-blue-800" href="#">
