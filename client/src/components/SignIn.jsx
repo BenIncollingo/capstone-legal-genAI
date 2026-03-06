@@ -4,13 +4,15 @@ import React, { use, useState } from 'react';
 export default function SignIn() {
   const [username, setUsername] = useState('');
   const [password, setPassword] = useState('');
+  const MAXCREDENTIALLENGTH = 30;
 
   const handleSubmit = (e) => {
     e.preventDefault();
 
     // Check if login credentials actually have values inside
-    if (!username || !password ) {
-      alert("Please enter a username and a password.");
+    if (!username || !password || (username.length > MAXCREDENTIALLENGTH) || (password > MAXCREDENTIALLENGTH) ) {
+      alert("Please enter a valid username and password.");
+
       return;
     }
 
@@ -38,7 +40,7 @@ export default function SignIn() {
                 <label className="block text-gray-700 text-sm font-bold mb-2" htmlFor="password">
                   Password
                 </label>
-                <input className="shadow appearance-none border border-red-500 rounded w-full py-2 px-3 text-gray-700 mb-2 leading-tight focus:outline-none focus:ring-2 focus:ring-red-500" id="password" type="password" placeholder="" onChange={(e) => setPassword(e.target.value)} required />
+                <input className="shadow appearance-none border border-red-500 rounded w-full py-2 px-3 text-gray-700 mb-2 leading-tight focus:outline-none focus:ring-2 focus:ring-red-500" id="password" type="password" placeholder="Password" onChange={(e) => setPassword(e.target.value)} required />
                 <p className="text-red-500 text-xs italic" hidden>Wrong Password</p>
               </div>
               
