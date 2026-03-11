@@ -1,4 +1,5 @@
 import { useMemo, useState } from "react";
+import { uploadChatToBackend } from "../api/chat.api";
 
 const CONVERSATIONS = [
   { title: "example chat 1", when: "Today" },
@@ -31,27 +32,52 @@ const SUGGESTIONS = [
 ];
 
 export default function Assistant() {
-  const [sidebarOpen, setSidebarOpen] = useState(false); // desktop default open
+  const [sidebarOpen, setSidebarOpen] = useState(false);
   const [activeIdx, setActiveIdx] = useState(0);
   const [message, setMessage] = useState("");
+  const [messages, setMessages] = useState([]);
 
   const activeConversation = useMemo(
     () => CONVERSATIONS[activeIdx] ?? { title: "New Chat", when: "" },
     [activeIdx]
   );
 
-  const onSend = () => {
+  const onSend = async () => {
     const trimmed = message.trim();
     if (!trimmed) return;
-    console.log("Send:", trimmed, "to", activeConversation.title);
+
+    setMessages((prev) => [...prev, { role: "user", text: trimmed }]);
     setMessage("");
+
+    try {
+      const res = await uploadChatToBackend(trimmed);
+
+      const botReply =
+        res?.answer ||
+        res?.message ||
+        res?.response ||
+        res?.data ||
+        "No response returned.";
+
+      setMessages((prev) => [
+        ...prev,
+        { role: "assistant", text: botReply },
+      ]);
+    } catch (error) {
+      console.error(error);
+      setMessages((prev) => [
+        ...prev,
+        {
+          role: "assistant",
+          text: "Something went wrong getting a response.",
+        },
+      ]);
+    }
   };
 
   return (
     <div className="min-h-screen bg-white text-zinc-900">
-      {/* Layout wrapper */}
       <div className="flex min-h-screen">
-        {/* Sidebar */}
         <aside
           className={[
             "fixed inset-y-0 left-0 z-40 w-72 border-r border-zinc-200 bg-gradient-to-b from-slate-950 to-slate-900 text-white",
@@ -61,13 +87,12 @@ export default function Assistant() {
           ].join(" ")}
         >
           <div className="flex h-full flex-col">
-            {/* Top: New Chat */}
             <div className="p-3">
               <button
                 type="button"
                 onClick={() => {
-                  // later: create new conversation in state
                   setActiveIdx(0);
+                  setMessages([]);
                 }}
                 className="flex w-full items-center gap-2 rounded-xl bg-white/10 px-3 py-2 text-sm font-medium hover:bg-white/15"
               >
@@ -76,8 +101,7 @@ export default function Assistant() {
               </button>
             </div>
 
-            {/* Conversation list
-            <div className="px-2 pb-2">
+            <div className="flex-1 overflow-y-auto px-2 pb-2">
               <div className="space-y-1">
                 {CONVERSATIONS.map((c, i) => {
                   const active = i === activeIdx;
@@ -104,36 +128,7 @@ export default function Assistant() {
                   );
                 })}
               </div>
-            </div> */}
-
-            {/* Conversation list (scrolls) */}
-            <div className="flex-1 overflow-y-auto px-2 pb-2">
-            <div className="space-y-1">
-                {CONVERSATIONS.map((c, i) => {
-                const active = i === activeIdx;
-                return (
-                    <button
-                    key={c.title}
-                    type="button"
-                    onClick={() => setActiveIdx(i)}
-                    className={[
-                        "w-full rounded-xl px-3 py-2 text-left transition",
-                        active ? "bg-white/15" : "hover:bg-white/10",
-                    ].join(" ")}
-                    >
-                    <div className="flex items-start gap-2">
-                        <span className="mt-0.5 opacity-80">💬</span>
-                        <div className="min-w-0">
-                        <div className="truncate text-sm font-semibold">{c.title}</div>
-                        <div className="text-xs text-white/60">{c.when}</div>
-                        </div>
-                    </div>
-                    </button>
-                );
-                })}
             </div>
-            </div>
-
 
             <div className="mt-auto border-t border-white/10 p-3">
               <div className="flex items-center gap-3 rounded-xl bg-white/5 px-3 py-2">
@@ -156,7 +151,6 @@ export default function Assistant() {
           </div>
         </aside>
 
-        {/* Overlay for mobile when sidebar is open */}
         {sidebarOpen && (
           <button
             type="button"
@@ -166,9 +160,7 @@ export default function Assistant() {
           />
         )}
 
-        {/* Main content */}
         <div className="flex min-w-0 flex-1 flex-col">
-          {/* Top bar */}
           <header className="border-b border-zinc-200 bg-white">
             <div className="mx-auto flex max-w-6xl items-center gap-3 px-4 py-3">
               <button
@@ -195,60 +187,78 @@ export default function Assistant() {
             </div>
           </header>
 
-          {/* Page content */}
-          <main className="mx-auto w-full max-w-6xl flex-1 px-4">
-            <div className="flex flex-col items-center pt-10 text-center">
-              <div className="flex h-14 w-14 items-center justify-center rounded-2xl bg-blue-600 text-2xl text-white shadow-sm">
-                ⚖️
-              </div>
-
-              <h1 className="mt-5 text-3xl font-semibold tracking-tight sm:text-4xl">
-                LegalAI Assistant
-              </h1>
-
-              <p className="mt-3 max-w-2xl text-sm text-zinc-600 sm:text-base">
-                Your AI-powered legal research companion. Ask questions, get insights, and explore
-                legal topics.
-              </p>
-            </div>
-
-            <div className="mt-10 grid gap-4 sm:grid-cols-2">
-              {SUGGESTIONS.map((s) => (
-                <button
-                  key={s.title}
-                  type="button"
-                  onClick={() => setMessage(s.desc)}
-                  className="group flex w-full items-start gap-4 rounded-2xl border border-zinc-200 bg-white p-5 text-left shadow-sm transition hover:border-zinc-300 hover:shadow"
-                >
-                  <div className="flex h-11 w-11 items-center justify-center rounded-xl bg-blue-50 text-lg">
-                    {s.icon}
+          <main className="mx-auto w-full max-w-6xl flex-1 px-4 py-6">
+            {messages.length === 0 ? (
+              <>
+                <div className="flex flex-col items-center pt-10 text-center">
+                  <div className="flex h-14 w-14 items-center justify-center rounded-2xl bg-blue-600 text-2xl text-white shadow-sm">
+                    ⚖️
                   </div>
 
-                  <div className="min-w-0">
-                    <div className="font-semibold">{s.title}</div>
-                    <div className="mt-1 text-sm text-zinc-600">{s.desc}</div>
+                  <h1 className="mt-5 text-3xl font-semibold tracking-tight sm:text-4xl">
+                    LegalAI Assistant
+                  </h1>
+
+                  <p className="mt-3 max-w-2xl text-sm text-zinc-600 sm:text-base">
+                    Your AI-powered legal research companion. Ask questions, get
+                    insights, and explore legal topics.
+                  </p>
+                </div>
+
+                <div className="mt-10 grid gap-4 sm:grid-cols-2">
+                  {SUGGESTIONS.map((s) => (
+                    <button
+                      key={s.title}
+                      type="button"
+                      onClick={() => setMessage(s.desc)}
+                      className="group flex w-full items-start gap-4 rounded-2xl border border-zinc-200 bg-white p-5 text-left shadow-sm transition hover:border-zinc-300 hover:shadow"
+                    >
+                      <div className="flex h-11 w-11 items-center justify-center rounded-xl bg-blue-50 text-lg">
+                        {s.icon}
+                      </div>
+
+                      <div className="min-w-0">
+                        <div className="font-semibold">{s.title}</div>
+                        <div className="mt-1 text-sm text-zinc-600">
+                          {s.desc}
+                        </div>
+                      </div>
+                    </button>
+                  ))}
+                </div>
+
+                <div className="mt-8 rounded-2xl border border-amber-200 bg-amber-50 p-4">
+                  <div className="flex items-start gap-3">
+                    <div className="mt-0.5 flex h-8 w-8 items-center justify-center rounded-lg bg-amber-100">
+                      ⚠️
+                    </div>
+                    <div className="text-sm text-amber-900">
+                      <span className="font-semibold">Disclaimer:</span> This AI
+                      assistant provides general legal information only and
+                      should not be considered legal advice. Always consult with
+                      a licensed attorney for your specific situation.
+                    </div>
                   </div>
-                </button>
-              ))}
-            </div>
-
-            <div className="mt-8 rounded-2xl border border-amber-200 bg-amber-50 p-4">
-              <div className="flex items-start gap-3">
-                <div className="mt-0.5 flex h-8 w-8 items-center justify-center rounded-lg bg-amber-100">
-                  ⚠️
                 </div>
-                <div className="text-sm text-amber-900">
-                  <span className="font-semibold">Disclaimer:</span> This AI assistant provides
-                  general legal information only and should not be considered legal advice. Always
-                  consult with a licensed attorney for your specific situation.
-                </div>
+              </>
+            ) : (
+              <div className="mx-auto flex max-w-3xl flex-col gap-4">
+                {messages.map((msg, i) => (
+                  <div
+                    key={i}
+                    className={`max-w-[80%] rounded-2xl px-4 py-3 text-sm shadow-sm ${
+                      msg.role === "user"
+                        ? "ml-auto bg-blue-600 text-white"
+                        : "mr-auto bg-zinc-100 text-zinc-900"
+                    }`}
+                  >
+                    {msg.text}
+                  </div>
+                ))}
               </div>
-            </div>
-
-            <div className="h-32" />
+            )}
           </main>
 
-          {/* Sticky composer */}
           <div className="sticky bottom-0 border-t border-zinc-200 bg-white">
             <div className="mx-auto max-w-6xl px-4 py-4">
               <div className="flex items-end gap-3">
@@ -267,8 +277,8 @@ export default function Assistant() {
                     }}
                   />
                   <div className="mt-2 text-xs text-zinc-500">
-                    This is an AI assistant. Always verify legal information with a licensed
-                    attorney.
+                    This is an AI assistant. Always verify legal information
+                    with a licensed attorney.
                   </div>
                 </div>
 
