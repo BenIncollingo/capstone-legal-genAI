@@ -1,4 +1,5 @@
 import { useMemo, useState } from "react";
+import { useAuth } from "../contexts/authContext/index.jsx";
 
 const CONVERSATIONS = [
   { title: "example chat 1", when: "Today" },
@@ -34,6 +35,8 @@ export default function Assistant() {
   const [sidebarOpen, setSidebarOpen] = useState(false); // desktop default open
   const [activeIdx, setActiveIdx] = useState(0);
   const [message, setMessage] = useState("");
+
+  const { currentUser } = useAuth();
 
   const activeConversation = useMemo(
     () => CONVERSATIONS[activeIdx] ?? { title: "New Chat", when: "" },
@@ -141,7 +144,7 @@ export default function Assistant() {
                   ⚖️
                 </div>
                 <div className="min-w-0">
-                  <div className="truncate text-sm font-semibold">LegalAI</div>
+                  <div className="truncate text-sm font-semibold">{ currentUser ? currentUser.email : "Not logged in" }</div>
                   <div className="text-xs text-white/60">Legal Assistant</div>
                 </div>
                 <button

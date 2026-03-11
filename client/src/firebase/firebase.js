@@ -8,7 +8,7 @@ import { getAuth } from "firebase/auth";
 // Your web app's Firebase configuration
 // For Firebase JS SDK v7.20.0 and later, measurementId is optional
 const firebaseConfig = {
-  apiKey: process.env.,
+  apiKey: "insert own key",
   authDomain: "legal-chatbot-31533.firebaseapp.com",
   projectId: "legal-chatbot-31533",
   storageBucket: "legal-chatbot-31533.firebasestorage.app",

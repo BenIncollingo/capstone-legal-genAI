@@ -1,10 +1,13 @@
 import React, { use, useState } from 'react';
 import { doSignInWithEmailAndPassword } from "../firebase/auth";
 import { useAuth } from "../contexts/authContext/index.jsx"
+import { Link } from 'react-router-dom';
+
 
 
 export default function SignIn() {
   const { userLoggedIn } = useAuth();
+  const { currentUser } = useAuth();
 
   const [email, setEmail] = useState('');
   const [password, setPassword] = useState('');
@@ -52,7 +55,7 @@ export default function SignIn() {
             <form onSubmit={handleSubmit} className="bg-white shadow-md rounded-lg px-8 pt-6 pb-8 mb-4 border border-gray-100">
               <div className="mb-4">
                 <label className="block text-gray-700 text-sm font-bold mb-2" htmlFor="email">
-                  email
+                  Email
                 </label>
                 <input className="shadow appearance-none border rounded w-full py-2 px-3 text-gray-700 leading-tight focus:outline-none focus:ring-2 focus:ring-blue-500" id="email" type="text" placeholder="email@example.com" onChange={(e) => setEmail(e.target.value)} required />
               </div>
@@ -64,10 +67,13 @@ export default function SignIn() {
                 <p className="text-red-500 text-xs italic" hidden>Wrong Password</p>
               </div>
               
-              <div className="flex items-center justify-between gap-4">
-                <button className="bg-blue-500 hover:bg-blue-700 text-white font-bold py-2 px-6 rounded focus:outline-none whitespace-nowrap" type="button" onClick={handleSubmit}>
-                  Sign In
-                </button>
+              <div className="flex items-center justify-between gap-4">                          
+                    <Link to={`/LawGPT`}>
+                      <button className="bg-purple-500 hover:bg-blue-700 text-white font-bold py-2 px-6 rounded focus:outline-none whitespace-nowrap" type="button">
+                        Sign In
+                      </button>
+                    </Link>
+
                 <a className="inline-block align-baseline font-bold text-sm text-blue-500 hover:text-blue-800" href="#">
                   Forgot Password?
                 </a>

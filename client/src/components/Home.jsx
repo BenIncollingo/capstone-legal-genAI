@@ -1,8 +1,19 @@
+import { useAuth } from "../contexts/authContext/index.jsx";
+import { Link } from "react-router-dom"
+import { doSignOut } from "../firebase/auth.js";
+
 export default function Home() {
+
+    const { currentUser } = useAuth();
     
     const loginButtonAction = () => {
         // change current page to login page
     }
+
+    const signOutHome = () => {
+        doSignOut();
+    }
+
 
 
     return(
@@ -13,9 +24,16 @@ export default function Home() {
                         <p>Lawbot</p>
                     </div>
                     <div className="flex-1 flex md:order-2 order-2">
-                        <button className="bg-purple-500 hover:bg-blue-700 text-white font-bold py-2 px-6 rounded focus:outline-none whitespace-nowrap" type="button">
-                        Sign In
-                        </button>
+                        { currentUser ?                           
+                            <button onClick={signOutHome()} className="bg-purple-500 hover:bg-blue-700 text-white font-bold py-2 px-6 rounded focus:outline-none whitespace-nowrap" type="button">
+                                Log Out
+                            </button> 
+                            :
+                            <Link to={`/Login`}>
+                                <button className="bg-purple-500 hover:bg-blue-700 text-white font-bold py-2 px-6 rounded focus:outline-none whitespace-nowrap" type="button">
+                                    Sign In
+                                </button>
+                            </Link>}
                     </div>
                 </div>
             </header>
