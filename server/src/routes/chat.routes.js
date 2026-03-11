@@ -5,7 +5,7 @@ const router = Router();
 
 router.post("/uploadChat", async (req, res) => {
     const { chat } = req.body;
-    console.log("route hit: /api/data/uploadChat with req: " + chat);
+    console.log("route hit: /api/chat/uploadChat with req: " + chat);
     const infraResponse = await sendChatToInfra(chat);
     res.json(infraResponse);
 });

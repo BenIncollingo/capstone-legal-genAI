@@ -52,12 +52,7 @@ export default function Assistant() {
     try {
       const res = await uploadChatToBackend(trimmed);
 
-      const botReply =
-        res?.answer ||
-        res?.message ||
-        res?.response ||
-        res?.data ||
-        "No response returned.";
+      const botReply = res?.response || "No response returned.";
 
       setMessages((prev) => [
         ...prev,
