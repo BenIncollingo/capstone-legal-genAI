@@ -1,23 +1,43 @@
 import React, { use, useState } from 'react';
+import { doSignInWithEmailAndPassword } from "../firebase/auth";
+import { useAuth } from "../contexts/authContext/index.jsx"
 
 
 export default function SignIn() {
-  const [username, setUsername] = useState('');
+  const { userLoggedIn } = useAuth();
+
+  const [email, setEmail] = useState('');
   const [password, setPassword] = useState('');
+  const [isSigningIn, setIsSigningIn] = useState(false);
+  const [errorMessage, setErrorMessage] = useState('');
+
   const MAXCREDENTIALLENGTH = 30;
 
-  const handleSubmit = (e) => {
+  const handleSubmit = async (e) => {
     e.preventDefault();
 
-    // Check if login credentials actually have values inside
-    if (!username || !password || (username.length > MAXCREDENTIALLENGTH) || (password > MAXCREDENTIALLENGTH) ) {
-      alert("Please enter a valid username and password.");
+        // Check if login credentials actually have values inside
+    if (!email || !password || (email.length > MAXCREDENTIALLENGTH) || (password > MAXCREDENTIALLENGTH) ) {
+      alert("Please enter a valid email and password.");
 
       return;
     }
 
-    console.log('Login attempt with:', { username, password });
-  };
+    console.log('Login attempt with:', { email, password });
+
+    if (!isSigningIn) {
+      setIsSigningIn(true);
+          try {
+            await doSignInWithEmailAndPassword(email, password);
+            console.log("User successfully logged in!");
+          } catch (error) {
+            console.error("Login failed:", error.message);
+          } finally {
+            setIsSigningIn(false);
+          }
+
+    }
+  }
 
 
   return (
@@ -31,10 +51,10 @@ export default function SignIn() {
           <div className="w-full max-w-sm">
             <form onSubmit={handleSubmit} className="bg-white shadow-md rounded-lg px-8 pt-6 pb-8 mb-4 border border-gray-100">
               <div className="mb-4">
-                <label className="block text-gray-700 text-sm font-bold mb-2" htmlFor="username">
-                  Username
+                <label className="block text-gray-700 text-sm font-bold mb-2" htmlFor="email">
+                  email
                 </label>
-                <input className="shadow appearance-none border rounded w-full py-2 px-3 text-gray-700 leading-tight focus:outline-none focus:ring-2 focus:ring-blue-500" id="username" type="text" placeholder="Username" onChange={(e) => setUsername(e.target.value)} required />
+                <input className="shadow appearance-none border rounded w-full py-2 px-3 text-gray-700 leading-tight focus:outline-none focus:ring-2 focus:ring-blue-500" id="email" type="text" placeholder="email@example.com" onChange={(e) => setEmail(e.target.value)} required />
               </div>
               <div className="mb-6">
                 <label className="block text-gray-700 text-sm font-bold mb-2" htmlFor="password">

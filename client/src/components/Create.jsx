@@ -1,17 +1,23 @@
 import React, { use, useState } from 'react';
-
+import { Navigate } from 'react-router-dom';
+import { doCreateUserWithEmailAndPassword } from '../firebase/auth';
 
 export default function Create() {
-  const [username, setUsername] = useState('');
+  const [email, setEmail] = useState('');
   const [password, setPassword] = useState('');
   const [retypePassword, setRetypePassword] = useState('');
+  const [isRegistering, setIsRegistering] = useState(false);
+  const [errorMessage, setErrorMessage] = useState('');
   const MAXCREDENTIALLENGTH = 30;
 
-  const handleSubmit = (e) => {
+
+  const handleSubmit = async (e) => {
     e.preventDefault();
 
+    alert("Login attempt: ", {email, password});
+
     // Check if login credentials actually have values inside
-    if (!username || !password || (username.length > MAXCREDENTIALLENGTH) || (password > MAXCREDENTIALLENGTH) ) {
+    if (!email || !password || (email.length > MAXCREDENTIALLENGTH) || (password.length > MAXCREDENTIALLENGTH) ) {
       alert("Please enter a valid username and password.");
 
       return;
@@ -20,11 +26,27 @@ export default function Create() {
       return;
     } 
 
-    console.log('Login attempt with:', { username, password, retypePassword });
+    if(!isRegistering) {
+      setIsRegistering(true);
+      try {
+        await doCreateUserWithEmailAndPassword(email, password);
+        console.log("Successful sign up!")
+      } catch (error) {
+        console.error("Sign up failed.");
+        setErrorMessage(error.message);
+      } finally {
+        setIsRegistering(false);
+      }
+    }
+
+
+    console.log('Login attempt with:', { email, password, retypePassword });
   };
 
 
+
   return (
+    <>
     <div className="flex flex-col min-h-screen bg-gray-50">
       <header className="bg-blue-500 p-4 font-mono text-white">Lawbot</header>
       
@@ -37,10 +59,10 @@ export default function Create() {
               <h1 class="bold text-2xl font-semibold">Create an account:</h1>
               <br></br>
               <div className="mb-4">
-                <label className="block text-gray-700 text-sm font-bold mb-2" htmlFor="username">
-                  Create a Username
+                <label className="block text-gray-700 text-sm font-bold mb-2" htmlFor="email">
+                  Enter an email:
                 </label>
-                <input className="shadow appearance-none border rounded w-full py-2 px-3 text-gray-700 leading-tight focus:outline-none focus:ring-2 focus:ring-blue-500" id="username" type="text" placeholder="Username" onChange={(e) => setUsername(e.target.value)} required />
+                <input type="email" onChange={(e) => {setEmail(e.target.value)}} className="shadow appearance-none border rounded w-full py-2 px-3 text-gray-700 leading-tight focus:outline-none focus:ring-2 focus:ring-blue-500" id="email" type="text" placeholder="email@example.com" required />
               </div>
               <div className="mb-6">
                 <label className="block text-gray-700 text-sm font-bold mb-2" htmlFor="password">
@@ -77,6 +99,8 @@ export default function Create() {
         </aside>
       </div>
     </div>
+    </>
+
 
   )
 }
