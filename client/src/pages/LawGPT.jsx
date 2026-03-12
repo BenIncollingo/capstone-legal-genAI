@@ -1,4 +1,5 @@
 import { useMemo, useState } from "react";
+import { useAuth } from "../contexts/authContext/index.jsx";
 import { uploadChatToBackend } from "../api/chat.api";
 
 const CONVERSATIONS = [
@@ -36,6 +37,8 @@ export default function Assistant() {
   const [activeIdx, setActiveIdx] = useState(0);
   const [message, setMessage] = useState("");
   const [messages, setMessages] = useState([]);
+
+  const { currentUser } = useAuth();
 
   const activeConversation = useMemo(
     () => CONVERSATIONS[activeIdx] ?? { title: "New Chat", when: "" },
@@ -131,7 +134,7 @@ export default function Assistant() {
                   ⚖️
                 </div>
                 <div className="min-w-0">
-                  <div className="truncate text-sm font-semibold">LegalAI</div>
+                  <div className="truncate text-sm font-semibold">{ currentUser ? currentUser.email : "Not logged in" }</div>
                   <div className="text-xs text-white/60">Legal Assistant</div>
                 </div>
                 <button
