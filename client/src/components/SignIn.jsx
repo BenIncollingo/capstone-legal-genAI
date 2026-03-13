@@ -2,12 +2,15 @@ import React, { use, useState } from 'react';
 import { doSignInWithEmailAndPassword } from "../firebase/auth";
 import { useAuth } from "../contexts/authContext/index.jsx"
 import { Link } from 'react-router-dom';
+import { useNavigate } from 'react-router-dom';
 
 
 
 export default function SignIn() {
   const { userLoggedIn } = useAuth();
   const { currentUser } = useAuth();
+
+  const navigate = useNavigate(); // Initialize the navigate function
 
   const [email, setEmail] = useState('');
   const [password, setPassword] = useState('');
@@ -33,6 +36,7 @@ export default function SignIn() {
           try {
             await doSignInWithEmailAndPassword(email, password);
             console.log("User successfully logged in!");
+            navigate("/LawGPT");
           } catch (error) {
             console.error("Login failed:", error.message);
           } finally {
@@ -67,12 +71,16 @@ export default function SignIn() {
                 <p className="text-red-500 text-xs italic" hidden>Wrong Password</p>
               </div>
               
-              <div className="flex items-center justify-between gap-4">                          
-                    <Link to={`/LawGPT`}>
-                      <button className="bg-purple-500 hover:bg-blue-700 text-white font-bold py-2 px-6 rounded focus:outline-none whitespace-nowrap" type="button">
-                        Sign In
-                      </button>
-                    </Link>
+              <div className="flex items-center justify-between gap-4">
+                                {/* Changed type to "submit" and removed onClick */}
+                <button 
+                  disabled={isSigningIn}
+                  className={`${isSigningIn ? 'bg-gray-400' : 'bg-purple-500 hover:bg-blue-700'} text-white font-bold py-2 px-6 rounded focus:outline-none whitespace-nowrap`} 
+                  type="submit"
+                >
+                  {isSigningIn ? 'Signing In...' : 'Sign In'}
+                </button>                          
+
 
                 <a className="inline-block align-baseline font-bold text-sm text-blue-500 hover:text-blue-800" href="#">
                   Forgot Password?
