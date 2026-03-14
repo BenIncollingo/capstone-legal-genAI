@@ -36,7 +36,7 @@ export default function ForgotPassword() {
     }
 
     // reset the email field
-    setEmail(' ');
+    setEmail('');
 
     console.log('Reset attempt with:', { email });
   };
@@ -54,13 +54,13 @@ export default function ForgotPassword() {
         <main className="flex-1 flex justify-center items-center p-8 w-full order-2 md:order-1">
           <div className="w-full max-w-sm">
             <form onSubmit={handleSubmit} className="bg-white shadow-md rounded-lg px-8 pt-6 pb-8 mb-4 border border-gray-100">
-              <h1 class="bold text-2xl font-semibold">Forgot your password? Reset here:</h1>
+              <h1 class="bold text-2xl font-semibold">Forgot your password? Send a password reset email:</h1>
               <br></br>
               <div className="mb-4">
                 <label className="block text-gray-700 text-sm font-bold mb-2" htmlFor="email">
-                  Enter an email:
+                  Enter your email:
                 </label>
-                <input type="email" onChange={(e) => {setEmail(e.target.value)}} className="shadow appearance-none border rounded w-full py-2 px-3 text-gray-700 leading-tight focus:outline-none focus:ring-2 focus:ring-blue-500" id="email" type="text" placeholder="email@example.com" required />
+                <input type="email" value={email} onChange={(e) => {setEmail(e.target.value)}} className="shadow appearance-none border rounded w-full py-2 px-3 text-gray-700 leading-tight focus:outline-none focus:ring-2 focus:ring-blue-500" id="email" type="text" placeholder="email@example.com" required />
               </div>
               
               <div className="flex items-center justify-between gap-4">
