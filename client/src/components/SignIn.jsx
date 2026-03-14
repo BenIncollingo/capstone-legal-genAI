@@ -18,6 +18,7 @@ export default function SignIn() {
   const [errorMessage, setErrorMessage] = useState('');
 
   const MAXCREDENTIALLENGTH = 30;
+  
 
   const handleSubmit = async (e) => {
     e.preventDefault();
@@ -82,7 +83,7 @@ export default function SignIn() {
                 </button>                          
 
 
-                <a className="inline-block align-baseline font-bold text-sm text-blue-500 hover:text-blue-800" href="#">
+                <a className="inline-block align-baseline font-bold text-sm text-blue-500 hover:text-blue-800" href="/reset">
                   Forgot Password?
                 </a>
               </div>
