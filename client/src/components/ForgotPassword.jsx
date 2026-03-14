@@ -13,8 +13,6 @@ export default function ForgotPassword() {
   const handleSubmit = async (e) => {
     e.preventDefault();
 
-    alert("Login attempt: ", {email});
-
     // Check if login credentials actually have values inside
     if (!email || (email.length > MAXCREDENTIALLENGTH)) {
       alert("Please enter a valid email.");
@@ -29,6 +27,7 @@ export default function ForgotPassword() {
         console.log("Successful reset!")
       } catch (error) {
         console.error("Reset failed.");
+        alert("Enter valid email address.");
         setErrorMessage(error.message);
       } finally {
         setIsReseting(false);
