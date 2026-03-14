@@ -1,46 +1,44 @@
 import React, { use, useState } from 'react';
 import { Navigate } from 'react-router-dom';
-import { doCreateUserWithEmailAndPassword } from '../firebase/auth';
+import { doCreateUserWithEmailAndPassword, doPasswordReset } from '../firebase/auth';
 
 export default function ForgotPassword() {
   const [email, setEmail] = useState('');
-  const [password, setPassword] = useState('');
-  const [retypePassword, setRetypePassword] = useState('');
-  const [isRegistering, setIsRegistering] = useState(false);
+  const [isReseting, setIsReseting] = useState(false);
   const [errorMessage, setErrorMessage] = useState('');
   const MAXCREDENTIALLENGTH = 30;
+
 
 
   const handleSubmit = async (e) => {
     e.preventDefault();
 
-    alert("Login attempt: ", {email, password});
+    alert("Login attempt: ", {email});
 
     // Check if login credentials actually have values inside
-    if (!email || !password || (email.length > MAXCREDENTIALLENGTH) || (password.length > MAXCREDENTIALLENGTH) ) {
-      alert("Please enter a valid username and password.");
+    if (!email || (email.length > MAXCREDENTIALLENGTH)) {
+      alert("Please enter a valid email.");
 
       return;
-    } else if (password !== retypePassword) {
-      alert("Passwords must match.");
-      return;
-    } 
+    }
 
-    if(!isRegistering) {
-      setIsRegistering(true);
+    if(!isReseting) {
+      setIsReseting(true);
       try {
-        await doCreateUserWithEmailAndPassword(email, password);
-        console.log("Successful sign up!")
+        await doPasswordReset(email);
+        console.log("Successful reset!")
       } catch (error) {
-        console.error("Sign up failed.");
+        console.error("Reset failed.");
         setErrorMessage(error.message);
       } finally {
-        setIsRegistering(false);
+        setIsReseting(false);
       }
     }
 
+    // reset the email field
+    setEmail(' ');
 
-    console.log('Login attempt with:', { email, password, retypePassword });
+    console.log('Reset attempt with:', { email });
   };
 
 
