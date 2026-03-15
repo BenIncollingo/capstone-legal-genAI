@@ -4,6 +4,7 @@ import LawGPT from "./pages/LawGPT";
 import Login from "./components/SignIn.jsx"
 import Create from "./components/Create.jsx";
 import HomeTwo from "./components/Home.jsx";
+import ForgotPassword from "./components/ForgotPassword.jsx";
 import { AuthProvider } from "./contexts/authContext/index.jsx";
 
 function App() {
@@ -16,6 +17,7 @@ function App() {
           <Route path="/login" element={<Login />} />
           <Route path="/create" element={<Create />} />
           <Route path="/home" element={<HomeTwo />} />
+          <Route path="/reset" element={<ForgotPassword />} />
         </Routes>
       </BrowserRouter>
       

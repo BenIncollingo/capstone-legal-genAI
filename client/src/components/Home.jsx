@@ -1,6 +1,7 @@
 import { useAuth } from "../contexts/authContext/index.jsx";
 import { Link } from "react-router-dom"
 import { doSignOut } from "../firebase/auth.js";
+import image from "../labor-law.jpg";
 
 export default function Home() {
 
@@ -28,7 +29,7 @@ export default function Home() {
                     <div class="flex items-center gap-4">
                         { currentUser ?
                             <>
-                                <img src="logo192.png" class="w-8 h-8" alt="profile" />
+                                <img src={image} class="w-8 h-8" alt="profile" />
                                 <button onClick={signOutHome()} className="bg-purple-500 hover:bg-blue-700 text-white font-bold py-2 px-6 rounded whitespace-nowrap">
                                     Log Out
                                 </button> 
@@ -47,7 +48,7 @@ export default function Home() {
             <br></br>
             <div class="flex flex-col md:flex-row flex-grow">
                 <main class="flex-1 flex justify-center items-center p-8 w-full order-2 md:order-1">
-                    <img src="../../public/logo192.png"></img>
+                    <img src="../../public/labor-law.jpg"></img>
                 </main>
                 <aside class="flex-1 flex justify-center p-8 order-1 md:order-2">
                     <div class="flex-row">
