@@ -1,6 +1,8 @@
-import { useMemo, useState } from "react";
+import { useEffect, useMemo, useRef, useState } from "react";
+import { useNavigate } from "react-router-dom";
 import { useAuth } from "../contexts/authContext/index.jsx";
 import { uploadChatToBackend } from "../api/chat.api";
+import { doSignOut } from "../firebase/auth.js";
 
 const CONVERSATIONS = [
   { title: "example chat 1", when: "Today" },
@@ -37,13 +39,46 @@ export default function Assistant() {
   const [activeIdx, setActiveIdx] = useState(0);
   const [message, setMessage] = useState("");
   const [messages, setMessages] = useState([]);
+  const [settingsOpen, setSettingsOpen] = useState(false);
+  const [isLoggingOut, setIsLoggingOut] = useState(false);
 
   const { currentUser } = useAuth();
+  const navigate = useNavigate();
+  const settingsRef = useRef(null);
 
   const activeConversation = useMemo(
     () => CONVERSATIONS[activeIdx] ?? { title: "New Chat", when: "" },
     [activeIdx]
   );
+
+  useEffect(() => {
+    const handleClickOutside = (event) => {
+      if (settingsRef.current && !settingsRef.current.contains(event.target)) {
+        setSettingsOpen(false);
+      }
+    };
+
+    document.addEventListener("mousedown", handleClickOutside);
+    return () => {
+      document.removeEventListener("mousedown", handleClickOutside);
+    };
+  }, []);
+
+  const handleLogout = async () => {
+    if (isLoggingOut) return;
+
+    setIsLoggingOut(true);
+
+    try {
+      await doSignOut();
+      navigate("/login");
+    } catch (error) {
+      console.error("Logout failed:", error);
+    } finally {
+      setIsLoggingOut(false);
+      setSettingsOpen(false);
+    }
+  };
 
   const onSend = async () => {
     const trimmed = message.trim();
@@ -54,7 +89,6 @@ export default function Assistant() {
 
     try {
       const res = await uploadChatToBackend(trimmed);
-
       const botReply = res?.response || "No response returned.";
 
       setMessages((prev) => [
@@ -133,17 +167,37 @@ export default function Assistant() {
                 <div className="flex h-9 w-9 items-center justify-center rounded-xl bg-blue-600">
                   ⚖️
                 </div>
+
                 <div className="min-w-0">
-                  <div className="truncate text-sm font-semibold">{ currentUser ? currentUser.email : "Not logged in" }</div>
+                  <div className="truncate text-sm font-semibold">
+                    {currentUser ? currentUser.email : "Not logged in"}
+                  </div>
                   <div className="text-xs text-white/60">Legal Assistant</div>
                 </div>
-                <button
-                  type="button"
-                  className="ml-auto inline-flex h-9 w-9 items-center justify-center rounded-xl hover:bg-white/10"
-                  aria-label="Settings"
-                >
-                  ⚙️
-                </button>
+
+                <div className="relative ml-auto" ref={settingsRef}>
+                  <button
+                    type="button"
+                    onClick={() => setSettingsOpen((prev) => !prev)}
+                    className="inline-flex h-9 w-9 items-center justify-center rounded-xl hover:bg-white/10"
+                    aria-label="Settings"
+                  >
+                    ⚙️
+                  </button>
+
+                  {settingsOpen && (
+                    <div className="absolute right-0 bottom-12 z-50 w-44 rounded-xl border border-zinc-200 bg-white py-2 text-zinc-900 shadow-xl">
+                      <button
+                        type="button"
+                        onClick={handleLogout}
+                        disabled={isLoggingOut}
+                        className="block w-full px-4 py-2 text-left text-sm hover:bg-zinc-100 disabled:cursor-not-allowed disabled:opacity-50"
+                      >
+                        {isLoggingOut ? "Logging out..." : "Log Out"}
+                      </button>
+                    </div>
+                  )}
+                </div>
               </div>
             </div>
           </div>
