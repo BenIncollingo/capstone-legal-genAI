@@ -1,9 +1,9 @@
 import { BrowserRouter, Routes, Route, Navigate } from "react-router-dom";
 import LawGPT from "./pages/LawGPT";
-import Login from "./components/SignIn.jsx";
-import Create from "./components/Create.jsx";
+import Login from "./pages/SignIn.jsx";
+import Create from "./pages/Create.jsx";
 import DocumentsPage from "./pages/DocumentUploadPage.jsx";
-import ForgotPassword from "./components/ForgotPassword.jsx";
+import ForgotPassword from "./pages/ForgotPassword.jsx";
 import { AuthProvider } from "./contexts/authContext/index.jsx";
 import { useAuth } from "./contexts/authContext/index.jsx";
 
