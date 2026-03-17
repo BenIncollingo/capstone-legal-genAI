@@ -26,7 +26,7 @@ export default function Home() {
                 <div class="flex items-center justify-between"> 
                     
                     <div>
-                        <p class="text-white font-bold">Lawbot</p>
+                        <p class="text-white font-mono font-bold">⚖️Lawbot</p>
                     </div>
 
                     <div class="flex items-center gap-4">

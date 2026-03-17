@@ -45,7 +45,7 @@ export default function ForgotPassword() {
   return (
     <>
     <div className="flex flex-col min-h-screen bg-gray-50">
-      <header className="bg-blue-500 p-4 font-mono text-white">Lawbot</header>
+      <header className="bg-blue-500 p-4 font-mono text-white">⚖️Lawbot</header>
       
       {/* Container for sign in form, button, and forgotten password link */}
       <div className="flex flex-col md:flex-row flex-grow items-center justify-center max-w-6xl mx-auto w-full">
