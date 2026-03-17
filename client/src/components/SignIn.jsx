@@ -1,4 +1,4 @@
-import React, { use, useState } from 'react';
+import React, { use, useEffect, useState } from 'react';
 import { doSignInWithEmailAndPassword } from "../firebase/auth";
 import { useAuth } from "../contexts/authContext/index.jsx"
 import { Link } from 'react-router-dom';
@@ -8,7 +8,7 @@ import { useNavigate } from 'react-router-dom';
 
 export default function SignIn() {
   const { userLoggedIn } = useAuth();
-  const { currentUser } = useAuth();
+  const { currentUser, loading } = useAuth();
 
   const navigate = useNavigate(); // Initialize the navigate function
 
@@ -16,6 +16,9 @@ export default function SignIn() {
   const [password, setPassword] = useState('');
   const [isSigningIn, setIsSigningIn] = useState(false);
   const [errorMessage, setErrorMessage] = useState('');
+
+  console.log(currentUser);
+
 
   const MAXCREDENTIALLENGTH = 30;
   

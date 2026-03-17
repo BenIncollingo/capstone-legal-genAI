@@ -5,7 +5,9 @@ import image from "../labor-law.jpg";
 
 export default function Home() {
 
-    const { currentUser } = useAuth();
+    const { currentUser, loading } = useAuth();
+
+    if (loading) return <div>Loading...</div>;
     
     const loginButtonAction = () => {
         // change current page to login page
@@ -30,7 +32,7 @@ export default function Home() {
                         { currentUser ?
                             <>
                                 <img src={image} class="w-8 h-8" alt="profile" />
-                                <button onClick={signOutHome()} className="bg-purple-500 hover:bg-blue-700 text-white font-bold py-2 px-6 rounded whitespace-nowrap">
+                                <button onClick={signOutHome} className="bg-purple-500 hover:bg-blue-700 text-white font-bold py-2 px-6 rounded whitespace-nowrap">
                                     Log Out
                                 </button> 
                             </>
