@@ -1,6 +1,7 @@
 import React, { use, useState } from 'react';
 import { Navigate } from 'react-router-dom';
 import { doCreateUserWithEmailAndPassword } from '../firebase/auth';
+import poster from "../labor-law.jpg";
 
 export default function Create() {
   const [email, setEmail] = useState('');
@@ -48,7 +49,7 @@ export default function Create() {
   return (
     <>
     <div className="flex flex-col min-h-screen bg-gray-50">
-      <header className="bg-blue-500 p-4 font-mono text-white">Lawbot</header>
+      <header className="bg-blue-500 p-4 font-mono text-white">⚖️Lawbot</header>
       
       {/* Container for sign in form, button, and forgotten password link */}
       <div className="flex flex-col md:flex-row flex-grow items-center justify-center max-w-6xl mx-auto w-full">
@@ -62,7 +63,7 @@ export default function Create() {
                 <label className="block text-gray-700 text-sm font-bold mb-2" htmlFor="email">
                   Enter an email:
                 </label>
-                <input type="email" onChange={(e) => {setEmail(e.target.value)}} className="shadow appearance-none border rounded w-full py-2 px-3 text-gray-700 leading-tight focus:outline-none focus:ring-2 focus:ring-blue-500" id="email" type="text" placeholder="email@example.com" required />
+                <input type="email" onChange={(e) => {setEmail(e.target.value)}} className="shadow appearance-none border rounded w-full py-2 px-3 text-gray-700 leading-tight focus:outline-none focus:ring-2 focus:ring-blue-500" id="email" placeholder="email@example.com" required />
               </div>
               <div className="mb-6">
                 <label className="block text-gray-700 text-sm font-bold mb-2" htmlFor="password">
@@ -94,7 +95,7 @@ export default function Create() {
         {/* Image Section: flex-1 ensures it also takes 50% width */}
         <aside className="flex-1 flex justify-center items-center p-8 order-1 md:order-2">
           <div className="max-w-xs md:max-w-md">
-            <img src="client\public\logo512.png" alt="Lawbot Logo" className="w-full h-auto object-contain" />
+            <img src={poster} alt="Lawbot Logo" className="w-full h-auto object-contain" />
           </div>
         </aside>
       </div>
