@@ -144,6 +144,12 @@ export default function Assistant() {
                 >
                   ⚙️
                 </button>
+                <button
+                  type="button"
+                  className="ml-auto inline-flex h-9 w-9 items-center justify-center rounded-xl hover:bg-white/10"
+                >
+                   ⏻
+                </button>
               </div>
             </div>
           </div>
