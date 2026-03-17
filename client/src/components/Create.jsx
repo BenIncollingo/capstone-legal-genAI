@@ -1,6 +1,7 @@
 import React, { use, useState } from 'react';
 import { Navigate } from 'react-router-dom';
 import { doCreateUserWithEmailAndPassword } from '../firebase/auth';
+import poster from "../labor-law.jpg";
 
 export default function Create() {
   const [email, setEmail] = useState('');
@@ -94,7 +95,7 @@ export default function Create() {
         {/* Image Section: flex-1 ensures it also takes 50% width */}
         <aside className="flex-1 flex justify-center items-center p-8 order-1 md:order-2">
           <div className="max-w-xs md:max-w-md">
-            <img src="client\public\logo512.png" alt="Lawbot Logo" className="w-full h-auto object-contain" />
+            <img src={poster} alt="Lawbot Logo" className="w-full h-auto object-contain" />
           </div>
         </aside>
       </div>
