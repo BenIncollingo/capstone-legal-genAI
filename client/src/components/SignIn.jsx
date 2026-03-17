@@ -73,7 +73,7 @@ export default function SignIn() {
               </div>
               
               <div className="flex items-center justify-between gap-4">
-                                {/* Changed type to "submit" and removed onClick */}
+                                
                 <button 
                   disabled={isSigningIn}
                   className={`${isSigningIn ? 'bg-gray-400' : 'bg-purple-500 hover:bg-blue-700'} text-white font-bold py-2 px-6 rounded focus:outline-none whitespace-nowrap`} 

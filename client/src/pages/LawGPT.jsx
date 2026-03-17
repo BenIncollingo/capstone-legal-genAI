@@ -1,6 +1,8 @@
 import { useMemo, useState } from "react";
 import { useAuth } from "../contexts/authContext/index.jsx";
 import { uploadChatToBackend } from "../api/chat.api";
+import { doSignOut } from "../firebase/auth";
+import { useNavigate } from 'react-router-dom';
 
 const CONVERSATIONS = [
   { title: "example chat 1", when: "Today" },
@@ -38,12 +40,22 @@ export default function Assistant() {
   const [message, setMessage] = useState("");
   const [messages, setMessages] = useState([]);
 
+  const navigate = useNavigate(); // Initialize the navigate function
+
   const { currentUser } = useAuth();
 
   const activeConversation = useMemo(
     () => CONVERSATIONS[activeIdx] ?? { title: "New Chat", when: "" },
     [activeIdx]
   );
+
+  function onLogout() {
+    if (currentUser) {
+      doSignOut();
+      console.log("onLogout called.");
+      navigate("/home");
+    }
+  }
 
   const onSend = async () => {
     const trimmed = message.trim();
@@ -145,8 +157,10 @@ export default function Assistant() {
                   ⚙️
                 </button>
                 <button
+                  disabled={!currentUser}
                   type="button"
                   className="ml-auto inline-flex h-9 w-9 items-center justify-center rounded-xl hover:bg-white/10"
+                  onClick={ () => onLogout() }
                 >
                    ⏻
                 </button>
