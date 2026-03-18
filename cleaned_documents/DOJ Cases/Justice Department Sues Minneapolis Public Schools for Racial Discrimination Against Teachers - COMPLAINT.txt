@@ -1,0 +1,1151 @@
+CASE 0:25-cv-04571 
+Doc. 1 
+Filed 12/09/25 
+ 
+UNITED STATES DISTRICT COURT 
+DISTRICT OF MINNESOTA 
+UNITED STATES OF AMERICA, 
+) 
+) 
+Plaintiff, 
+) 
+) 
+v. 
+) 
+Civil Action No. __________ 
+) 
+) 
+Jury demand 
+BOARD OF DIRECTORS OF 
+) 
+SPECIAL SCHOOL DISTRICT 
+) 
+NO. 1, MINNEAPOLIS PUBLIC 
+) 
+SCHOOLS, 
+) 
+) 
+SPECIAL SCHOOL DISTRICT 
+) 
+NO. 1, THE MINNEAPOLIS 
+) 
+PUBLIC SCHOOLS, 
+) 
+) 
+and 
+) 
+) 
+LISA SAYLES-ADAMS, 
+) 
+SUPERINTENDENT 
+) 
+) 
+Defendants. 
+) 
+COMPLAINT 
+INTRODUCTION 
+The United States brings this action to stop the Board of Directors of Special 
+School District No. 1, Minneapolis Public Schools (Board), Special School District No. 
+1, the Minneapolis Public Schools (MPS), and MPS Superintendent Lisa Sayles-Adams 
+(collectively, Defendants) from discriminating against teachers based on their race, color, 
+sex, and national origin in violation of federal law. Since at least July 1, 2021, Defendants 
+have contracted with a teacher’s union to provide black teachers, teachers of color, and 
+“underrepresented” teachers preferential treatment in employment decisions—such as 
+1 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+CASE 0:25-cv-04571 
+Doc. 1 
+Filed 12/09/25 
+ 
+involuntary reassignments, layoffs, and reinstatements—based on their race, color, sex, 
+and national origin. This preferential treatment is plainly discriminatory and unlawful. 
+The Defendants’ collective bargaining agreement (CBA) with the union requires 
+Defendants to “excess” or involuntarily reassign teachers based on seniority unless a 
+teacher is “underrepresented.” In that case, the CBA requires Defendants to skip the 
+“underrepresented” teacher and “excess” or reassign a “non-underrepresented” teacher 
+instead. Defendants’ CBA also requires them to reinstate “underrepresented” teachers 
+first, ignoring seniority order and the order in which the “excessing” or layoffs occurred. 
+The CBA further allows Defendants to exempt “underrepresented” teachers from layoffs. 
+Defendants’ unlawful classification of, and discrimination against, their “non­
+underrepresented” teachers is even more manifest in its Memorandum of Agreement with 
+a third party called “Black Men Teach” included in the CBA. Defendants offer “Black 
+Men Teach Fellows” extra paid training days and exempt them from normal layoff 
+policies. Of course, only black men can be “Black Men Teach Fellows,” so women, 
+whites, Asians, and others need not apply. 
+While Defendants claim that these provisions are to stop discrimination, they 
+require Defendants to blatantly discriminate against teachers based on their race, color, 
+sex, and national origin. “The way to stop discrimination on the basis of race is to stop 
+discriminating on the basis of race.” Parents Involved in Cmty. Schs. v. Seattle Sch. Dist. 
+No. 1, 551 U.S. 701, 748 (2007). The United States brings this action to stop Defendants 
+from engaging in race- and sex-based discrimination and thereby violating Title VII of 
+the Civil Rights Act of 1964, as amended, 42 U.S.C. 
+
+§ 2000e et seq. 
+2 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+CASE 0:25-cv-04571 
+Doc. 1 
+Filed 12/09/25 
+ 
+JURISDICTION AND VENUE 
+1. 
+This Court has subject matter jurisdiction over this action under 42 U.S.C. 
+
+
+§ 2000e-6(b) and 28 U.S.C. 
+
+§ 
+
+§ 1331, 1343(a)(3), and 1345. 
+2. 
+Venue is proper in the United States District Court for the District of 
+Minnesota pursuant to 28 U.S.C. 
+
+§ 1391(b) because a substantial part of the acts and 
+omissions giving rise to this action occurred in this judicial District of Minnesota. 
+PARTIES 
+3. 
+Plaintiff United States is expressly authorized to bring this action by 
+Section 707 of Title VII, 42 U.S.C. 
+
+§ 2000e-6. 
+4. 
+Defendant Board of Directors of Special School District No. 1, Minneapolis 
+Public Schools (Board) is a governmental entity created pursuant to Minnesota state law. 
+5. 
+Defendant Special School District No. 1, the Minneapolis Public Schools 
+(MPS) is a governmental entity created pursuant to Minnesota state law. 
+6. 
+Lisa Sayles-Adams is the superintendent of MPS. Sayles-Adams is sued in 
+her official capacity. 
+7. 
+The Board is a “person” within the meaning of 42 U.S.C. 
+
+§ 2000e(a) and an 
+“employer” within the meaning of 42 U.S.C. 
+
+§ 2000e(b). 
+8. 
+MPS is a “person” within the meaning of 42 U.S.C. 
+
+§ 2000e(a) and an 
+“employer” within the meaning of 42 U.S.C. 
+
+§ 2000e(b). 
+9. 
+Sayles-Adams is a “person” within the meaning of 42 U.S.C. 
+
+§ 2000e(a) 
+and an “employer” within the meaning of 42 U.S.C. 
+
+§ 2000e(b) who is responsible, 
+3 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+CASE 0:25-cv-04571 
+Doc. 1 
+Filed 12/09/25 
+ 
+according to Board Policy 2405,1 for developing the collective bargaining agreement 
+(CBA) at issue in this litigation, submitting the CBA for Board approval, and 
+implementing the CBA. 
+FACTS 
+10. 
+Since at least July 1, 2021, Defendants have had a CBA with the 
+Minneapolis Federation of Teachers Local 59 (union). 
+11. 
+The CBA details many of the terms and conditions of employment under 
+which teachers work in Defendants’ schools. 
+12. 
+Defendants’ two most recent CBAs with the union had effective dates of 
+July 1, 2021, through June 30, 2023, (2021–23 CBA) and July 1, 2023, through June 30, 
+2025, (2023–25 CBA) (collectively, CBAs).2 
+13. 
+The 2023–25 CBA was ratified on May 14, 2024.3 Currently, Defendants 
+and the union have not ratified a new CBA, and they are operating under a continuation 
+of the 2023–25 CBA. 
+14. 
+The CBAs promote the use of an “Anti-Bias Anti-Racist Educator 
+Development and Advisory Council (Council).” According to the CBAs, the Council has 
+1 See Board Policy 2405: Employee Compensation, available at https://perma.cc/VN2R­
+YUVY. 
+2 Employee Relations and Collective Bargaining: Collective Bargaining Agreement with 
+Minneapolis Federation of Teachers Local No. 59, Minneapolis Public Schools, available 
+at https://perma.cc/L4BY-EWWW. 
+3 See May 14, 2024 Regular Business Meeting Minutes, available at 
+https://perma.cc/CX6U-AWQM. 
+4 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+CASE 0:25-cv-04571 
+Doc. 1 
+Filed 12/09/25 
+ 
+“a committed focus on reducing inequitable practices and behaviors in our learning 
+places and spaces as well as supporting educators, specifically educators of color, in 
+navigating and disrupting our District as a predominantly white institution.” 2021–23 
+CBA 
+
+§ 3.5.7; 2023–25 CBA 
+
+§ 3.4.7. 
+15. 
+Defendants seek to “disrupt[] [the] District as a predominantly white 
+institution,” id., through CBA provisions that provide employment preferences based on 
+race, color, or national origin. 
+16. 
+According to the 2023-25 CBA, one of the Council’s purposes is to 
+“[r]eview and consult on culturally responsive support for Black, Indigenous, and People 
+of Color (BIPOC) educators to increase retention and success.” 2023–25 CBA 
+
+§ 3.4.7(b). 
+17. 
+The 2023-25 CBA further provides that “[a] core component of the Council 
+is the Anti-Bias Anti-Racist subcommittees specifically tasked with recommending 
+establishing initiatives for recruitment, retention, and development of educators of 
+color . . . [.]” Id. 
+
+§ 3.4.7(d). 
+18. 
+“Educators of color” is a reference to a teacher’s race, color, or national 
+origin. See id. at 235 (discussing Defendants’ “commitment to recruiting and retaining 
+educators of color . . . specifically . . . Black male educators”). 
+19. 
+“Underrepresented populations” is a proxy for a teacher’s race, color, or 
+national origin. 
+5 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+CASE 0:25-cv-04571 
+Doc. 1 
+Filed 12/09/25 
+ 
+20. 
+Upon information and belief, the terms “educators of color” includes 
+BIPOC4 individuals, otherwise known as black, indigenous, and people of color. 
+21. 
+Upon information and belief, “underrepresented populations” include 
+BIPOC individuals, otherwise known as black, indigenous, and people of color. 
+22. 
+Defendants have set specific, percentage-based goals for their hiring and 
+retention of BIPOC staff and teachers. Defendants’ 2023-2026 Achievement and 
+Integration Plan seeks to “increase [their] BIPOC staffing” from 37.6% in 2023 to “at 
+least 40% by 2026.”5 And Defendants’ May 2025 strategic plan progress report sets a 
+goal that by 2026-27, “54.3% of new [teacher] hires identify as Black, Indigenous, and 
+People of Color (BIPOC).”6 
+23. 
+The provisions of the CBAs exempting “underrepresented” teachers from 
+adverse employment actions serve Defendants’ goals for increasing the number of 
+“BIPOC” teachers and staff. 
+4 The school strike aimed to protect BIPOC teachers. Instead, some feel ‘ostracized,’” 
+North News, Apr. 23, 2022, available at https://perma.cc/F69W-G8WM (noting that 
+Minneapolis teachers’ union leaders drafted, for inclusion in the 2021-23 CBA, a 
+memorandum of agreement “with a contractual commitment for exempting BIPOC 
+teachers from layoff”); School district sued over keeping teachers of color in the 
+classroom, Southwest Voices, Aug. 25, 2022, available at https://perma.cc/8FSF-G8LE 
+(describing how “BIPOC union members” organized in 2022 to reverse the Minneapolis 
+teachers’ union’s decision to remove exemption language designed to “protect teachers 
+from underrepresented groups from seniority-based layoffs and excessing”). 
+5 Achievement & Integration Updates, Minneapolis Public Schools at 7, available at 
+https://perma.cc/DE7S-3SPS. 
+6 Effective Staff, Minneapolis Public Schools, May 2025 Progress Report at 2, available 
+at https://perma.cc/6V88-Y9HM. 
+6 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+CASE 0:25-cv-04571 
+Doc. 1 
+Filed 12/09/25 
+ 
+24. 
+In service of Defendants’ stated goal of increasing BIPOC teachers, the 
+CBAs grant employment privileges to teachers who are members of “underrepresented 
+populations” based on their race, color, or national origin that are not granted to teachers 
+who are not members of an underrepresented population. 
+Article 15 of the CBA Obligates Defendants to Classify, Limit, and Discriminate 
+Against Teachers 
+25. 
+Article 15 of the 2021-23 and 2023-25 CBAs establish Defendants’ 
+contractual obligations when excessing, including involuntarily reassigning; laying off; 
+and reinstating teachers. 2023–25 CBA at 200–20. 
+26. 
+The stated goal of Article 15 is to “to facilitate the best match possible of 
+teachers and sites or programs seeking teachers.” Id. 
+
+§ 15.1.1. 
+27. 
+Article 15 purports “to remedy the continuing effects of past discrimination 
+by the District . . . [that] disproportionately impacted the hiring of underrepresented 
+teachers in the District, as compared to the relevant labor market and the community, and 
+resulted in a lack of diversity of teachers.” Id. 
+
+§ 15.1.2(i). 
+28. 
+Article 15 further provides that its “diversity”-related provisions “will no 
+longer be in effect once the teachers in the District reflect the diversity of the labor 
+market and the community served by the District.” Id. 
+
+§ 15.1.2(i). 
+29. 
+Upon information and belief, Defendants’ claim that “past discrimination . . 
+. resulted in a lack of diversity of teachers” is not supported by any analytical process or 
+factual basis. Rather, Defendants justified this claim by bluntly stating that it was 
+7 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+CASE 0:25-cv-04571 
+Doc. 1 
+Filed 12/09/25 
+ 
+included as part of the negotiation process with the union. No other factual or analytical 
+justification supports this claim. 
+30. 
+Based on no evidence, Defendants assumed that they had a problem with 
+teacher representation stemming from past discrimination and imposed multiple race-, 
+color-, and national origin-based classifications, terms, and conditions of employment on 
+its teachers. 
+Defendants Classify and Limit Teachers Based on Race, Color, and National Origin 
+for “Excessing” and Involuntary Reassignment 
+31. 
+The 2023-25 CBA establishes general procedures for “excessing” teachers. 
+A teacher is in “excessed” status when a school or job site undergoes staff reductions, 
+when a teacher returns from a leave of absence longer than a year, or when a teacher 
+waives their right to return to a job before taking leave longer than a year. Id. 
+
+§ 15.2.5(a). 
+32. 
+The 2023–25 CBA generally obligates Defendants to conduct staff 
+reductions through “excessing” based on seniority classification; Defendants are required 
+to “excess” a junior teacher before a teacher with more seniority. Id. 
+
+§ 15.2.5(b), ¶ 1. 
+33. 
+Despite this general policy, Article 15 obligates Defendants to disregard 
+seniority order for “excessing” depending on the teacher’s race, color, or national origin. 
+Defendants must exempt teachers from an “underrepresented population” from traditional 
+“excessing” by seniority order. Instead of “excessing” an “underrepresented” teacher, 
+Article 15 requires Defendants to “excess” “the next least senior teacher, who is not a 
+member of an underrepresented population.” Id. 
+
+§ 15.2.5(b), ¶ 3. 
+8 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+CASE 0:25-cv-04571 
+Doc. 1 
+Filed 12/09/25 
+ 
+34. 
+Article 15 of the 2023–25 CBA also establishes Defendants’ procedure for 
+“excessing” teachers through involuntary reassignment. If Defendants determine that 
+greater than normal staff reduction is required in a particular school building, and an 
+insufficient number of teachers volunteer for reassignment, Defendants use the 
+involuntary reassignment process. Id. 
+
+§ 
+
+§ 15.9.2(a), 15.9.2(d). 
+35. 
+Article 15 generally obligates Defendants to conduct involuntary teacher 
+reassignments based on seniority classification; Defendants are required to involuntarily 
+reassign the least senior teachers first. Id. 
+
+§ 15.9.2(d), ¶ 1. 
+36. 
+Despite this general policy, Article 15 obligates Defendants to disregard 
+seniority order for involuntary reassignments depending on the teacher’s race, color, or 
+national origin. Defendants must exempt teachers from an “underrepresented population” 
+from the traditional procedure of involuntarily reassigning teachers by seniority order. 
+Instead of reassigning an “underrepresented” teacher, Article 15 requires Defendants to 
+reassign “the next least senior teacher, who is not a member of an underrepresented 
+population.” Id. 
+
+§ 15.9.2(d), ¶ 3. 
+37. 
+Defendants’ 2023–25 CBA memorializes policies that use teachers’ race, 
+color, and national origin to determine whom to excess or involuntarily reassign. 
+38. 
+Defendants’ 2023–25 CBA contractually obligates Defendants to consider 
+teachers’ race, color, and national origin when determining whom to excess or 
+involuntarily reassign. 
+9 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+CASE 0:25-cv-04571 
+Doc. 1 
+Filed 12/09/25 
+ 
+39. 
+Defendants’ 2023–25 CBA contractually obligates Defendants to classify 
+teachers by race, color, and national origin to determine whom to “excess” or 
+involuntarily reassign. 
+40. 
+Defendants’ 2023–25 CBA contractually obligates Defendants to limit the 
+ability of teachers who are not members of an “underrepresented population” to avoid 
+“excessing” or involuntary reinstatement, because of their race, color, or national origin. 
+41. 
+Defendants’ 2023–25 CBA contractually obligates Defendants to 
+discriminate against teachers based on race, color, and national origin when “excessing” 
+or involuntarily reassigning teachers. 
+42. 
+Pursuant to the 2023–25 CBA, Defendants classify teachers by race, color, 
+and national origin for purposes of “excessing” and involuntary reassignment decisions. 
+43. 
+Pursuant to the 2023–25 CBA, Defendants limit the ability of teachers who 
+are not members of an “underrepresented population” to avoid “excessing” or involuntary 
+reassignment, because of their race, color, or national origin. 
+Defendants Classify and Limit Teachers Based on Race, Color, and National Origin 
+for Reinstatement 
+44. 
+Article 15 of the 2023–25 CBA establishes Defendants’ procedure for 
+reinstating teachers who have been laid off. Id. 
+
+§ 15.10.7. 
+45. 
+Article 15 generally obligates Defendants to reinstate laid-off teachers “in 
+the inverse order of placement on layoff.” Id. 
+
+§ 15.10.7(d). 
+46. 
+Despite this general policy, Article 15 obligates Defendants to preference 
+teachers for reinstatement depending on their race, color, or national origin. Defendants 
+10 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+CASE 0:25-cv-04571 
+Doc. 1 
+Filed 12/09/25 
+ 
+must exempt teachers from an “underrepresented population” from the traditional 
+procedure of reinstating teachers in the inverse order in which they were laid off. Instead 
+of reinstating teachers in chronological layoff order, Article 15 requires that Defendants 
+“shall prioritize the recall of a teacher who is a member of a population underrepresented 
+among licensed teachers in the District.” Id. 
+
+§ 15.10.7(d), ¶ 2. To elevate the 
+“underrepresented” teacher’s recall prospects, Article 15 accordingly requires Defendants 
+to “deprioritize [a] more senior teacher, who is not a member of an underrepresented 
+population, in order to recall a teacher who is a member of a population underrepresented 
+among licensed teachers.” Id. 
+
+§ 15.10.7(d), ¶ 2. 
+47. 
+Defendants’ 2023–25 CBA memorializes policies that require Defendants 
+to use teachers’ race, color, and national origin when determining whom to reinstate. 
+48. 
+Defendants’ 2023–25 CBA contractually obligates Defendants to 
+“deprioritize” one group of teachers for reinstatement while prioritizing another—all 
+based on the teachers’ race, color, and national origin. 
+49. 
+Defendants’ 2023–25 CBA contractually obligates Defendants to classify 
+teachers by race, color, and national origin when determining which teachers to reinstate. 
+50. 
+Defendants’ 2023–25 CBA contractually obligates Defendants to limit the 
+ability of teachers who are not members of an “underrepresented population” to be 
+reinstated, because of their race, color, or national origin. 
+51. 
+Defendants’ 2023–25 CBA contractually obligates Defendants to 
+discriminate against teachers based on race, color, and national origin when determining 
+which teachers to reinstate. 
+11 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+CASE 0:25-cv-04571 
+Doc. 1 
+Filed 12/09/25 
+ 
+52. 
+Pursuant to the 2023–25 CBA, Defendants classify teachers by race, color, 
+and national origin for purposes of teacher reinstatement decisions. 
+53. 
+Pursuant to the 2023–25 CBA, Defendants limit the ability of teachers who 
+are not members of an “underrepresented population” to be reinstated, because of their 
+race, color, or national origin. 
+Defendants Classify and Limit Teachers Based on Race, Color, and National Origin 
+for Layoff Exemptions 
+54. 
+Article 15 of the 2023-25 CBA establishes Defendants’ procedure for 
+teacher layoffs. Id. 
+
+§ 15.10. 
+55. 
+Article 15 generally obligates Defendants to follow certain non-racial 
+preferences when determining the order of layoffs. Teachers who are not members of the 
+bargaining unit must be laid off before bargaining unit members. Id. 
+
+§ 15.10.4(a). Out-of­
+field permission teachers (those who are teaching outside of their licensure field) must be 
+laid off before licensed teachers. Id. 
+
+§ 15.10.4(b). Non-bargaining unit teachers and non­
+tenured licensed teachers are laid off before tenured teachers. Id. 
+
+§ 15.10.4(c). And 
+tenured teachers can be laid off only in inverse seniority order. Id. 
+
+§ 15.10.4(c). 
+56. 
+Despite this general policy, Article 15 permits Defendants to disregard 
+seniority order and exempt certain groups of teachers from layoff “to ensure continuity of 
+instruction” at certain schools and programs. Id. 
+
+§ 15.10.12. These groups include 
+teachers at Racially Isolated Schools, Montessori and Immersion schools, and teachers 
+working in Native and Heritage language literacy programs. 
+12 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+CASE 0:25-cv-04571 
+Doc. 1 
+Filed 12/09/25 
+ 
+57. 
+The 2023–25 CBA also permits Defendants to exempt “[t]eachers who are 
+members of populations underrepresented among licensed teachers in the District” from 
+layoff, a classification based solely on the race, color, or national origin of the teacher. Id. 
+
+
+§ 15.10.12(f). A teacher’s race, color, or national origin is unrelated to the school or 
+program at which the teacher works. 
+58. 
+Defendants’ 2023–25 CBA permits Defendants to classify teachers by race, 
+color, and national origin when determining which teachers to exempt from layoff. 
+59. 
+Defendants’ 2023–25 CBA permits Defendants to limit the ability of 
+teachers who are not members of an “underrepresented population” to avoid layoff, 
+because of their race, color, or national origin. 
+60. 
+Defendants’ 2023–25 CBA permits Defendants to make teacher layoff 
+decisions based on race, color, and national origin. 
+Defendants Classify, Limit, and Discriminate Against Teachers Based on Race, 
+Color, National Origin, and Sex Through the “Black Men Teach” Memorandum of 
+Agreement 
+61. 
+Defendants’ 2023-25 CBA includes a memorandum of agreement (MOA) 
+with an organization called “Black Men Teach” (BMT). 2023–25 CBA at 235. 
+62. 
+BMT’s stated goal is “to build and engage a fellowship of Black male 
+educators.”7 
+63. 
+To be a member of BMT, otherwise known as a “BMT Fellow,” a teacher 
+must be black and male. 
+7 Black Men Teach, What We Do: Our Theory of Action, available at 
+https://perma.cc/UYA9-6NGV. 
+13 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+CASE 0:25-cv-04571 
+Doc. 1 
+Filed 12/09/25 
+ 
+64. 
+Defendants’ BMT MOA begins by noting that MPS and Local 59 “share a 
+deep commitment to recruiting and retaining educators of color in order to remedy past, 
+present, and continuing effects of discrimination in MPS hiring practices, specifically 
+towards Black male educators, as they work to increase and retain teachers who reflect 
+the diversity of the community served by the District . . . [.]” 2023–25 CBA at 235. 
+65. 
+The BMT MOA further states that “MPS is in partnership with Black Men 
+Teach, an organization which is committed to addressing all barriers faced by Black male 
+educators and supports the growth of Black male educators in MPS.” Id. 
+66. 
+The BMT MOA establishes MPS’ Nellie Stone Johnson Community School 
+(NSJ) as “a partnership elementary school with Black Men Teach (BMT).” Id. 
+67. 
+The BMT MOA clarifies that “BMT Fellows may interview for and be 
+offered teaching positions at NSJ concurrent to the timeline for internal [MPS] 
+employees.” Id. 
+68. 
+Upon information and belief, BMT Fellows interview for positions at NSJ 
+separately from all other external female and non-black applicants. Upon information and 
+belief, Defendants offer BMT Fellows positions at NSJ separately from any offers 
+Defendants make to external female and non-black applicants. 
+69. 
+Pursuant to the 2023–25 CBA, Defendants are required to exempt “BMT 
+Fellows” from the CBA’s general provisions on excessing and layoff detailed in 
+paragraphs 31-43 and 54-60 of this Complaint. Id. Defendants therefore are required to 
+exempt both teachers who are members of “underrepresented populations” and BMT 
+14 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+CASE 0:25-cv-04571 
+Doc. 1 
+Filed 12/09/25 
+ 
+Fellows from their seniority-based or general policies on excessing, id. 
+
+§ 15.2.5(b), 
+involuntary reassignment, id. 
+
+§ 15.9.2(d), and reinstatement, id. 
+
+§ 15.10.7(d). 
+70. 
+The BMT MOA also obligates Defendants to provide “BMT Fellows” with 
+“five (5) days per year of reserve teacher coverage, with no loss of pay or benefits, to 
+participate in BMT-sponsored professional development events.” 2023–25 CBA at 235. 
+71. 
+Under the BMT MOA, female and non-black teachers cannot receive the 
+same employment benefits that BMT Fellows receive. External female and non-black 
+applicants cannot interview alongside BMT Fellows for positions at NSJ. And when 
+Defendants make hiring decisions at NSJ, they group the applicants into (1) a BMT 
+Fellows pool, and (2) a pool of female and non-black applicants. Neither are female and 
+non-black teachers exempt from Defendants’ general policies on excessing, involuntary 
+reassignment, reinstatement, or layoff like BMT Fellows are. Finally, female and non-
+black teachers do not receive five extra paid professional development days like BMT 
+Fellows. 
+72. 
+The BMT MOA obligates Defendants to classify teachers by race, color, 
+national origin, and sex when determining which teachers to exempt from “excessing” 
+and layoff, which teachers to interview for positions at NSJ, and whether to award 
+additional paid professional development days to BMT Fellows. 
+73. 
+The BMT MOA obligates Defendants to limit the ability of teachers who 
+are not BMT Fellows to receive employment benefits, or otherwise adversely affect non-
+BMT Fellows’ status as employees, because of their race, color, sex, or national origin. 
+15 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+CASE 0:25-cv-04571 
+Doc. 1 
+Filed 12/09/25 
+ 
+74. 
+The BMT MOA obligates Defendants to discriminate against teachers 
+based on race, color, national origin, and sex by preferencing black male teachers for 
+hiring at NSJ, by exempting black male teachers from “excessing” and layoff, and by 
+awarding black male teachers five extra days of paid reserve teacher coverage for 
+professional development. 
+75. 
+Pursuant to the 2023–25 CBA, Defendants classify teachers by race, color, 
+national origin, and sex when making hiring decisions at NSJ, when deciding which 
+teachers to “excess” or lay off, and when deciding which teachers to award extra paid 
+reserve teacher coverage for professional development. 
+76. 
+Pursuant to the 2023–25 CBA, Defendants limit the ability of teachers who 
+are not black men to be hired at NSJ, to avoid “excessing” or layoff, and to receive extra 
+paid reserve teacher coverage for professional development, because of their race, color, 
+sex, or national origin. 
+77. 
+Pursuant to the 2023–25 CBA, Defendants discriminate against teachers 
+who are not black men by awarding black men the hiring preference and employment 
+benefits provided for in the BMT MOA—preferences and benefits unavailable to any 
+other race or gender. 
+COUNT I 
+Title VII, 42 U.S.C. 
+
+§ 2000e-2(a)(2) 
+Limitation or classification based on race, color, national origin, and sex 
+78. 
+The United States realleges and incorporates herein by reference the 
+allegations set forth above in paragraphs 1-77. 
+16 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+CASE 0:25-cv-04571 
+Doc. 1 
+Filed 12/09/25 
+ 
+79.
+ Since 2023 and until present day, Defendants have engaged in a pattern or 
+practice of discrimination against MPS teachers, in violation of 
+
+§ 703(a)(2) of Title VII, 
+42 U.S.C. 
+
+§ 2000e-2(a)(2), by classifying or limiting their employees based on race, 
+color, or national origin, as required under Article 15 of the 2023-25 CBA. 
+80. 
+Since 2023 and until present day, Defendants have engaged in a pattern or 
+practice of discrimination against MPS teachers, in violation of 
+
+§ 703(a)(2) of Title VII, 
+42 U.S.C. 
+
+§ 2000e-2(a)(2), by classifying or limiting their employees based on race, 
+color, national origin, or sex as required under the BMT MOA. 
+81. 
+The Attorney General has reasonable cause to believe that Defendants’ 
+continued contractual obligations to classify or limit employees based on race, color, 
+national origin, and sex under the 2023-25 CBA violate Section 703(a)(2) and are “a 
+pattern or practice of resistance to the full enjoyment of” the rights of MPS teachers to 
+equal employment opportunities without discrimination based on race, color, national 
+origin, or sex. See Section 707(a) of Title VII, as amended, 42 U.S.C. 
+
+§ 2000e-6(a). 
+82. 
+The United States, through the United States Department of Justice, 
+notified Defendant MPS of the United States’ determination that Defendants’ pattern or 
+practice of classification based on race, color, national origin, and sex is unlawful. 
+17 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+CASE 0:25-cv-04571 
+Doc. 1 
+Filed 12/09/25 
+ 
+COUNT II 
+Title VII, 42 U.S.C. 
+
+§ 2000e-2(a)(1) 
+Discrimination in terms or conditions of employment based on race, color, national 
+origin, and sex 
+83. 
+The United States realleges and incorporates herein by reference the 
+allegations set forth above in paragraphs 1-82. 
+84.
+ Since 2023 and until present day, Defendants have engaged in a pattern or 
+practice of discrimination against MPS teachers, in violation of 
+
+§ 703(a)(1) of Title VII, 
+42 U.S.C. 
+
+§ 2000e-2(a)(1), by implementing preferences based on race, color, national 
+origin, or sex, as required by the BMT MOA. 
+85. 
+The Attorney General has reasonable cause to believe that Defendants’ 
+continued contractual obligations under the BMT MOA to provide “BMT Fellows” with 
+a separate interviewing and hiring process for positions at NSJ, additional protection 
+against “excessing” and layoff, and additional paid professional development days violate 
+Section 703(a)(1) and are “a pattern or practice of resistance to the full enjoyment of” the 
+rights of MPS teachers to equal employment opportunities without discrimination based 
+on race, color, national origin, or sex. See Section 707(a) of Title VII, as amended, 42 
+U.S.C. 
+
+§ 2000e-6(a). 
+86. 
+The United States, through the United States Department of Justice, 
+notified Defendant MPS of the United States’ determination that Defendants’ pattern or 
+practice of discrimination based on race, color, national origin, and sex is unlawful. 
+18 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+CASE 0:25-cv-04571 
+Doc. 1 
+Filed 12/09/25 
+ 
+PRAYER FOR RELIEF 
+WHEREFORE, the United States prays that this Court enter judgment against 
+Defendants and grant the following relief: 
+a. 
+A declaratory judgment that Defendants’ 2023–25 CBA 
+discriminates against MPS teachers on the basis of race, color, 
+national origin, and sex, in violation of Title VII; 
+b. 
+A permanent injunction prohibiting Defendants, and their officers, 
+agents, employees, successors, and attorneys, and other persons who 
+are in active concert or participation with Defendants, from further 
+violating Title VII by implementing 2023–25 CBA Article 15 and 
+the BMT MOA on the basis of race, color, national origin, and sex; 
+c. 
+A permanent injunction prohibiting Defendants, and their officers, 
+agents, employees, successors, and attorneys, and other persons who 
+are in active concert or participation with Defendants, from further 
+violating Title VII by entering into or implementing any contractual 
+provision that is substantially similar to Article 15 or the BMT MOA 
+that limits, classifies, or discriminates against employees based on 
+race, color, sex, or national origin, in any future CBA with the union; 
+d. 
+An award of any applicable costs and fees; and 
+e. 
+An award of all such other additional relief as the interests of justice 
+may require. 
+Dated: December 9, 2025 
+19 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+CASE 0:25-cv-04571 
+Doc. 1 
+Filed 12/09/25 
+ 
+Respectfully submitted: 
+HARMEET K. DHILLON 
+Assistant Attorney General 
+Civil Rights Division 
+ERIC SELL 
+Counsel 
+Civil Rights Division 
+JEFFREY MORRISON 
+Acting Chief 
+Employment Litigation Section 
+HILARY PINION 
+Acting Principal Deputy Chief 
+Employment Litigation Section 
+/s/___________________ 
+BRANDON T. WROBLESKI (VSB No. 89697) 
+Trial Attorney 
+Employment Litigation Section 
+Civil Rights Division 
+U.S. Department of Justice 
+4 Constitution Square 
+150 M Street, N.E., Suite 9000 
+Washington, D.C. 20530 
+Phone: (202) 598-9122 
+Fax: (202) 514-1005 
+Email: Brandon.Wrobleski@usdoj.gov 
+20 
+CASE 0:25-cv-04571 
+Doc. 1-1 
+Filed 12/09/25
