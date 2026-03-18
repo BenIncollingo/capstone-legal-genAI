@@ -1,5 +1,7 @@
+import { BACKEND_API_BASE_URL } from "./config"
+
 export async function uploadChatToBackend(userChat) {
-  const res = await fetch("/api/chat/uploadChat", 
+  const res = await fetch(`${BACKEND_API_BASE_URL}/chat/uploadChat`, 
     {
         method: "POST",
         headers: {

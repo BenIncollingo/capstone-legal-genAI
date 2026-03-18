@@ -1,7 +1,16 @@
-export async function sendChatToInfra(message) {
-  console.log("BACKEND SERVICE got message:", message);
+export async function sendChatToInfra(question) {
+  try {
+    const response = await fetch("https://api-service-4xa2fuayfa-ue.a.run.app/");
 
-  return {
-    response: "example AI response message: wow very interesting question",
-  };
+    if (!response.ok) {
+      throw new Error(`Request failed: ${response.status}`);
+    }
+
+    const data = await response.json();
+    console.log("Infra response:", data);
+    return data;
+  } catch (error) {
+    console.error("Infra error:", error);
+    throw error;
+  }
 }

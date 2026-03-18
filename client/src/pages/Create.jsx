@@ -1,107 +1,190 @@
-import React, { use, useState } from 'react';
-import { Navigate } from 'react-router-dom';
-import { doCreateUserWithEmailAndPassword } from '../firebase/auth';
-import poster from "../labor-law.jpg";
+import React, { useState } from "react";
+import { doCreateUserWithEmailAndPassword } from "../firebase/auth.js";
+import { Link, useNavigate } from "react-router-dom";
 
-export default function Create() {
-  const [email, setEmail] = useState('');
-  const [password, setPassword] = useState('');
-  const [retypePassword, setRetypePassword] = useState('');
-  const [isRegistering, setIsRegistering] = useState(false);
-  const [errorMessage, setErrorMessage] = useState('');
-  const MAXCREDENTIALLENGTH = 30;
+export default function CreateAccountPage() {
+  const navigate = useNavigate();
 
+  const [email, setEmail] = useState("");
+  const [password, setPassword] = useState("");
+  const [confirmPassword, setConfirmPassword] = useState("");
+
+  const [isCreating, setIsCreating] = useState(false);
+  const [errorMessage, setErrorMessage] = useState("");
+  const [successMessage, setSuccessMessage] = useState("");
+
+  const MAX_CREDENTIAL_LENGTH = 30;
 
   const handleSubmit = async (e) => {
     e.preventDefault();
+    setErrorMessage("");
+    setSuccessMessage("");
 
-    alert("Login attempt: ", {email, password});
-
-    // Check if login credentials actually have values inside
-    if (!email || !password || (email.length > MAXCREDENTIALLENGTH) || (password.length > MAXCREDENTIALLENGTH) ) {
-      alert("Please enter a valid username and password.");
-
+    if (
+      !email ||
+      !password ||
+      !confirmPassword ||
+      email.length > MAX_CREDENTIAL_LENGTH ||
+      password.length > MAX_CREDENTIAL_LENGTH
+    ) {
+      setErrorMessage("Please enter valid credentials.");
       return;
-    } else if (password !== retypePassword) {
-      alert("Passwords must match.");
-      return;
-    } 
-
-    if(!isRegistering) {
-      setIsRegistering(true);
-      try {
-        await doCreateUserWithEmailAndPassword(email, password);
-        console.log("Successful sign up!")
-      } catch (error) {
-        console.error("Sign up failed.");
-        setErrorMessage(error.message);
-      } finally {
-        setIsRegistering(false);
-      }
     }
 
+    if (password !== confirmPassword) {
+      setErrorMessage("Passwords do not match.");
+      return;
+    }
 
-    console.log('Login attempt with:', { email, password, retypePassword });
+    if (isCreating) return;
+
+    setIsCreating(true);
+
+    try {
+      await doCreateUserWithEmailAndPassword(email.trim(), password);
+
+      setSuccessMessage("Account created! Redirecting...");
+
+      setTimeout(() => {
+        navigate("/login");
+      }, 1200);
+    } catch (error) {
+      console.error("Signup failed:", error);
+
+      switch (error.code) {
+        case "auth/email-already-in-use":
+          setErrorMessage("Email already in use.");
+          break;
+        case "auth/invalid-email":
+          setErrorMessage("Invalid email.");
+          break;
+        case "auth/weak-password":
+          setErrorMessage("Password is too weak.");
+          break;
+        default:
+          setErrorMessage("Failed to create account.");
+      }
+    } finally {
+      setIsCreating(false);
+    }
   };
 
-
-
   return (
-    <>
-    <div className="flex flex-col min-h-screen bg-gray-50">
-      <header className="bg-blue-500 p-4 font-mono text-white">⚖️Lawbot</header>
-      
-      {/* Container for sign in form, button, and forgotten password link */}
-      <div className="flex flex-col md:flex-row flex-grow items-center justify-center max-w-6xl mx-auto w-full">
-        
-        <main className="flex-1 flex justify-center items-center p-8 w-full order-2 md:order-1">
+    <div className="flex min-h-screen flex-col bg-gray-50">
+      <header className="bg-blue-500 p-4 font-mono text-white">Lawbot</header>
+
+      <div className="mx-auto flex w-full max-w-6xl flex-grow flex-col items-center justify-center md:flex-row">
+        <main className="order-2 flex w-full flex-1 items-center justify-center p-8 md:order-1">
           <div className="w-full max-w-sm">
-            <form onSubmit={handleSubmit} className="bg-white shadow-md rounded-lg px-8 pt-6 pb-8 mb-4 border border-gray-100">
-              <h1 class="bold text-2xl font-semibold">Create an account:</h1>
-              <br></br>
+            <form
+              onSubmit={handleSubmit}
+              className="mb-4 rounded-lg border border-gray-100 bg-white px-8 pt-6 pb-8 shadow-md"
+            >
               <div className="mb-4">
-                <label className="block text-gray-700 text-sm font-bold mb-2" htmlFor="email">
-                  Enter an email:
+                <label className="mb-2 block text-sm font-bold text-gray-700">
+                  Email
                 </label>
-                <input type="email" onChange={(e) => {setEmail(e.target.value)}} className="shadow appearance-none border rounded w-full py-2 px-3 text-gray-700 leading-tight focus:outline-none focus:ring-2 focus:ring-blue-500" id="email" placeholder="email@example.com" required />
+                <input
+                  className="w-full appearance-none rounded border px-3 py-2 text-gray-700 shadow focus:outline-none focus:ring-2 focus:ring-blue-500"
+                  type="email"
+                  placeholder="email@example.com"
+                  value={email}
+                  onChange={(e) => setEmail(e.target.value)}
+                  required
+                />
               </div>
+
+              <div className="mb-4">
+                <label className="mb-2 block text-sm font-bold text-gray-700">
+                  Password
+                </label>
+                <input
+                  className="w-full appearance-none rounded border px-3 py-2 text-gray-700 shadow focus:outline-none focus:ring-2 focus:ring-blue-500"
+                  type="password"
+                  placeholder="Password"
+                  value={password}
+                  onChange={(e) => setPassword(e.target.value)}
+                  required
+                />
+              </div>
+
               <div className="mb-6">
-                <label className="block text-gray-700 text-sm font-bold mb-2" htmlFor="password">
-                  Create a Password
+                <label className="mb-2 block text-sm font-bold text-gray-700">
+                  Confirm Password
                 </label>
-                <input className="shadow appearance-none border border-red-500 rounded w-full py-2 px-3 text-gray-700 mb-2 leading-tight focus:outline-none focus:ring-2 focus:ring-red-500" id="password" type="password" placeholder="Password" onChange={(e) => setPassword(e.target.value)} required />
-                <p className="text-red-500 text-xs italic" hidden>Wrong Password</p>
+                <input
+                  className="mb-2 w-full appearance-none rounded border px-3 py-2 text-gray-700 shadow focus:outline-none focus:ring-2 focus:ring-blue-500"
+                  type="password"
+                  placeholder="Confirm Password"
+                  value={confirmPassword}
+                  onChange={(e) => setConfirmPassword(e.target.value)}
+                  required
+                />
+
+                {errorMessage && (
+                  <p className="text-xs italic text-red-500">
+                    {errorMessage}
+                  </p>
+                )}
+
+                {successMessage && (
+                  <p className="text-xs italic text-green-600">
+                    {successMessage}
+                  </p>
+                )}
               </div>
-              <div className="mb-6">
-                <label className="block text-gray-700 text-sm font-bold mb-2" htmlFor="password">
-                  Retype Password
-                </label>
-                <input className="shadow appearance-none border border-red-500 rounded w-full py-2 px-3 text-gray-700 mb-2 leading-tight focus:outline-none focus:ring-2 focus:ring-red-500" id="password" type="password" placeholder="Retype Password" onChange={(e) => setRetypePassword(e.target.value)} required />
-                <p className="text-red-500 text-xs italic" hidden>Wrong Password</p>
-              </div>
-              
+
               <div className="flex items-center justify-between gap-4">
-                <button className="bg-blue-500 hover:bg-blue-700 text-white font-bold py-2 px-6 rounded focus:outline-none whitespace-nowrap" type="button" onClick={handleSubmit}>
-                  Create Account
+                <button
+                  disabled={isCreating}
+                  className={`rounded px-6 py-2 font-bold text-white whitespace-nowrap ${
+                    isCreating
+                      ? "cursor-not-allowed bg-gray-400"
+                      : "bg-blue-500 hover:bg-blue-700"
+                  }`}
+                  type="submit"
+                >
+                  {isCreating ? "Creating..." : "Create Account"}
+                </button>
+
+                <button
+                  type="button"
+                  onClick={() => navigate("/login")}
+                  className="text-sm font-bold text-blue-500 hover:text-blue-800"
+                >
+                  Back to Login
                 </button>
               </div>
             </form>
-            <p className="text-center text-gray-400 text-xs">
+
+            <div className="mt-4 text-center">
+              <p className="text-sm text-gray-600">
+                Already have an account?{" "}
+                <Link
+                  to="/login"
+                  className="font-semibold text-blue-600 hover:underline"
+                >
+                  Sign in
+                </Link>
+              </p>
+            </div>
+
+            <p className="mt-4 text-center text-xs text-gray-400">
               &copy;2026 Lawbot Co. All rights reserved.
             </p>
           </div>
         </main>
 
-        {/* Image Section: flex-1 ensures it also takes 50% width */}
-        <aside className="flex-1 flex justify-center items-center p-8 order-1 md:order-2">
+        <aside className="order-1 flex flex-1 items-center justify-center p-8 md:order-2">
           <div className="max-w-xs md:max-w-md">
-            <img src={poster} alt="Lawbot Logo" className="w-full h-auto object-contain" />
+            <img
+              src=""
+              alt="Lawbot Logo"
+              className="h-auto w-full object-contain"
+            />
           </div>
         </aside>
       </div>
     </div>
-    </>
-
-
-  )
+  );
 }
