@@ -1,0 +1,3599 @@
+5
+10
+15
+20
+25
+1 
+2 
+3 
+4 
+6 
+7 
+8 
+9 
+11 
+12 
+13 
+14 
+16 
+17 
+18 
+19 
+21 
+22 
+23 
+24 
+26 
+27 
+28 
+IN THE DISTRICT COURT OF GUAM 
+UNITED STATES OF AMERICA, 
+Case No. 1:21-cv-00022 
+v. 
+Plaintiff, 
+DE
+(1) 
+CISION AND ORDER: 
+GRANTING UNITED STATES’ 
+MOTION TO SUPPLEMENT 
+UNITED STATES TERRITORY OF GUAM 
+and THE GOVERNMENT OF GUAM 
+RETIREMENT FUND,
+(2) 
+THE RECORD (ECF No. 88); 
+GRANTING UNITED STATES’ 
+MOTION FOR SUMMARY 
+JUDGMENT AS TO LIABILITY 
+ Defendants. 
+(3) 
+(ECF No. 51); 
+DENYING THE GOVERNMENT 
+OF GUAM RETIREMENT 
+FUND’S COUNTER-MOTION 
+FOR SUMMARY JUDGMENT 
+(4) 
+(ECF No. 52); and 
+DISMISSING UNITED STATES 
+TERRITORY OF GUAM’S 
+MOTION FOR SUMMARY 
+JUDGMENT AS TO 
+CLAIMANT’S UNJUST 
+ENRICHMENT (ECF No. 94) 
+This civil action arises under the Uniformed Services Employment and Reemployment 
+Rights Act of 1994, as amended, 38 U.S.C. 
+
+§ 4301, et seq. (“USERRA”). The United States filed 
+this lawsuit on behalf of five service members as well as other potential service members 
+pursuant to 38 U.S.C. 
+
+§ 4323(b), alleging that Defendants United States Territory of Guam 
+(“GovGuam”) and the Government of Guam Retirement Fund (the “Fund”) violate USERRA 
+when they treat service members who were away on active military duty and subsequently 
+reemployed as having incurred a break in service under Guam’s Leave Sharing Program 
+(“LSP”). In addition, the United States alleges GovGuam and the Fund violate USERRA when 
+- 1 -
+Case 1:21-cv-00022 
+Document 113 
+Filed 09/04/25 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+5
+10
+15
+20
+25
+1 
+2 
+3 
+4 
+6 
+7 
+8 
+9 
+11 
+12 
+13 
+14 
+16 
+17 
+18 
+19 
+21 
+22 
+23 
+24 
+26 
+27 
+28 
+they prohibit employer- and employee-side contributions towards the service members’ 
+retirement plans when they take leave under the LSP. Before the Court are three motions for 
+summary judgment: (1) the United States’ Motion for Summary Judgment as to liability (USA’s 
+MSJ, ECF No. 51), 1 (2) the Fund’s Counter-Motion for Summary Judgment based on the 
+equitable doctrine of quasi-estoppel (Fund’s Counter-MSJ, ECF No. 52),2 and (3) GovGuam’s 
+Motion for Summary Judgment as to the unjust enrichment of one claimant (GovGuam’s MSJ, 
+ECF No. 94).3 
+After a hearing was held on the United States’ Motion for Summary Judgment and the 
+Fund’s Counter-Motion for Summary Judgment and both motions were taken under advisement 
+(Mins., ECF No. 71), the United States filed a Motion for Leave to File Additional Documents 
+to Supplement the Summary Judgment Record. (USA’s Mot. Suppl. Record, ECF No. 88.)4 
+1 The United States’ Motion for Summary Judgment is supported by a Brief (USA’s MSJ Br., ECF No. 51-1), 
+Concise Statement of Undisputed Material Facts (USA’s CSUMF, ECF No. 51-2), and Exhibits (ECF No. 51-3). 
+The Fund opposed the United States’ Motion for Summary Judgment (ECF No. 52) with its Concise Statement of 
+Material Facts, which includes declarations and exhibits. (Fund’s CSMF, ECF No. 52-1.) GovGuam also opposed 
+the United States’ Motion (GovGuam’s Opp’n to USA’s MSJ, ECF No. 53) and joins in the Fund’s Opposition and 
+Counter-Motion. (GovGuam’s Joinder, ECF No. 54.) The United States replied to both the Fund’s and GovGuam’s 
+Oppositions. (ECF No. 56.) 
+2 The Fund’s Counter-Motion is supported by its Concise Statement of Material Facts. (Fund’s CSMF, ECF No. 
+52-1.) The United States opposed the Fund’s Counter-Motion (USA’s Opp’n to Fund’s Counter-MSJ, ECF No. 56), 
+to which the Fund filed its reply (ECF No. 63). GovGuam also joined the Fund’s reply. (GovGuam’s Joinder to 
+Fund’s Reply, ECF No. 64.) 
+3 GovGuam supports its Motion for Summary Judgment as to unjust enrichment with a Concise Statement of 
+Undisputed Material Facts (GovGuam’s CSUMF, ECF No. 95) and Exhibits (95-1–95-7). The United States 
+opposes the Motion (USA’s Opp’n to GovGuam MSJ, ECF No. 100) to which GovGuam replied (GovGuam’s 
+Reply in Support of MSJ, ECF No. 102). There was no hearing on GovGuam’s Motion for Summary Judgment 
+based on unjust enrichment. Subsequently, GovGuam filed a Notice of Errata, which fixed a typographical error in 
+its Reply. (ECF No. 103.) 
+4 The United States supports its Motion to Supplement the Record with a Brief in Support. (USA’s Suppl. Br., ECF 
+No. 88-1.) The Fund opposes the Motion to Supplement the Record (Fund’s Opp’n to Mot. Suppl., ECF No. 98), 
+which GovGuam joins (ECF No. 99). The Fund supports its Opposition with exhibits and declarations. (ECF Nos. 
+98-1–98-3.)⁠ GovGuam supports its joinder with a summary report and claimant declarations. (ECF Nos. 99-1–99­
+6.)⁠ The United States replied (ECF No. 101) and attached an email exhibit (ECF No. 101-1). 
+- 2 -
+Case 1:21-cv-00022 
+Document 113 
+Filed 09/04/25 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+5
+10
+15
+20
+25
+1 
+2 
+3 
+4 
+6 
+7 
+8 
+9 
+11 
+12 
+13 
+14 
+16 
+17 
+18 
+19 
+21 
+22 
+23 
+24 
+26 
+27 
+28 
+Neither party sought a hearing for GovGuam’s Motion for Summary Judgment and it was 
+therefore submitted on the briefs. 
+The Court has reviewed and considered the parties’ filings, the applicable law, and 
+counsels’ oral arguments. For the following reasons, the Court (1) GRANTS the United States’ 
+Motion to Supplement the Record; (2) GRANTS the United States’ Motion for Summary 
+Judgment as to Defendants’ liability; (3) DENIES the Fund’s Counter-Motion for Summary 
+Judgment based on the equitable doctrine of quasi-estoppel; and (4) DISMISSES GovGuam’s 
+Motion for Summary Judgment as to the unjust enrichment of one claimant for lack of 
+jurisdiction. 
+I. 
+BACKGROUND 
+A. Guam’s Leave Sharing Program 
+The Guam Fire Department (“GFD”) and Guam’s Department of Education (“GDOE”) 
+are agencies of GovGuam and individuals working there are GovGuam employees. (USA’s 
+CSUMF ¶¶ 2-3; Fund’s CSMF ¶¶ 2-3.) Beginning in 1993, GovGuam offered its employees a 
+choice of retirement plans, including: Defined Benefit Plan, Defined Contribution Retirement 
+System 401(a) Plan, Defined Benefit 1.75 Retirement System Plan, and Deferred Compensation 
+(457) Plan. (USA’s CSUMF ¶ 4; Fund’s CSMF ¶ 4.) 
+The Department of Administration (“DOA”) is also a GovGuam agency. (USA’s 
+CSUMF ¶¶ 5, 7; Fund’s CSMF ¶¶ 5, 7.) DOA and GDOE are responsible for payroll actions for 
+GovGuam employees, and through these payroll actions, the agencies make employer-side 
+contributions to GovGuam employees’ retirement pension funds. (USA’s CSUMF ¶¶ 5, 7; 
+Fund’s CSMF ¶¶ 5, 7.) The DOA and GDOE do not make employer-side pension contributions 
+for the time that employees use donated leave from the LSP for military service. (USA’s CSUMF 
+- 3 -
+Case 1:21-cv-00022 
+Document 113 
+Filed 09/04/25 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+5
+10
+15
+20
+25
+1 
+2 
+3 
+4 
+6 
+7 
+8 
+9 
+11 
+12 
+13 
+14 
+16 
+17 
+18 
+19 
+21 
+22 
+23 
+24 
+26 
+27 
+28 
+¶¶ 6, 8; Fund’s CSMF ¶¶ 6, 8.) 
+The Fund administers the pension fund for GovGuam employees and is responsible for 
+collecting pension contributions. (USA’s CSUMF ¶ 9; Fund’s CSMF ¶ 9.) The Fund blocks all 
+contributions made by employees for the time an employee used donated leave for military 
+service and instead returns the funds. (USA’s CSUMF ¶ 10; Fund’s CSMF ¶ 10 (partially 
+disputed by the parties).)5 The Fund is also responsible for calculating and verifying service 
+credit towards retirement. (USA’s CSUMF ¶ 11; Fund’s CSMF ¶ 11.) However, the Fund does 
+not recognize any service credit for the time an employee uses donated leave for military service. 
+(USA’s CSUMF ¶ 12; Fund’s CSMF ¶ 12.) 
+The LSP is an employee benefit that provides assistance to employees who need to take 
+extended periods of absence from their employments for personal reasons. (USA’s CSUMF ¶ 
+13; Fund’s CSMF ¶ 13.) The employees can use donated leave from a leave donor to remain in 
+a paid leave status. (USA’s CSUMF ¶ 13; Fund’s CSMF ¶ 13 (disputed as the Fund asserts that 
+there is not a leave bank for donated leave and each application for donated leave is specific to 
+a leave donor and leave recipient).) 6 Military service is an accepted personal reason for 
+employees to use donated leave from the LSP. (USA’s CSUMF ¶ 14; Fund’s CSMF ¶ 15.) 
+Employees’ time spent on donated leave from the LSP may not count towards retirement 
+service credit for any GovGuam employee, including service members. (USA’s CSUMF ¶ 15; 
+5 The Fund asserts that this fact is disputed as the Fund “does not block all contributions made for the time an 
+employee used donated leave for military service.” (Fund’s CSMF ¶ 10 (citing ECF No. 51-3 at 17, 26, 32; USA’s 
+CSUMF ¶¶ 6, 8).) The Court finds that the Fund’s cited exhibits do not dispute the fact asserted by the United States. 
+Therefore, the Court considers this fact undisputed. See Fed. R. Civ. Proc. 56(e)(2). 
+6 The Fund disputes this fact citing to the Declarations of Gilbert F. Galang and Kathryn M. C. Diaz. (ECF No. 52­
+1 at 15-18, 34-37, 59-61). Both Declarations support the Fund’s assertion. (Id. at 16, 35 (“The government of 
+Guam’s Leave Sharing program does not maintain a leave bank for donated leave.”).) Based on the express language 
+of Guam law, the Court finds the LSP is a voluntary program that requires a voluntary leave donor to transfer leave 
+to a specific recipient, not to a leave bank. 4 G.C.A. 
+
+§ 4109.2(b)(1). Furthermore, nowhere in the Leave Sharing 
+Procedure at Appendix G is there a reference to a leave bank. However, this fact is not material. 
+- 4 -
+Case 1:21-cv-00022 
+Document 113 
+Filed 09/04/25 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+5
+10
+15
+20
+25
+1 
+2 
+3 
+4 
+6 
+7 
+8 
+9 
+11 
+12 
+13 
+14 
+16 
+17 
+18 
+19 
+21 
+22 
+23 
+24 
+26 
+27 
+28 
+Fund’s CSMF ¶ 15.) Any pension contributions made while an employee is using donated leave 
+for military service will be returned to the employer or employee (USA’s CSUMF ¶ 16; Fund’s 
+CSMF ¶ 16.) 
+B. The Claimants (LSP Participants) 
+Alan Torre was employed as a firefighter for GFD from 1992 until 2020 and was an 
+active participant in the Defined Benefit Plan. (USA’s CSUMF ¶ 17; Fund’s CSMF ¶ 17.) Torre 
+is a former Army National Guardsman who utilized GovGuam’s LSP for active duty from March 
+17, 2007 until December 8, 2007; he received honorable discharge and GFD reemployed him 
+after deployment, and he did not receive service credit or pension benefits for a period of time 
+after GFD reemployed him. (USA’s CSUMF ¶ 18; Fund’s CSMF ¶ 18 (partially disputed for the 
+amount of pay periods he received donated paid leave and for which years).)7 In his deposition 
+for this case, Torre testified that the only information he knew about shared leave was what the 
+payroll clerk told him or his supervisor. (USA’s Suppl. Br. 14-15.) Torre testified that two weeks 
+before his retirement, “Retirement told me I was not able to retire.” (Id. at 21.) He thereafter 
+inquired why after two years of being told he could retire in 2019, he was told that he had to 
+work longer. (Id.) The Fund informed Torre that his participation in the LSP impacted his 
+retirement service credit. (Id. at 22.) Torre had to work an extra five months before he became 
+eligible to retire. (Id. at 22-23.) He wants the Fund to give him the nine months of retirement 
+service credit that he claims to be entitled to. (Id. at 28.) When asked if Torre read the personnel 
+rules and regulations about leave sharing, he said that he could not find any online despite 
+searching. (Id. at 24.) Torre also testified that both he and his employer contributed to the Fund 
+for his retirement plan while on the LSP, but that prior to retiring, a clerk gave him a check for 
+7 The Fund disputes this fact stating that Torre received donated paid leave for 36 pay periods. (Fund’s CSMF ¶ 
+18.) The Court does not find this to be a material fact when resolving the issue of liability only. 
+- 5 -
+Case 1:21-cv-00022 
+Document 113 
+Filed 09/04/25 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+5
+10
+15
+20
+25
+1 
+2 
+3 
+4 
+6 
+7 
+8 
+9 
+11 
+12 
+13 
+14 
+16 
+17 
+18 
+19 
+21 
+22 
+23 
+24 
+26 
+27 
+28 
+the contributions he made. (Id. at 28.) When the Fund returned his employee contributions, Torre 
+testified that he told the clerk to keep the check and requested his time in service credit, but the 
+Fund informed him that could not be done. (Id. at 29-30.) Ultimately, he cashed the check before 
+he lost it. (Id. at 30.) 
+Andrew Quinata has been employed as a firefighter for GFD since 1992 to the present 
+and is an active participant in the Defined Benefits Plan. (USA’s CSUMF ¶ 19; Fund’s CSMF ¶ 
+19.) Quinata is a former Air National Guardsman who utilized GovGuam’s LSP for active duty 
+during 2007 to 2009, 2012, and 2016. (USA’s CSUMF ¶ 20; Fund’s CSMF ¶ 20.) Quinata did 
+not receive retirement service credit or pension benefits for those periods. (USA’s CSUMF ¶ 20; 
+Fund’s CSMF ¶ 20.) Quinata was unaware that participation in the LSP would forfeit his 
+USERRA benefits. (USA’s CSUMF ¶ 21; Fund’s CSMF ¶ 21 (disputed by the parties).)8 In his 
+deposition for this case, Quinata was asked if he had ever seen the LSP statute, to which he 
+responded no. (USA’s Suppl. Br. 36.) He also stated that no one had ever gone over the LSP 
+with him. (Id. at 37.) Quinata testified that the payroll clerk informed him about shared leave. 
+(Id. at 38-39.) The payroll clerk would inform Quinata that he was running out of leave and 
+would provide a leave sharing document for him to fill out after which the payroll clerk said he 
+would take care of the rest. (Id. at 39, 41.) When Quinata inquired at the Fund about his time in 
+service, he was informed that he was short about two and a half years in service because he had 
+used the LSP. (Id. at 44-46.) Quinata was informed that because the Fund is not crediting him 
+for the time that he used donated leave while on active military duty, he will draw a lower pension 
+annuity for the rest of his life. (Id. at 45-46.) 
+8 The Fund disputes this on the basis of the Declaration by Diaz. (Fund’s CSMF ¶ 21.) As addressed in greater detail 
+below, the Court finds that Diaz’s Declaration does not sufficiently dispute Quinata’s unawareness that participation 
+in LSP would forfeit his USERRA benefits. 
+- 6 -
+Case 1:21-cv-00022 
+Document 113 
+Filed 09/04/25 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+5
+10
+15
+20
+25
+1 
+2 
+3 
+4 
+6 
+7 
+8 
+9 
+11 
+12 
+13 
+14 
+16 
+17 
+18 
+19 
+21 
+22 
+23 
+24 
+26 
+27 
+28 
+Jesse Cruz has been employed as a firefighter for GFD since 1992 to the present and is 
+an active participant in the Defined Benefits Plan. (USA’s CSUMF ¶ 22; Fund’s CSMF ¶ 22.) 
+Cruz is an Air National Guardsman who utilized GovGuam’s LSP for active duty during 2012, 
+and he did not receive retirement service credit or pension benefits for that period of time. 
+(USA’s CSUMF ¶ 23; Fund’s CSMF ¶ 23.) Cruz was unaware that participation in the LSP 
+would forfeit his USERRA benefits. (USA’s CSUMF ¶ 24; Fund’s CSMF ¶ 24 (disputed by the 
+parties).) 9 In his deposition testimony for this case, Cruz testified that he did not look at the 
+personnel rules and regulations regarding LSP. (USA’s Suppl. Br. 86.) He did not know the 
+details about the LSP because his payroll clerk “took care of all of that.” (Id. at 87.) 
+Raymond San Nicolas was employed as a firefighter for GFD from 1992 until 2018 and 
+is a former Air National Guardsman who utilized GovGuam’s LSP for active duty during 2005, 
+2006-2007, 2008, and 2012. (USA’s CSUMF ¶¶ 25-26; Fund’s CSMF ¶¶ 25-26.) Cruz did not 
+receive retirement service credit or pension benefits for those periods. (USA’s CSUMF ¶ 26; 
+Fund’s CSMF ¶ 26.) In his deposition for this case, San Nicolas testified that he applied for leave 
+under the LSP through his payroll office. (USA’s Suppl. Br. 98.) His contributions to the Fund 
+were taken out of his pay while on military orders and leave sharing. (Id. at 101.) However, the 
+Fund refunded those contributions. (Id. at 101-02.) An agent at the Fund initially informed San 
+Nicolas in 2015 about the pay he would receive and his years of credited service, which included 
+credit for years of service during his leave sharing. (Id. at 102.) Years later in 2018, he received 
+contrary information. (Id. at 102-03.) 
+Frederick Guzman has been employed by GDOE since 1996 to the present and is an 
+active participant in the Defined Benefit 1.75 Plan. (USA’s CSUMF ¶ 27; Fund’s CSMF ¶ 27.) 
+9 The Fund disputes this on the basis of the Declaration by Diaz. (Fund’s CSMF ¶ 24.) As addressed in greater detail 
+below, the Court finds that Diaz’s Declaration does not sufficiently dispute Cruz’s unawareness that participation 
+in LSP would forfeit his USERRA benefits. 
+- 7 -
+Case 1:21-cv-00022 
+Document 113 
+Filed 09/04/25 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+5
+10
+15
+20
+25
+1 
+2 
+3 
+4 
+6 
+7 
+8 
+9 
+11 
+12 
+13 
+14 
+16 
+17 
+18 
+19 
+21 
+22 
+23 
+24 
+26 
+27 
+28 
+Guzman is an Air National Guardsman who utilized GovGuam’s LSP for active duty during 
+2012 and 2018. (USA’s CSUMF ¶ 28; Fund’s CSMF ¶ 28; GovGuam CSUMF ¶ I.B (GovGuam 
+asserts the period of time is to August 2023, which is not disputed).) Guzman’s leave transfer 
+request was approved. (GovGuam CSUMF ¶ III.B.) Guzman did not receive service credit or 
+pension benefits for those periods. (USA’s CSUMF ¶ 28; Fund’s CSMF ¶ 28; GovGuam 
+CSUMF ¶ III.A.) The cash benefit of Guzman’s leave under the LSP is $42,993.73. (GovGuam 
+CSUMF ¶ IV.A (undisputed).) Guzman refuses to return the LSP cash benefits. (Id. ¶ V.) In his 
+deposition for this case, Guzman testified that he never read the GovGuam personnel rules and 
+regulations. (USA’s Suppl. Br. 59.) He further stated that when he turned in his leave request 
+form for the very first time, he turned it in to the secretary of the school that employed him, who 
+then called payroll. (Id. at 62.) He learned about shared leave from the secretary. (Id. at 64.) 
+When the Defined Benefit 1.75 program was launched, Guzman learned from a person at the 
+Fund that his credit years is not the same as the period from when he started working in 1996. 
+(Id. at 66.) A person from the Fund informed Guzman that he was short on retirement credits 
+and suggested possible reasons but did not pinpoint the specific reason. (Id.) He subsequently 
+asked someone from payroll why he is short on years and was told maybe it is because he went 
+on military leave. (Id. at 67.) He still did not understand why he would be short if he went on 
+military leave. (Id.) 
+II. 
+LEGAL STANDARDS 
+A. Supplemental Briefing 
+Pursuant to CVLR 7(h), no supplemental briefing shall be filed without leave of the 
+Court. Federal Rule of Civil Procedure 56(e)(1) dictates that if a party fails to properly support 
+an assertion of fact or address another party’s assertion of fact, the court may “give an 
+opportunity to properly support or address the fact.” 
+- 8 -
+Case 1:21-cv-00022 
+Document 113 
+Filed 09/04/25 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+5
+10
+15
+20
+25
+1 
+2 
+3 
+4 
+6 
+7 
+8 
+9 
+11 
+12 
+13 
+14 
+16 
+17 
+18 
+19 
+21 
+22 
+23 
+24 
+26 
+27 
+28 
+B. Summary Judgment Pursuant to Federal Rule of Civil Procedure 56 
+A principal purpose of the summary judgment procedure is to identify and dispose of 
+factually unsupported claims. Celotex Corp. v. Cattret, 477 U.S. 317, 323-24 (1986). Summary 
+judgment is proper when the “pleadings, depositions, answers to interrogatories, and admissions 
+on file, together with the affidavits, if any, show that there is no genuine issue as to any material 
+fact and that the moving party is entitled to judgment as a matter of law.” Id. at 322. 
+A party who moves for summary judgment who bears the burden of proof at trial must 
+produce evidence that would entitle him to a directed verdict if the evidence went uncontroverted 
+at trial. C.A.R. Transp. Brokerage Co., Inc. v. Darden, 213 F.3d 474, 480 (9th Cir. 2000). Once 
+the moving party meets its initial burden, the non-moving party must go beyond the pleadings 
+and by its own evidence “set forth specific facts showing that there is a genuine issue for trial.” 
+Id. at 480. In order to make this showing, the non-moving party must “identify with reasonable 
+particularity the evidence that precludes summary judgment.” Keenan v. Allan, 91 F.3d 1275, 
+1279 (9th Cir. 1996) (quoting Richards v. Combined Ins. Co., 55 F.3d 247, 251 (7th Cir. 1995)). 
+If the non-moving party fails to make this showing, the moving party is entitled to judgment as 
+a matter of law. Celotex, 477 U.S. at 323. 
+A party moving for summary judgment who does not have the ultimate burden of 
+persuasion at trial must produce evidence which either negates an essential element of the non-
+moving party’s claims or show that the non-moving party does not have enough evidence of an 
+essential element to carry its ultimate burden of persuasion at trial. Nissan Fire & Marine Ins. 
+Co. v. Fritz Cos., 210 F.3d 1099, 1102 (9th Cir. 2000). 
+“[W]hen parties submit cross-motions for summary judgment, each motion must be 
+considered on its own merits.” Fair Hous. Council of Riverside Cty., Inc. v. Riverside Two, 249 
+F.3d 1132, 1136 (9th Cir. 2001) (citations omitted). “If a genuine dispute of material fact exists, 
+- 9 -
+Case 1:21-cv-00022 
+Document 113 
+Filed 09/04/25 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+5
+10
+15
+20
+25
+1 
+2 
+3 
+4 
+6 
+7 
+8 
+9 
+11 
+12 
+13 
+14 
+16 
+17 
+18 
+19 
+21 
+22 
+23 
+24 
+26 
+27 
+28 
+a court must deny both motions.” Fed. Trade Comm’n v. Am. eVoice, Ltd., 242 F. Supp. 3d 1119, 
+1121 (D. Mont. 2017) (citation omitted). However, if there is no dispute of material fact and only 
+one party is entitled to judgment as a matter of law, a court may grant summary judgment as to 
+that party only. E.g., Johnson v. Diaz, 339 F. Supp. 60, 65 (C.D. Cal. 1971) (granting one party’s 
+motion for summary judgment and denying other party’s motion). 
+At the summary judgment stage, “[a] plaintiff moving for summary judgment is not 
+obligated to negate affirmative defenses, but an affirmative defense will negate summary 
+judgment where each element of the affirmative defense is supported by summary judgment 
+evidence.” McCollough v. Johnson, Rodenberg & Lauinger, 587 F. Supp. 2d 1170, 1176 (D. 
+Mont. 2008) (citing Garza v. Gonzales, No. 13-05-200-CV, 2006 WL 3317732, at *4 (Tex. App. 
+Nov. 16, 2006)). 
+If the moving party seeks summary adjudication with respect to a claim or 
+defense upon which it bears the burden of proof at trial, it must satisfy its burden 
+with affirmative, admissible evidence. By contrast, when the non-moving party 
+bears the burden of proving the claim or defense, the moving party can meet its 
+burden by pointing out the absence of evidence submitted by the non-moving 
+party. The moving party need not disprove the other party’s case. 
+See Forum Ins. Co. v. Devere Ltd., 151 F. Supp. 2d 1145, 1147 (C.D. Cal. 2001) (citing Celotex, 
+477 U.S. at 325). 
+III. 
+DISCUSSION 
+The Court addresses each motion starting with the United States’ Motion to Supplement 
+the Record. The Court grants the United States’ Motion to Supplement the Record because the 
+United States was diligent, and the additional evidence of the claimants’ depositions was not at 
+its request. The Court also accepts the Defendants’ supplemental records as well. Next, the Court 
+grants the United States’ Motion for Summary Judgment and finds that GovGuam’s LSP 
+prohibition does not limit the service members’ USERRA benefits because the LSP prohibition 
+is preempted, Defendants did not sufficiently support their affirmative defense of waiver, and 
+- 10 -
+Case 1:21-cv-00022 
+Document 113 
+Filed 09/04/25 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+5
+10
+15
+20
+25
+1 
+2 
+3 
+4 
+6 
+7 
+8 
+9 
+11 
+12 
+13 
+14 
+16 
+17 
+18 
+19 
+21 
+22 
+23 
+24 
+26 
+27 
+28 
+the service members are entitled to their USERRA benefits. Next, the Court finds that the Fund 
+is not entitled to summary judgment based on quasi-estoppel because the United States or 
+claimants are not receiving an unconscionable advantage nor is the Fund or GovGuam receiving 
+an unconscionable disadvantage. Finally, the Court dismisses GovGuam’s Motion for Summary 
+Judgment for unjust enrichment as to Guzman because it does not have jurisdiction. 
+A. United States’ Motion to Supplement the Record 
+As an initial matter, the Court grants the United States’ Motion for Leave to Supplement 
+the Record. The Fund opposes the United States’ Motion to Supplement the Record and asserts 
+that if the Court were to grant the Motion that the Fund should also be able to submit additional 
+documents to complete the record as well. (Fund’s Opp’n to Mot. Suppl. 6.) GovGuam noticed 
+depositions of the five claimants about a month before the close of discovery and after briefing 
+closed on both the United States’ Motion for Summary Judgment and GovGuam’s Motion 
+(USA’s Suppl. Br. 3; Third Am. Scheduling Order 2, ECF No. 73 (“All discovery must be 
+scheduled so as to be completed by January 4, 2024”).) 
+Federal Rule of Civil Procedure 56(e)(1) dictates that if a party fails to properly support 
+an assertion of fact or address another party’s assertion of fact, the court may “give an 
+opportunity to properly support or address the fact.” The Ninth Circuit has affirmed a district 
+court’s denial of a motion to supplement the summary judgment record based on a lack of 
+diligence from the moving party. Stucky v. Dep’t of Educ., 337 Fed. Appx. 611, 613 (9th Cir. 
+2009). Thereafter, Ninth Circuit district courts have analyzed the diligence of the moving party 
+when determining whether to grant or deny a motion to supplement. See, e.g., Dentists Ins. Co. 
+v. Yousefian, Case No. C20-1076RSL, 2023 WL 4106220, at *7 (citing Stucky, 337 Fed. Appx. 
+at 613)). 
+- 11 -
+Case 1:21-cv-00022 
+Document 113 
+Filed 09/04/25 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+5
+10
+15
+20
+25
+1 
+2 
+3 
+4 
+6 
+7 
+8 
+9 
+11 
+12 
+13 
+14 
+16 
+17 
+18 
+19 
+21 
+22 
+23 
+24 
+26 
+27 
+28 
+In this instance, the United States was diligent. The depositions were not at its own 
+request but became available upon the Defendants’ requests. Because the depositions properly 
+address material issues of fact about the claimants’ waiver, or lack of a waiver, the Court grants 
+the United States’ Motion to Supplement the Record. In addition, the Court accepts the Fund’s 
+and GovGuam’s supplement of the record as well. All parties have had ample time to brief the 
+legal issues and argue before the Court, and because the Court accepts the supplemental record 
+from all parties, any additional legal arguments submitted with the supplemental briefs are 
+accepted for consideration. The Court now turns to the pending substantive motions. 
+B. United States’ Motion for Summary Judgment 
+The United States argues that the Court should grant its motion for summary judgment 
+on liability because Defendants violated USERRA in three ways: (1) Defendants failed to make 
+employer-side contributions to pension accounts for reemployed service member-employees 
+utilizing the LSP for military service; (2) the Fund rejected service members’ employee-side 
+contributions to pension accounts when service members utilized the LSP for military service; 
+and (3) the Fund failed to provide retirement service credit time to reemployed service members 
+that utilized the LSP for military service. (USA’s MSJ Br. 9-10.) Defendants’ sole justification 
+for their actions is their unequivocal reliance on Guam’s territorial statute at 4 G.C.A. 
+
+§ 4109.2(b)(3), the LSP’s prohibition against the recipient employee using the paid leave for credit 
+towards retirement. (Id. at 10.) 
+The United States contends USERRA supersedes the LSP’s prohibition against crediting 
+retirement service benefits to service members who are transferred leave. Although the LSP 
+confers paid leave benefits to the service members, the United States still contends that as a 
+matter of law, USERRA preempts that portion of Guam’s statute that deprives service members 
+of the three minimal rights under USERRA. (Id. at 15.) Further, as a matter of fact, the United 
+- 12 -
+Case 1:21-cv-00022 
+Document 113 
+Filed 09/04/25 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+5
+6 
+7 
+8 
+9 
+10
+15
+20
+25
+1 
+2 
+3 
+4 
+11 
+12 
+13 
+14 
+16 
+17 
+18 
+19 
+21 
+22 
+23 
+24 
+26 
+27 
+28 
+States maintains that there has been no waiver by the service members of their minimal USERRA 
+rights. (Id. at 19.) 
+The Fund argues the United States’ Motion should be denied because there exist genuine 
+disputes of material facts. Specifically, the Fund contends that the critical inquiry at issue is 
+“whether the rights to service credits under USERRA (and their value) are more or less beneficial 
+than the value of rights to service credits and other benefits under Guam law.” (Fund’s Counter-
+MSJ 17.) The Fund further argues that the Court must consider not just the application of Guam’s 
+LSP, but also the application of its alternative as set out in Guam law at 4 G.C.A. 
+
+§ 8137.2. (Id.) 
+Lastly, the Fund contends “[p]reemption requires a determination of the beneficial value of the 
+rights conferred by federal vs. Guam laws.” (Id. at 22.) GovGuam joins the Fund’s Opposition. 
+(GovGuam’s Joinder Reply 1.) The Court rejects the Fund’s contention that the Court must 
+consider alternative Guam law on retirement benefits for service members, such as the 
+employees on the active duty provision at 4 G.C.A. 
+
+§ 8137.2, in determining whether the LSP’s 
+prohibition against credit towards retirement violates USERRA because the LSP operates on its 
+own in providing both a benefit and a deprivation of retirement rights. 
+1. Service Members’ Rights Under USERRA 
+Congress enacted USERRA for the purpose of encouraging service in the uniformed 
+services by eliminating or minimizing disadvantages to civilian careers and employment 
+resulting from such service; minimizing disruption to service members’ lives, employers, fellow 
+employees, and their communities; and prohibiting discrimination against service members. 38 
+U.S.C. 
+
+§ 4301(a). “USERRA establishes a floor, not a ceiling, for the employment and 
+reemployment rights and benefits of those it protects. In other words, an employer may provide 
+greater rights and benefits than USERRA requires, but no employer can refuse to provide any 
+right or benefit guaranteed by USERRA.” 20 C.F.R. 
+
+§ 1002.7(a). “If an employer provides a 
+- 13 -
+Case 1:21-cv-00022 
+Document 113 
+Filed 09/04/25 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+5
+10
+15
+20
+25
+1 
+2 
+3 
+4 
+6 
+7 
+8 
+9 
+11 
+12 
+13 
+14 
+16 
+17 
+18 
+19 
+21 
+22 
+23 
+24 
+26 
+27 
+28 
+benefit that exceeds USERRA’s requirements in one area, it cannot reduce or limit other rights 
+or benefits provided by USERRA.” Id. 
+
+§ 1002.7(c). “If the employer provides additional benefits 
+such as full or partial pay when the employee performs service, the employer is not excused from 
+providing other rights and benefits to which the employee is entitled under [USERRA].” Id. 
+
+§ 1002.151. 
+USERRA defines a “benefit” or “rights and benefits” as: “the terms, conditions, or 
+privileges of employment, including any advantage, profit, privilege, gain, status, account, or 
+interest (including wages or salary for work performed) that accrues by reason of an 
+employment contract or agreement or an employer policy, plan or practice and includes rights 
+and benefits under a pension plan . . . .” 38 U.S.C. 
+
+§ 4303(2). 
+USERRA contains a supremacy clause at 38 U.S.C. 
+
+§ 4302(b) that addresses rights and 
+benefits conferred under the chapter: 
+This chapter supersedes any State law (including any local law or ordinance), 
+contract, agreement, policy, plan, practice, or other matter that reduces, limits, 
+or eliminates in any manner any right or benefit provided by this chapter, 
+including the establishment of additional prerequisites to the exercise of any 
+such right or the receipt of any such benefit. 
+Section 4302(a) of USERRA is a limitation on the scope of federal preemption 
+established by 
+
+§ 4302(b). Section 4302(a) states: 
+Nothing in this chapter shall supersede, nullify or diminish any Federal or 
+State law (including any local law or ordinance), contract, agreement, policy, 
+plan, practice, or other matter that establishes a right or benefit that is more 
+beneficial to, or is in addition to, a right or benefit provided for such person. 
+Id. 
+
+§ 4302(a) (emphasis added). 
+Section 4318 covers service members’ reemployment rights arising under employee 
+pension benefit plans. Id. 
+
+§ 4318(a)(1)(A). For a right provided under an employee pension 
+benefit plan or a right provided by federal or state law governing pension benefits for government 
+- 14 -
+Case 1:21-cv-00022 
+Document 113 
+Filed 09/04/25 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+5
+10
+15
+20
+25
+1 
+2 
+3 
+4 
+6 
+7 
+8 
+9 
+11 
+12 
+13 
+14 
+16 
+17 
+18 
+19 
+21 
+22 
+23 
+24 
+26 
+27 
+28 
+employees, “the right to pension benefits of a person reemployed under [chapter 38] shall be 
+determined under [
+
+§ 4318].” 38 U.S.C. 
+
+§ 4318(a)(1)(A). 
+“A person reemployed under [chapter 38] shall be treated as not having incurred a break 
+in service with the employer or employers maintaining the [employee pension benefit] plan by 
+reason of such person’s period or periods of service in the uniformed services.” Id. 
+
+§ 4318(a)(2)(A). Not only does USERRA prohibit the treatment of reemployed service members 
+as having incurred a break in service, but it also requires employers reemploying service 
+members to maintain the employee’s pension plan in the same manner and extent as to other 
+employees during the period of service. Id. 
+
+§ 4318(b)(1). USERRA expressly states: 
+Each period served by a person in the uniformed services shall, upon 
+reemployment under this chapter, be deemed to constitute service with the 
+employer or employers maintaining the plan for the purpose of determining 
+the nonforfeitability of the person’s accrued benefits and for the purpose of 
+determining the accrual of benefits under the plan. 
+Id. 
+
+§ 4318(a)(2)(B). Finally, USERRA allows an employee to make employee-side contributions 
+at the amount the service member would have been permitted to make if not for their service: 
+A person reemployed under this chapter shall be entitled to accrued benefits 
+pursuant to subsection (a) that are contingent on the making of, or derived 
+from, employee contributions or elective deferrals . . . only to the extent the 
+person makes payment to the plan with respect to such contributions or 
+deferrals. No such payment may exceed the amount the person would have 
+been permitted or required to contribute had the person remained 
+continuously employed by the employer throughout the period of service 
+described in subsection (a)(2)(B). Any payment to the plan described in this 
+paragraph shall be made during the period beginning with the date of 
+reemployment and whose duration is three times the period of the person’s 
+service in the uniformed services, such payment period not to exceed five 
+years. 
+Therefore, under USERRA, reemployed service members explicitly have rights that 
+include: (1) the period of time during which they served will not be treated as a break in service 
+with the employers maintaining their pension benefit plan; (2) employer contributions to their 
+employee pension benefit plan shall be in the amount of “any employer contribution for the 
+- 15 -
+Case 1:21-cv-00022 
+Document 113 
+Filed 09/04/25 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+5
+6 
+7 
+8 
+9 
+10
+15
+20
+25
+1 
+2 
+3 
+4 
+11 
+12 
+13 
+14 
+16 
+17 
+18 
+19 
+21 
+22 
+23 
+24 
+26 
+27 
+28 
+person in the same manner and to the same extent the allocation occurs for other employees 
+during the period of service[;]” and (3) employee contributions upon reemployment in the 
+amount permitted but for their service. See 38 U.S.C. 
+
+§ 4318(b)(1). 
+2. Service Members’ Rights Under Guam Law 
+Guam law provides multiple benefits to employees and service members pertaining to 
+leave. All government of Guam employees who are also in the military reserves or are National 
+Guard members are entitled to fifteen days of military paid leave within a fiscal year when they 
+are called on for active military duty. 4 G.C.A. 
+
+§ 4119(a)-(b). The provisions of 
+
+§ 4119 are 
+retroactive to October 1, 2012. Section 4119 does not affirmatively deprive a service member of 
+any retirement benefit. Therefore, 4 G.C.A. 
+
+§ 4119(a)-(b) establishes a right or benefit that is 
+more beneficial to, or is in addition to, a right or benefit provided for such person under 
+USERRA. Section 4119 does not take away from service members’ pension rights when it 
+provides leave with pay for military service, which is not mandated under USERRA. 
+After exhaustion of this fifteen-day military paid leave, service members must elect 
+annual leave, compensatory-time accrued, or unpaid leave when called on for active military 
+duty. Id. 
+
+§ 4119(b). 
+Under 
+
+§ 8137.2, GovGuam funds both employer- and employee-side retirement 
+contributions for military service member employees who take unpaid leave while on active 
+duty. Id. 
+
+§ 8137.2. Specifically, Guam law provides as follows: 
+Employees on Active Duty. The government shall pay the employer’s and 
+employee’s shares for Retirement Fund contributions, group health insurance 
+premiums, and group life insurance premiums for all officers and other 
+employees of the government of Guam who are on leave without pay and on 
+active duty with the Guam National Guard or the reserve components of any 
+of the Armed Services of the United States. All agencies and departments of 
+the government of Guam shall fund, from their respective annual budgets, the 
+contributions for retirement, health insurance, and life insurance authorized 
+by this section. 
+- 16 -
+Case 1:21-cv-00022 
+Document 113 
+Filed 09/04/25 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+5
+10
+15
+20
+25
+1 
+2 
+3 
+4 
+6 
+7 
+8 
+9 
+11 
+12 
+13 
+14 
+16 
+17 
+18 
+19 
+21 
+22 
+23 
+24 
+26 
+27 
+28 
+Id. (emphasis added). Military service members are also given retirement credit for their period 
+of active military service if discharged under conditions other than dishonorable and reemployed 
+by Guam. Id. 
+
+§ 8108(b). Therefore under 
+
+§ 
+
+§ 8108(b) and 8137.2, service members who elect to 
+take unpaid leave receive both retirement credit and employer-side contributions as they are 
+entitled to under USERRA, and the additional benefits of GovGuam-funded employee 
+contributions, group health insurance premiums, and group life insurance premiums during their 
+period of military service. Again, because 
+
+§ 
+
+§ 8108(b) and 8137.2 do not take away any of the 
+minimum rights guaranteed to service members by USERRA and only add the benefits 
+identified, these Guam statutory provisions establish a right or benefit that is more beneficial 
+than, or is in addition to, a right or benefit provided for such person under USERRA. 
+Finally, through GovGuam’s LSP, a GovGuam employee may voluntarily use donated 
+leave generally of up to ninety days instead of taking unpaid leave. Id. 
+
+§ 4109.2(b)(4). During 
+this period, the recipient of donated leave—in this case, the service member—receives pay based 
+on either the recipient or donor’s rate, whichever is lower. Id. 
+
+§ 4109.2(b)(1). By using donated 
+leave under the LSP, the recipients are not permitted to use the period of donated leave as credit 
+towards retirement. Id. 
+
+§ 4109.2(b)(3). “Leave may not be transferred to another employee if as 
+a recipient that employee intends to use it for credit towards retirement,” and “[i]n no event shall 
+transferred leave be converted to cash or retirement credit by the person to whom it is 
+transferred.” 4 G.C.A. 
+
+§ 4109.2(b)(3). Therefore, under Guam’s LSP statute, service members 
+receive the benefit of leave with pay, which is not a USERRA benefit. However, in exchange for 
+receiving paid leave under the same law, GovGuam does not make employer-side contributions, 
+permit employee-side contributions, nor count the service member’s leave as credit towards 
+retirement––the three benefits protected under USERRA when a service member is on unpaid 
+leave. 
+- 17 -
+Case 1:21-cv-00022 
+Document 113 
+Filed 09/04/25 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+5
+10
+15
+20
+25
+1 
+2 
+3 
+4 
+6 
+7 
+8 
+9 
+11 
+12 
+13 
+14 
+16 
+17 
+18 
+19 
+21 
+22 
+23 
+24 
+26 
+27 
+28 
+3. USERRA Supremacy Provision and Waiver of USERRA Rights 
+The United States contends that USERRA supersedes Guam’s LSP, and Defendants 
+contend that Guam’s LSP is more beneficial and therefore not preempted. Furthermore, the 
+United States argues that none of the claimants waived their rights when they accepted the 
+benefits under the LSP, while Defendants argue that through this acceptance of the LSP paid 
+leave, they waived their USERRA rights to retirement benefits. The Court has not found and the 
+parties have not identified any Ninth Circuit binding cases that address the issues of USERRA 
+supremacy and waiver. Therefore, the Court turns to out of circuit decisions and finds that the 
+Sixth Circuit decisions discussed herein regarding waiver of USERRA rights and supremacy are 
+persuasive. 
+In Wysocki v. International Business Machine Corporation, 607 F.3d 1102 (6th Cir. 
+2010), the Sixth Circuit analyzed when the USERRA supremacy clause under 
+
+§ 4302(b) is 
+limited by the express non-supremacy clause in 
+
+§ 4302(a), and what constitutes waiver of the 
+protected USERRA rights for a more beneficial right. Id. at 1107-08. In Wysocki, the service 
+member plaintiff returned from military service and his company reemployed him. Id. at 1103. 
+The service member alleged that his company refused to reintegrate him and terminated him in 
+violation of USERRA. Id. The same day the company terminated the service member, he signed 
+a release. Id. at 1104. The release stated, the service member waived “all claims, demands, 
+actions or liabilities [he] m[ight] have against [the company] of whatever kind,” and included 
+within its scope “any other federal, state or local law dealing with discrimination in employment 
+including, but not limited to, discrimination based on . . . veteran status . . . .” Id. The release 
+also advised the service member that he should consult an attorney and provided a period of time 
+to consider the release before the signing deadline, in addition to a period of time for the service 
+member to revoke his acceptance after signing. Id. 
+- 18 -
+Case 1:21-cv-00022 
+Document 113 
+Filed 09/04/25 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+5
+10
+15
+20
+25
+1 
+2 
+3 
+4 
+6 
+7 
+8 
+9 
+11 
+12 
+13 
+14 
+16 
+17 
+18 
+19 
+21 
+22 
+23 
+24 
+26 
+27 
+28 
+The Sixth Circuit began its analysis by noting that the rights and benefits listed in 
+
+§ 4303(2) of USERRA are substantive rights. Id. at 1106. Where a service member’s substantive 
+rights are involved, 
+
+§ 4302 of USERRA is “squarely” implicated. Id. at 1107. However, just 
+because 
+
+§ 4302 applies, USERRA does not automatically supersede any law, plan, or agreement. 
+Id. To determine if the release was exempt from the USERRA supremacy clause by 
+
+§ 4302(a), 
+the Sixth Circuit examined whether the rights provided to the service member were more 
+beneficial than the rights he waived. Id. It reasoned that USERRA “clearly envisioned that 
+veterans would be able to waive their individual USERRA rights by clear and unambiguous 
+action.” Id. at 1108 (citing H.R. Rep. No. 103-65, at 20 (1993) (emphasis added)). The Sixth 
+Circuit concluded, and the Fund agrees, that the release signed by the service member who 
+waived “all claims, demands, actions or liabilities” regarding “discrimination based on . . . 
+veteran status” against his employer was a valid release because he received financial 
+compensation in exchange for it, was instructed to consult with an attorney before signing the 
+release, and the release used clear and unambiguous language. Id. at 1104, 1108. 
+More recently, the Sixth Circuit addressed the issue of whether a settlement agreement 
+was effective in releasing a service member’s claim under USERRA. Ward v. Shelby County, 
+Tennessee, 98 F.4th 688, 690 (6th Cir. 2024).10 The Sixth Circuit specifically discusses the 
+requirements of waiver under 
+
+§ 4302. Id. at 692-93. “[Section] 4302 does not make the courts 
+guardians of servicemembers who choose to settle their USERRA claims. To the contrary, [the 
+Sixth Circuit] said in Wysocki, servicemembers can ‘waive their USERRA rights without 
+unnecessary court interference, if they believe that the consideration they will receive . . . is more 
+beneficial than pursuing their rights through the courts[.]’” Id. at 692 (quoting Wysocki, 607 F.3d 
+10 The Sixth Circuit issued Ward after briefing closed for the parties’ motions. However, the Ward Court discusses 
+Wysocki, which the parties cited. 
+- 19 -
+Case 1:21-cv-00022 
+Document 113 
+Filed 09/04/25 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+5
+10
+15
+20
+25
+1 
+2 
+3 
+4 
+6 
+7 
+8 
+9 
+11 
+12 
+13 
+14 
+16 
+17 
+18 
+19 
+21 
+22 
+23 
+24 
+26 
+27 
+28 
+at 1108). “An individual servicemember knows better than the courts do whether the certainty 
+of a lump-sum payment up front, for example, is ‘more beneficial’ to him than the possibility of 
+a larger recovery later.” Id. Ward clarified that there are no special words that will release a right 
+in a waiver. See id. at 692. In these decisions, the Sixth Circuit outlined a subjective standard in 
+which the Court relies on service members’ determination as to whether the benefits they accept 
+are more beneficial than the USERRA rights they waived. 
+As identified in Wysocki, the Court here finds that the supremacy provision in 
+
+§ 4302 of 
+USERRA is “squarely” implicated by the LSP’s prohibition against giving service members 
+credit towards retirement at 4 G.C.A. 
+
+§ 4109.2(b)(3) because the rights at issue are substantive 
+rights that fall under 
+
+§ 4303(2) of USERRA. In order for the waiver of supremacy in 
+
+§ 4302(a) 
+to apply to Guam’s LSP as being more beneficial than USERRA benefits and limit the supremacy 
+clause of USERRA under 
+
+§ 4302(b), the service members must clearly and unambiguously 
+recognize that accepting this LSP benefit is in exchange for a waiver of both their Guam and 
+USERRA rights to credit towards retirement. See Wysocki, 607 F.3d at 1108; Ward, 98 F.4th at 
+692. 
+Here, the Fund provides the Court with four of the five claimants’ records showing the 
+benefits they received when they took unpaid leave under Guam law for military service. (ECF 
+No. 98-2 at 3; ECF No. 98-3 at 2.) Through these submissions, the Fund contends that the Court 
+should consider these benefits in determining whether the limitation of USERRA’s supremacy 
+clause applies. However, neither the Wysocki nor Ward Courts engaged in such an analysis as 
+“[a]n individual servicemember knows better than the courts do whether the certainty of a lump-
+sum payment up front, for example, is ‘more beneficial’ to him than the possibility of a larger 
+recovery later.” Ward, 98 F.4th at 692. Therefore, the Court rejects the Fund’s suggestion to 
+apply an objective test in which the Court would conduct a financial cost-benefit analysis to 
+- 20 -
+Case 1:21-cv-00022 
+Document 113 
+Filed 09/04/25 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+5
+10
+15
+20
+25
+1 
+2 
+3 
+4 
+6 
+7 
+8 
+9 
+11 
+12 
+13 
+14 
+16 
+17 
+18 
+19 
+21 
+22 
+23 
+24 
+26 
+27 
+28 
+determine what is more beneficial for the service members. Instead, the Court adopts a subjective 
+standard applied at the time the service member elects to receive the LSP paid leave benefit in 
+exchange for giving up the USERRA benefits. Here, the undisputed evidence received is that 
+claimants Torre and San Nicolas, together with their employer, paid their contributions to the 
+Fund whenever they used shared leave. This evidence supports the conclusion that these service 
+members accepted the LSP benefit, and contributed their portions consistent with USERRA. 
+The Fund also argues that under Wysocki, a service member may impliedly waive their 
+USERRA rights. (Fund’s Opp’n to Mot. Suppl.17.) In support of this argument, the Fund cites 
+to Wysocki “noting that USERRA rights may be waived, ‘either explicitly or impliedly, through 
+conduct’ (citing S. Rep. 103-1058, at 41 [sic]. . . .).” (See id. (citing Wysocki, 607 F.3d at 1108).) 
+However, the Sixth Circuit actually noted that “the legislative history clearly envisioned that 
+veterans would be able to waive their individual USERRA rights by clear and unambiguous 
+action.” Wysocki, 607 F.3d at 1108. In fact, the Wysocki Court applied the clear and unambiguous 
+standard. 
+As to the affirmative defense of waiver, the Fund relies on the declaration of Kathryn M. 
+C. Diaz, Employee Management Relations Office II/Supervisor for the Employee Management 
+Relations (“EMR”) Branch under the GovGuam DOA in the Human Resources Division. She 
+declares that “EMR staff informs all employees that the donated leave may not be transferred if 
+the Leave Recipient intends to use it for credit towards retirement or accumulated leave.” (Fund’s 
+CSMF 36.) She further declares that “[t]o my knowledge and recollection, the EMR staff 
+informed Andrew Quinata, Alan Torre, Jesse Cruz, Raymond San Nicolas, and Frederick 
+Guzman that donated leave cannot be used for credit toward retirement, according to 4 G.C.A. 
+
+
+§ 4109.2.” (Id.) 
+- 21 -
+Case 1:21-cv-00022 
+Document 113 
+Filed 09/04/25 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+5
+10
+15
+20
+25
+1 
+2 
+3 
+4 
+6 
+7 
+8 
+9 
+11 
+12 
+13 
+14 
+16 
+17 
+18 
+19 
+21 
+22 
+23 
+24 
+26 
+27 
+28 
+Pursuant to Rule 56(c)(4), “[a]n affidavit or declaration used to support or oppose a 
+motion must be made on personal knowledge, set out facts that would be admissible in evidence, 
+and show that the affiant or declarant is competent to testify on the matters stated.” “Personal 
+knowledge can be inferred from an affiant’s position.” Self-Realization Fellowship Church v. 
+Amanda Church of Self-Realization, 206 F.3d 1322, 1330 (9th Cir. 2000) (citing Sheet Metal 
+Workers’ Int’l Ass’n Local Union No. 359 v. Madison Ind., Inc., 84 F.3d 1186, 1193 (9th Cir. 
+1996); Barthelemy v. Air Lines Pilots Ass’n, 897 F.2d 999, 1018 (9th Cir. 1990)). Diaz’s personal 
+knowledge of procedures at the GovGuam DOA under the Human Resources Division may be 
+presumed from her role. See id. Therefore, the Court accepts as a fact that EMR staff informs all 
+employees that donated leave may not be transferred if the leave recipient intends to use it for 
+credit towards retirement or accumulated leave. However, this personal knowledge is not enough 
+to establish that EMR staff informed the recipients of donated leave––the claimants in this action. 
+Diaz has no personal knowledge of informing the claimants, nor does she name the EMR staff 
+that informed the claimants. Therefore, Diaz’s claim that EMR staff informed the claimants is 
+inadmissible. Even if the Court were to accept that EMR staff informed the claimants, the 
+evidence does not demonstrate a sufficient waiver of USERRA rights as waiver must be clear 
+and unambiguous. Additionally, even if the service members were informed that donated leave 
+may not be transferred if the leave recipient intends to use it for credit towards retirement, the 
+LSP is not the sole basis by which service members can receive retirement credit; they are 
+entitled to retirement credit under USERRA. If GovGuam wanted service members to waive 
+such USERRA rights in exchange for LSP benefits under Guam law, merely informing them that 
+the LSP does not allow that time to be used towards retirement credit is insufficient to constitute 
+a USERRA waiver. 
+- 22 -
+Case 1:21-cv-00022 
+Document 113 
+Filed 09/04/25 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+5
+10
+15
+20
+25
+1 
+2 
+3 
+4 
+6 
+7 
+8 
+9 
+11 
+12 
+13 
+14 
+16 
+17 
+18 
+19 
+21 
+22 
+23 
+24 
+26 
+27 
+28 
+The claimants’ depositions reveal that when the service members requested leave under 
+the LSP, they shared the required documents with their supervisors or payroll clerk. (USA’s 
+Suppl. Br. 14-15, 36-38, 62, 98.) Some claimants were informed that they had less service credit 
+towards retirement than believed and that this was because they used the LSP, but this notice 
+was given after they already had used shared leave. (Id. at 22, 44-45.) Therefore, the only 
+admissible evidence of service members being “informed” by anyone about the limitations under 
+the LSP was after they had already elected to use the LSP. Waiver of USERRA rights cannot 
+retroactively occur in this manner but must be made at the time the service members elected to 
+use the LSP. 
+In the form for requesting leave and accompanying instructions for completing the form 
+(Fund’s CSMF 48-49), there is no language about the USERRA rights a person receiving the 
+donated leave will forgo in exchange for the paid leave. The service member recipient does sign 
+that they have secured “permission from my agency to use donated leave pursuant to the leave 
+sharing procedures.” (Id.) The LSP procedures state that “[i]t is the responsibility of the 
+employee requesting for donated leave to obtain proper leave authorization from his supervisor 
+and the department/agency head.” (ECF No. 51-3 at 53.) This language is not enough to 
+constitute a waiver of USERRA rights because it is not clear and unambiguous language of such 
+release or waiver of USERRA rights. See Wysocki, 607 F.3d 1108. If GovGuam were to include 
+clear and unambiguous language regarding USERRA waiver in its leave form and a service 
+member acknowledged the consequence of accepting the donated leave on their rights, the Court 
+would not need to analyze whether the benefits go beyond a service members’ USERRA rights. 
+That is, whether the benefit of receiving leave with pay under the LSP is more beneficial than 
+the USERRA benefits the service members would forgo—credit towards retirement and 
+employer-side contributions towards retirement— is determined by the service member and is 
+- 23 -
+Case 1:21-cv-00022 
+Document 113 
+Filed 09/04/25 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+5
+10
+15
+20
+25
+1 
+2 
+3 
+4 
+6 
+7 
+8 
+9 
+11 
+12 
+13 
+14 
+16 
+17 
+18 
+19 
+21 
+22 
+23 
+24 
+26 
+27 
+28 
+manifested unequivocally in writing by the signing of an express waiver of USERRA benefits in 
+exchange for this paid leave consideration. 
+Because the Fund and GovGuam do not provide sufficient evidence permitting judgment 
+on their affirmative defense of waiver, the Court finds that there is no genuine dispute of material 
+fact and that Defendants have not defeated the United States’ Motion for Summary Judgment on 
+this basis. See Forum Ins. Co. 151 F. Supp. 2d at 1147 (citing Celotex, 477 U.S. at 325). The 
+Court therefore grants the United States’ Motion for Summary Judgment and finds that the LSP 
+as applied to service members on active duty leave violates USERRA because GovGuam never 
+obtained a valid waiver. 
+C. The Fund’s Counter-Motion for Summary Judgment for Quasi-Estoppel 
+The Court finds that the Fund is not entitled to summary judgment based on quasi­
+estoppel. The Fund asserts that claimants accepted monetary benefits under Guam’s LSP, and 
+the service members now challenge the validity of that same statute. (Fund Counter-MSJ 24.) 
+The United States argues that as the sole party plaintiff, it has never sought to enforce any other 
+right than that required under USERRA. (USA’s Opp’n to Fund’s Counter-MSJ 12.) 
+“Quasi-estoppel prevents a party from reaping an unconscionable advantage, or from 
+imposing an unconscionable disadvantage upon another, by changing positions.” Short v. Singer 
+Asset Fin. Co. LLC, 107 Fed. Appx. 738, 739 (9th Cir. 2004) (citation omitted). In this instance, 
+Guam’s LSP is a voluntary leave program that gives its employees the option to avoid taking 
+leave without pay in times of need and when they have already exhausted the leave that they 
+have earned and accrued. 4 G.C.A. 
+
+§ 4109.2(a), (b)(1), (b)(3). Both service members and non-
+service members may use the LSP. This program is made possible “[t]hrough the generosity of 
+the other employees.” Id. 
+
+§ 4109.2(a). The voluntary nature is conditioned on a donor employee 
+being willing to transfer a number of hours of earned sick leave or annual leave to another 
+- 24 -
+Case 1:21-cv-00022 
+Document 113 
+Filed 09/04/25 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+5
+10
+15
+20
+25
+1 
+2 
+3 
+4 
+6 
+7 
+8 
+9 
+11 
+12 
+13 
+14 
+16 
+17 
+18 
+19 
+21 
+22 
+23 
+24 
+26 
+27 
+28 
+employee—the recipient employee. Leave transferred shall be used as leave by the recipient 
+employee, and “if it is not used in its entirety, it may be re-transferred to the person who 
+originally earned it.” Id. 
+
+§ 4109.2(b)(3). Also, under the LSP, 
+[l]eave transferred from donors whose hourly rates of pay or salaries are lower 
+than the recipient shall be paid at the hourly rate or salary of the donor. Leave 
+transferred from donors whose hourly rates of pay or salaries are higher than 
+the recipient, shall be paid at the hourly rate or salary of the recipient. 
+4 G.C.A. 
+
+§ 4109.2(b)(1) (emphasis added). If a service member had not received the donated 
+leave under the LSP, GovGuam would still owe the donor the sum of money for their earned 
+leave at the same or higher rate than what would have been provided to the service member under 
+the LSP, and would be required to permit employer- and employee-side contributions, as well as 
+provide credit towards retirement for the period of time the earned leave is used by the employee 
+who originally earned it. Therefore, the Court cannot say that allowing the LSP payments to 
+service members while protecting their USERRA rights would impose an unconscionable 
+disadvantage upon GovGuam. 
+Also under the LSP, “[l]eave transferred from donors whose hourly rates of pay or 
+salaries are lower than the recipient shall be paid at the hourly rate of salary of the donor. Leave 
+transferred from donors whose hourly rates of pay or salaries are higher than the recipient, shall 
+be paid at the hourly rate or salary of the recipient.” 4 G.C.A. 
+
+§ 4109.2(b)(1) (emphasis added). 
+Finally, a service member accepting “benefits” under the LSP does not automatically 
+surrender his rights under USERRA. This is evident because USERRA “clearly envisioned that 
+veterans would be able to waive their individual USERRA rights by clear and unambiguous 
+action,” which the Court has found that the service members in this case have not done. See 
+Wysocki, 607 F.3d at 1108 (emphasis added). If the service members had waived their rights 
+under USERRA at the time they accepted the LSP donated leave, then they would be estopped 
+from now asserting violations of USERRA—but this is not what the service members did. 
+- 25 -
+Case 1:21-cv-00022 
+Document 113 
+Filed 09/04/25 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+5
+10
+15
+20
+25
+1 
+2 
+3 
+4 
+6 
+7 
+8 
+9 
+11 
+12 
+13 
+14 
+16 
+17 
+18 
+19 
+21 
+22 
+23 
+24 
+26 
+27 
+28 
+Service members’ acceptance of “benefits” under a state statute––in this instance, paid leave 
+instead of being on unpaid leave––is not preempted by 
+
+§ 4302(b) because it is more beneficial 
+than the protected USERRA benefits; however, this acceptance does not equate to waiver of a 
+service members’ rights under USERRA, which must be done clearly and unambiguously. 
+The LSP may prohibit any recipient employee from using their donated leave as the basis 
+to earn credit towards retirement. For non-service member GovGuam recipient employees, that 
+is a consequence of accepting the LSP paid leave benefit. However, as to service member 
+employees, their basis to assert a right to retirement credits is not limited to the LSP; they may 
+do so under USERRA. For these reasons, the doctrine of quasi-estoppel does not preclude the 
+United States, the actual party in this action, or more particularly the claimants as the Fund argues 
+from reaping the benefits of paid leave under the LSP. If GovGuam intends to preclude the 
+service members from reaping the benefits of USERRA while on paid leave under the LSP, then 
+it needs to give clear and unambiguous notice to them about this consequence to their USERRA 
+rights. Accordingly, the Fund is not entitled to summary judgment on the basis of quasi-estoppel. 
+D. GovGuam’s Motion for Summary Judgment for Unjust Enrichment as to 
+Claimant Guzman 
+GovGuam also moves for summary judgment pursuant to Federal Rule of Civil 
+Procedure 56 asserting that claimant Guzman was unjustly enriched in the amount of $42,993.73. 
+(GovGuam’s MSJ 3-4.) This Motion, although as to claimant Guzman’s unjust enrichment, is 
+still made against the United States. GovGuam argues that Guzman’s donors through the LSP 
+were not authorized to transfer leave to him pursuant to 4 G.C.A. 
+
+§ 4109.2(b)(3) despite the 
+transfers being approved by the DOA Directors. (Id. at 6-8.) The United States argues that 
+Guzman is not a party to this matter, and therefore, the Court does not have subject matter 
+jurisdiction over claimant Guzman. (USA’s Opp’n to GovGuam’s MSJ 4.) The United States, in 
+a footnote in its Opposition, introduces that the Ninth Circuit has identified “nominal defendants” 
+- 26 -
+Case 1:21-cv-00022 
+Document 113 
+Filed 09/04/25 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+5
+10
+15
+20
+25
+1 
+2 
+3 
+4 
+6 
+7 
+8 
+9 
+11 
+12 
+13 
+14 
+16 
+17 
+18 
+19 
+21 
+22 
+23 
+24 
+26 
+27 
+28 
+in the securities law context in which the Court does not need to obtain subject matter jurisdiction 
+over the nominal defendant. (Id. at 3-4 n.1.) Further, the United States argues that GovGuam 
+cannot claim unjust enrichment without first admitting that GovGuam is liable to Guzman for 
+service credits. (Id. at 6.) Lastly, the United States argues that GovGuam’s assertion of unjust 
+enrichment is preempted by USERRA. (Id. at 8.) In GovGuam’s Reply, it asserts that Guzman 
+is a nominal defendant, and thus, the Court does have jurisdiction. (GovGuam’s Reply in Support 
+of MSJ 2-3.) 
+As an initial matter, Claimant Guzman is not a named party pursuant to Federal Rule of 
+Civil Procedure 10. Fed. R. Civ. Proc. 10(a) (“The title of the complaint must name all the 
+parties.”). The Ninth Circuit and district courts have defined a non-party or nominal defendant 
+in securities and non-securities cases in which courts have subject matter jurisdiction over a 
+claim. In Securities Exchange Commission v. Cross Financial Services, Inc., cited by GovGuam, 
+a Ninth Circuit district court looked to the Seventh Circuit for guidance on nominal or non-party 
+defendants. 908 F. Supp. 718, 730-31 (C.D. Cal.1995). “A court can obtain equitable relief from 
+a non-party against whom no wrongdoing is alleged if it is established that the non-party 
+possesses illegally obtained profits but has no legitimate claim to them. Courts have jurisdiction 
+to decide the legitimacy of ownership claims made by non-parties to assets alleged to be proceeds 
+from securities laws violations.” Id. A nominal defendant is a person holding the subject matter 
+of the litigation in a subordinate or possessory capacity as to which there is no dispute. Sec. & 
+Exch. Comm’n v. Colello, 139 F.3d 674, 676 (9th Cir. 1998). Here, GovGuam does allege 
+wrongdoing by claimant Guzman. (GovGuam’s Reply in Support of MSJ 4.) GovGuam states, 
+“Guzman . . . obtained LSP cash by willfully violating Guam’s LSP provision and procuring 
+others’ wrongful conduct.” (Id.) GovGuam’s own arguments that claimant Guzman committed 
+wrongdoing is incongruous to the securities cases GovGuam cites in attempting to assert that 
+- 27 -
+Case 1:21-cv-00022 
+Document 113 
+Filed 09/04/25 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+5
+10
+15
+20
+25
+1 
+2 
+3 
+4 
+6 
+7 
+8 
+9 
+11 
+12 
+13 
+14 
+16 
+17 
+18 
+19 
+21 
+22 
+23 
+24 
+26 
+27 
+28 
+claimant Guzman is a nominal defendant. The Court finds that the securities law cases GovGuam 
+cites to do not support the position that claimant Guzman is a nominal defendant because 
+GovGuam alleges wrongdoing. 
+Further, in the non-securities law setting, GovGuam does not provide any case law to 
+support the contention that claimant Guzman is a nominal defendant. The Court analyzes Perez 
+v. Wells Fargo Bank, N.A., 929 F. Supp. 2d 988 (N.D. Cal. 2013), to determine if Guzman may 
+be considered a nominal defendant in the non-securities law context. In Perez, the plaintiffs 
+asserted that a named defendant was actually a nominal defendant and therefore the Ninth Circuit 
+district court should not consider the named defendant’s citizenship when determining whether 
+diversity jurisdiction existed. Id. at 991, 995. The district court found that the plaintiffs did not 
+demonstrate that the named defendant was a nominal defendant. Id. at 1005. “A nominal party 
+is one ‘who has no interest in the action’ and is merely joined to ‘perform a ministerial act.’” 
+Perez, 929 F. Supp. 2d at 1002 (quoting Prudential Real Estate Affiliates, Inc. v. PPR Realty, 
+Inc., 204 F.3d 867, 873 (9th Cir. 2000)). 
+The paradigmatic nominal defendant is “a trustee, agent or depositary . . . 
+[who is] joined purely as a means of facilitating collection.” As the nominal 
+defendant has no legitimate claim to the disputed property, he is not a real 
+party in interest. Accordingly, “there is no claim against him and it is 
+unnecessary to obtain subject matter jurisdiction over him once jurisdiction 
+of the defendant is established.” 
+Sec. & Exch. Comm’n, 139 F.3d at 676 (internal citations omitted). 
+In this case, GovGuam is attempting to characterize the unnamed claimant Guzman as a 
+nominal defendant. (GovGuam’s Reply in Support of MSJ 3.) The Court has not found any case 
+law in which a named defendant asserts a claim against a nominal defendant in the securities or 
+non-securities law contexts, nor any other case law that supports GovGuam’s arguments. 
+Although the facts in Perez are not congruous with those in this case, even applying the nominal 
+defendant definition articulated by the Perez court, claimant Guzman does not qualify as a 
+- 28 -
+Case 1:21-cv-00022 
+Document 113 
+Filed 09/04/25 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+5
+10
+15
+20
+25
+1 
+2 
+3 
+4 
+6 
+7 
+8 
+9 
+11 
+12 
+13 
+14 
+16 
+17 
+18 
+19 
+21 
+22 
+23 
+24 
+26 
+27 
+28 
+nominal defendant. Determining whether Guzman was unjustly enriched is not a ministerial act. 
+Nor can he properly be categorized as akin to a trustee, agent, or depositary joined purely as a 
+means of facilitating collection. Therefore, based on the case law in both the securities and non-
+securities law contexts, the Court finds that claimant Guzman is not a nominal defendant and 
+thus, the Court does not have jurisdiction over GovGuam’s Motion for Summary Judgment for 
+Unjust Enrichment as to Claimant Guzman. 
+In addition, the Court has found that the Fund and GovGuam violated USERRA when 
+they treated leave under the LSP as a break in service regarding retirement contributions because 
+they did not obtain a waiver from the service members. The disputed property is not the money 
+that service members received as paid leave through the LSP, but rather their substantive 
+entitlement under USERRA while on leave through the LSP. For these reasons, the Court finds 
+that Guzman is not a named party nor a nominal defendant and therefore dismisses GovGuam’s 
+Motion for Summary Judgment for lack of jurisdiction. 
+IV. 
+CONCLUSION 
+Guam law provides some benefits to GovGuam employees when they take leave from 
+work to serve in the Armed Forces, with most of them clearly more beneficial than the benefits 
+conferred on the service members under USERRA. However, one Guam law––the LSP as 
+applied to service members—is the source of the dispute in this case. For the foregoing reasons, 
+the Court finds that USERRA supersedes the LSP’s prohibition against giving service members 
+credit towards retirement and the related benefits. In particular, the Fund and GovGuam’s 
+treatment of each service member’s leave under GovGuam’s LSP as a break in service violates 
+their rights under USERRA but for a waiver, and there has been no waiver in this case. 
+Accordingly, the Court hereby GRANTS the United States’ Motion for Leave to Supplement its 
+Motion for Summary Judgment, GRANTS the United States’ Motion for Summary Judgment as 
+- 29 -
+Case 1:21-cv-00022 
+Document 113 
+Filed 09/04/25 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+5
+10
+15
+20
+25
+1 
+2 
+3 
+4 
+6 
+7 
+8 
+9 
+11 
+12 
+13 
+14 
+16 
+17 
+18 
+19 
+21 
+22 
+23 
+24 
+26 
+27 
+28 
+to liability against both Defendants, DENIES the Fund’s Counter-Motion for Summary 
+Judgment, and DISMISSES GovGuam’s Motion for Summary Judgment for Unjust Enrichment. 
+IT IS SO ORDERED this 4th day of September 2025. 
+______________________________________ 
+RAMONA V. MANGLONA 
+District Judge 
+- 30 -
+Case 1:21-cv-00022 
+Document 113 
+Filed 09/04/25
