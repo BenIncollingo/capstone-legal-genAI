@@ -1,10 +1,4 @@
-// ============================================================
-// Unit Tests — capstone-legal-genAI
-// Place in: client/src/__tests__/unit.test.js
-// Run with: npx jest unit.test.js  (from inside /client)
-// ============================================================
 
-// ─── Mock global fetch & FormData ───────────────────────────
 global.fetch = jest.fn();
 
 global.FormData = class {
@@ -13,9 +7,8 @@ global.FormData = class {
   get(key) { return this.data[key]; }
 };
 
-// ============================================================
 // 1. documents.service.js — uploadDocumentToInfra logic
-// ============================================================
+
 const fsMock = { mkdir: jest.fn(), writeFile: jest.fn() };
 const pathMock = { join: (...args) => args.join("/") };
 
@@ -75,9 +68,9 @@ describe("uploadDocumentToInfra", () => {
   });
 });
 
-// ============================================================
+
 // 2. chat.service.js — sendChatToInfra logic
-// ============================================================
+
 async function sendChatToInfra(message) {
   return {
     response: "example AI response message: wow very interesting question",
@@ -106,9 +99,8 @@ describe("sendChatToInfra", () => {
   });
 });
 
-// ============================================================
+
 // 3. data.service.js — testData logic
-// ============================================================
 function testDataService() {
   // mirrors data.service.js
 }
@@ -123,9 +115,8 @@ describe("testData (data.service)", () => {
   });
 });
 
-// ============================================================
+
 // 4. chat.api.js — uploadChatToBackend logic
-// ============================================================
 async function uploadChatToBackend(userChat) {
   const res = await fetch("/api/chat/uploadChat", {
     method: "POST",
@@ -169,9 +160,7 @@ describe("uploadChatToBackend", () => {
   });
 });
 
-// ============================================================
 // 5. data.api.js — testData logic
-// ============================================================
 async function testDataApi() {
   const res = await fetch("/api/data/test");
   if (!res.ok) throw new Error(`API request failed: ${res.status}`);
@@ -202,9 +191,7 @@ describe("testData (data.api)", () => {
   });
 });
 
-// ============================================================
 // 6. documents.api.js — uploadDocumentToBackend logic
-// ============================================================
 async function uploadDocumentToBackend(file, metadata) {
   const formData = new FormData();
   formData.append("file", file);
@@ -271,9 +258,9 @@ describe("uploadDocumentToBackend", () => {
   });
 });
 
-// ============================================================
+
 // 7. SignIn.jsx — form validation logic
-// ============================================================
+
 const MAX_CREDENTIAL_LENGTH = 30;
 
 function validateSignIn(email, password) {
@@ -305,9 +292,9 @@ describe("SignIn validation", () => {
   });
 });
 
-// ============================================================
+
 // 8. Create.jsx — form validation logic
-// ============================================================
+
 const MAXCREDENTIALLENGTH = 30;
 
 function validateCreate(email, password, retypePassword) {
@@ -340,9 +327,9 @@ describe("Create account validation", () => {
   });
 });
 
-// ============================================================
+
 // 9. ForgotPassword.jsx — validation logic
-// ============================================================
+
 function validateForgotPassword(email) {
   if (!email || email.length > MAXCREDENTIALLENGTH) {
     return "Please enter a valid email.";
@@ -364,9 +351,9 @@ describe("ForgotPassword validation", () => {
   });
 });
 
-// ============================================================
+
 // 10. DocumentUploadPage.jsx — formatSize helper
-// ============================================================
+
 function formatSize(bytes) {
   if (bytes < 1024) return `${bytes} B`;
   if (bytes < 1024 * 1024) return `${(bytes / 1024).toFixed(1)} KB`;
