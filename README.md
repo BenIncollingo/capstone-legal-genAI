@@ -201,3 +201,9 @@ As the project grows:
 - Keep pages as route-level components
 
 ---
+## Run Unit Test
+git switch unit-test
+Cd client
+npx jest unit.test.js
+
+
