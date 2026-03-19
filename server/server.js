@@ -2,32 +2,41 @@ import express from "express";
 import cors from "cors";
 import apiRoutes from "./src/routes/index.js";
 import dotenv from "dotenv";
+
 dotenv.config();
 
 const app = express();
-app.use(express.json());
-const port = process.env.REACT_APP_BACKEND_PORT || 8080;
+const port = process.env.BACKEND_PORT || 8080;
 
 const allowedOrigins = [
-  process.env.REACT_APP_FRONTEND_URL,
-  "http://localhost:3000", 
-];
+  process.env.FRONTEND_URL,
+  "http://localhost:3000",
+  "http://127.0.0.1:3000",
+].filter(Boolean);
 
 app.use(
   cors({
-    origin: function (origin, callback) {
-      // allow requests with no origin (like Postman, curl)
-      if (!origin) return callback(null, true);
+    origin(origin, callback) {
+      console.log("CORS origin:", origin);
+      console.log("Allowed origins:", allowedOrigins);
+
+      if (!origin) {
+        return callback(null, true);
+      }
 
       if (allowedOrigins.includes(origin)) {
-        callback(null, true);
-      } else {
-        callback(new Error("Not allowed by CORS"));
+        return callback(null, true);
       }
+
+      return callback(new Error(`Not allowed by CORS: ${origin}`));
     },
     credentials: true,
   })
 );
+
+app.use(express.json());
 app.use("/api", apiRoutes);
 
-app.listen(port, () => console.log(`${process.env.REACT_APP_BACKEND_URL}`));
+app.listen(port, () => {
+  console.log(`Server running on port ${port}`);
+});

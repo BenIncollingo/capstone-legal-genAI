@@ -82,7 +82,8 @@ http://localhost:8080
 ### Start the frontend
 From the frontend folder:
 ```
-npm start
+npm run build
+npx serve -s build -l 3000
 ```
 
 The frontend will run on:

@@ -1,6 +1,10 @@
 export async function sendChatToInfra(question) {
   try {
-    const response = await fetch("https://api-service-4xa2fuayfa-ue.a.run.app/");
+    const response = await fetch("https://api-service-4xa2fuayfa-ue.a.run.app/chat", {
+      
+
+
+    });
 
     if (!response.ok) {
       throw new Error(`Request failed: ${response.status}`);
