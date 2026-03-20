@@ -1,32 +1,55 @@
-import React from "react";
+import React, {useRef, useState} from "react";
 import { doSignOut } from "../firebase/auth";
 import { useAuth } from "../contexts/authContext/index.jsx";
 import { useNavigate } from 'react-router-dom';
 
-export default function Modal({onClose}) {
+export default function Modal({ onClose }) {
+  const modalRef = useRef();
+  const [activeTab, setActiveTab] = useState();
 
-    const navigate = useNavigate(); // Initialize the navigate function
+  const closeModal = (e) => {
+    if (modalRef.current === e.target) onClose();
+  };
 
-    const { currentUser } = useAuth();
+  const profileClick = (e) => {
 
-    function onLogout() {
-        if (currentUser) {
-            doSignOut();
-            console.log("onLogout called.");
-            navigate("/home");
-        }
-    }
+  }
 
-    return (
-        <div className="fixed font-mono inset-0 bg-black bg-opacity-30 backdrop-blur-sm flex justify-center items-center">
-            <div className="mt-10 flex flex-col gap-5 text-white pt-3">
-                <button className="place-self-end w-4 hover:bg-gray-400 py-1 gap-2 rounded" onClick={onClose}>X</button>
-                <div className="bg-slate-600 rounded-xl px-20 py-10 flex flex-col gap-5 items-center mx-4">
-                    <h1 className="text-3xl font-extrabold max-w-md">Are you sure you want to logout?</h1>
-                    <button className="text-3xl max-w-md font-normal text-white flex hover:bg-gray-500 py-2 gap-3 rounded" onClick={ () => onLogout() }>Yes</button>
-                    <button className="text-3xl max-w-md font-normal text-white flex hover:bg-gray-500 py-2 gap-3 rounded" onClick={onClose}>No</button>
-                </div>
-            </div>
-        </div>
-    )
+  return (
+    <div
+      ref={modalRef}
+      onClick={closeModal}
+      className="fixed inset-0 z-50 flex items-center justify-center bg-black bg-opacity-30 backdrop-blur-sm p-4"
+    >
+      <div className="relative flex w-full max-w-4xl flex-col rounded-xl bg-slate-600 text-white shadow-2xl md:flex-row overflow-hidden">
+        
+
+        <button 
+          className="absolute right-4 top-4 z-10 hover:text-gray-400 font-bold" 
+          onClick={onClose}
+        >
+          ✕
+        </button>
+
+        <aside className="w-full border-b border-slate-500 p-8 md:w-1/3 md:border-b-0 md:border-r">
+          <nav className="flex flex-col gap-4">
+            <button className="rounded py-2 text-left text-xl hover:bg-slate-500 px-3">
+              Settings
+            </button>
+            <button className="rounded py-2 text-left text-xl hover:bg-slate-500 px-3">
+              Profile
+            </button>
+          </nav>
+        </aside>
+
+        <main className="flex-1 p-8">
+          <h2 className="mb-4 text-2xl font-bold">Panel Content</h2>
+          <button className="rounded bg-red-500 px-4 py-2 hover:bg-red-600">
+            Action Button
+          </button>
+        </main>
+        
+      </div>
+    </div>
+  );
 }
