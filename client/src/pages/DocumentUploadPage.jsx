@@ -30,7 +30,9 @@ export default function DocumentsPage() {
   };
 
   const handleUploadAll = async () => {
-    const stagedDocs = documents.filter((doc) => doc.status === "staged" || doc.status === "failed");
+    const stagedDocs = documents.filter(
+      (doc) => doc.status === "staged" || doc.status === "failed"
+    );
     if (!stagedDocs.length) return;
 
     setIsUploading(true);
@@ -94,50 +96,150 @@ export default function DocumentsPage() {
     (doc) => doc.status === "staged" || doc.status === "failed"
   ).length;
 
+  const uploadedCount = documents.filter(
+    (doc) => doc.status === "uploaded"
+  ).length;
+
   return (
-    <div className="min-h-screen bg-blue-50 px-6 py-10">
-      <div className="mx-auto w-full max-w-4xl rounded-2xl bg-white p-8 shadow-xl">
-        <h1 className="mb-2 text-3xl font-bold text-blue-700">
-          Upload Documents
-        </h1>
+    <div className="min-h-screen bg-white text-zinc-900">
+      <div className="border-b border-zinc-200 bg-white">
+        <div className="mx-auto flex max-w-6xl items-center gap-3 px-4 py-4">
+          <div className="flex h-11 w-11 items-center justify-center rounded-2xl bg-blue-600 text-xl text-white shadow-sm">
+            ⚖️
+          </div>
 
-        <p className="mb-6 text-gray-600">
-          Add files to the staging area, then upload them all at once.
-        </p>
+          <div>
+            <h1 className="text-lg font-semibold tracking-tight">
+              Document Uploads
+            </h1>
+            <p className="text-sm text-zinc-500">
+              Stage files and upload them to your legal AI backend
+            </p>
+          </div>
+        </div>
+      </div>
 
-        <div
-          onClick={handleOpenExplorer}
-          className="cursor-pointer rounded-xl border-2 border-dashed border-blue-400 bg-blue-50 p-10 text-center transition hover:border-blue-600 hover:bg-blue-100"
-        >
-          <p className="text-lg font-semibold text-blue-700">
-            Click to choose documents
-          </p>
-          <p className="mt-1 text-sm text-gray-500">
-            Files will be added to the staging area first
-          </p>
+      <main className="mx-auto w-full max-w-6xl px-4 py-8">
+        <div className="grid gap-6 lg:grid-cols-[1.15fr_0.85fr]">
+          <section className="rounded-3xl border border-zinc-200 bg-white p-6 shadow-sm">
+            <div className="mb-6">
+              <h2 className="text-2xl font-semibold tracking-tight">
+                Add documents
+              </h2>
+              <p className="mt-2 text-sm text-zinc-600">
+                Choose one or more files. They will be staged first, then
+                uploaded together when you are ready.
+              </p>
+            </div>
+
+            <button
+              type="button"
+              onClick={handleOpenExplorer}
+              className="group w-full rounded-3xl border-2 border-dashed border-zinc-300 bg-zinc-50 px-6 py-12 text-center transition hover:border-blue-400 hover:bg-blue-50"
+            >
+              <div className="mx-auto flex h-14 w-14 items-center justify-center rounded-2xl bg-blue-100 text-2xl">
+                📄
+              </div>
+
+              <div className="mt-4 text-lg font-semibold text-zinc-900">
+                Click to choose documents
+              </div>
+
+              <div className="mt-2 text-sm text-zinc-500">
+                Supported files will be added to the staging area below
+              </div>
+            </button>
+
+            <input
+              ref={fileInputRef}
+              type="file"
+              multiple
+              onChange={handleFileChange}
+              className="hidden"
+            />
+
+            <div className="mt-6 flex flex-col gap-3 border-t border-zinc-200 pt-6 sm:flex-row sm:items-center sm:justify-between">
+              <button
+                type="button"
+                onClick={handleClearStaged}
+                disabled={isUploading || documents.length === 0}
+                className="rounded-2xl border border-zinc-300 px-5 py-3 text-sm font-medium text-zinc-700 transition hover:bg-zinc-100 disabled:cursor-not-allowed disabled:opacity-50"
+              >
+                Clear Unuploaded Files
+              </button>
+
+              <button
+                type="button"
+                onClick={handleUploadAll}
+                disabled={isUploading || stagedCount === 0}
+                className="rounded-2xl bg-blue-600 px-6 py-3 text-sm font-semibold text-white shadow-sm transition hover:bg-blue-700 active:scale-[0.99] disabled:cursor-not-allowed disabled:bg-blue-300"
+              >
+                {isUploading ? "Uploading..." : `Upload All (${stagedCount})`}
+              </button>
+            </div>
+          </section>
+
+          <aside className="space-y-4">
+            <div className="rounded-3xl border border-zinc-200 bg-white p-6 shadow-sm">
+              <h3 className="text-sm font-semibold uppercase tracking-wide text-zinc-500">
+                Summary
+              </h3>
+
+              <div className="mt-4 grid gap-3">
+                <div className="rounded-2xl bg-zinc-50 p-4">
+                  <div className="text-2xl font-semibold">{documents.length}</div>
+                  <div className="text-sm text-zinc-600">Total files</div>
+                </div>
+
+                <div className="rounded-2xl bg-zinc-50 p-4">
+                  <div className="text-2xl font-semibold">{stagedCount}</div>
+                  <div className="text-sm text-zinc-600">Ready to upload</div>
+                </div>
+
+                <div className="rounded-2xl bg-zinc-50 p-4">
+                  <div className="text-2xl font-semibold">{uploadedCount}</div>
+                  <div className="text-sm text-zinc-600">Uploaded</div>
+                </div>
+              </div>
+            </div>
+
+            <div className="rounded-3xl border border-amber-200 bg-amber-50 p-5">
+              <div className="flex items-start gap-3">
+                <div className="mt-0.5 flex h-9 w-9 items-center justify-center rounded-xl bg-amber-100">
+                  ⚠️
+                </div>
+                <div>
+                  <div className="text-sm font-semibold text-amber-900">
+                    Upload note
+                  </div>
+                  <p className="mt-1 text-sm text-amber-800">
+                    Files are staged locally first so you can review them before
+                    sending them to the backend.
+                  </p>
+                </div>
+              </div>
+            </div>
+          </aside>
         </div>
 
-        <input
-          ref={fileInputRef}
-          type="file"
-          multiple
-          onChange={handleFileChange}
-          className="hidden"
-        />
+        <section className="mt-6 rounded-3xl border border-zinc-200 bg-white p-6 shadow-sm">
+          <div className="mb-5 flex items-center justify-between gap-3">
+            <div>
+              <h2 className="text-xl font-semibold tracking-tight">
+                Staging Area
+              </h2>
+              <p className="mt-1 text-sm text-zinc-600">
+                Review file details and upload status before sending.
+              </p>
+            </div>
 
-        <div className="mt-8">
-          <div className="mb-4 flex items-center justify-between">
-            <h2 className="text-xl font-semibold text-gray-800">
-              Staging Area
-            </h2>
-
-            <div className="text-sm text-gray-500">
+            <div className="rounded-full bg-zinc-100 px-3 py-1 text-sm text-zinc-600">
               {documents.length} file{documents.length === 1 ? "" : "s"}
             </div>
           </div>
 
           {documents.length === 0 ? (
-            <div className="rounded-xl border border-blue-100 bg-blue-50 p-6 text-gray-500">
+            <div className="rounded-2xl border border-zinc-200 bg-zinc-50 p-8 text-center text-sm text-zinc-500">
               No files added yet.
             </div>
           ) : (
@@ -145,47 +247,62 @@ export default function DocumentsPage() {
               {documents.map((doc) => (
                 <li
                   key={doc.id}
-                  className="flex items-start justify-between rounded-xl border border-gray-200 bg-gray-50 p-4"
+                  className="flex flex-col gap-4 rounded-2xl border border-zinc-200 bg-zinc-50 p-4 sm:flex-row sm:items-start sm:justify-between"
                 >
-                  <div className="pr-4">
-                    <p className="font-medium text-gray-800">{doc.name}</p>
-                    <p className="mt-1 text-sm text-gray-500">
-                      {doc.type} • {formatSize(doc.size)}
-                    </p>
+                  <div className="min-w-0 pr-4">
+                    <div className="flex items-start gap-3">
+                      <div className="flex h-10 w-10 shrink-0 items-center justify-center rounded-xl bg-white shadow-sm">
+                        📄
+                      </div>
 
-                    <div className="mt-2 text-sm">
-                      {doc.status === "staged" && (
-                        <span className="font-medium text-blue-600">
-                          Staged
-                        </span>
-                      )}
-                      {doc.status === "uploading" && (
-                        <span className="font-medium text-yellow-600">
-                          Uploading...
-                        </span>
-                      )}
-                      {doc.status === "uploaded" && (
-                        <span className="font-medium text-green-600">
-                          Uploaded
-                        </span>
-                      )}
-                      {doc.status === "failed" && (
-                        <span className="font-medium text-red-600">
-                          Failed
-                        </span>
-                      )}
+                      <div className="min-w-0">
+                        <p className="truncate font-semibold text-zinc-900">
+                          {doc.name}
+                        </p>
+                        <p className="mt-1 text-sm text-zinc-500">
+                          {doc.type} • {formatSize(doc.size)}
+                        </p>
+
+                        <div className="mt-3">
+                          {doc.status === "staged" && (
+                            <span className="inline-flex rounded-full bg-blue-100 px-3 py-1 text-xs font-semibold text-blue-700">
+                              Staged
+                            </span>
+                          )}
+
+                          {doc.status === "uploading" && (
+                            <span className="inline-flex rounded-full bg-amber-100 px-3 py-1 text-xs font-semibold text-amber-700">
+                              Uploading...
+                            </span>
+                          )}
+
+                          {doc.status === "uploaded" && (
+                            <span className="inline-flex rounded-full bg-green-100 px-3 py-1 text-xs font-semibold text-green-700">
+                              Uploaded
+                            </span>
+                          )}
+
+                          {doc.status === "failed" && (
+                            <span className="inline-flex rounded-full bg-red-100 px-3 py-1 text-xs font-semibold text-red-700">
+                              Failed
+                            </span>
+                          )}
+                        </div>
+
+                        {doc.error && (
+                          <p className="mt-2 text-sm text-red-600">
+                            {doc.error}
+                          </p>
+                        )}
+                      </div>
                     </div>
-
-                    {doc.error && (
-                      <p className="mt-1 text-sm text-red-600">{doc.error}</p>
-                    )}
                   </div>
 
                   <button
                     type="button"
                     onClick={() => handleRemoveDocument(doc.id)}
                     disabled={isUploading}
-                    className="rounded-lg border border-gray-300 px-3 py-2 text-sm font-medium text-gray-700 transition hover:bg-gray-100 disabled:cursor-not-allowed disabled:opacity-50"
+                    className="self-start rounded-2xl border border-zinc-300 px-4 py-2 text-sm font-medium text-zinc-700 transition hover:bg-white disabled:cursor-not-allowed disabled:opacity-50"
                   >
                     Remove
                   </button>
@@ -193,28 +310,8 @@ export default function DocumentsPage() {
               ))}
             </ul>
           )}
-        </div>
-
-        <div className="mt-8 flex flex-col gap-3 border-t pt-6 sm:flex-row sm:justify-between">
-          <button
-            type="button"
-            onClick={handleClearStaged}
-            disabled={isUploading || documents.length === 0}
-            className="rounded-lg border border-gray-300 px-5 py-3 font-medium text-gray-700 transition hover:bg-gray-100 disabled:cursor-not-allowed disabled:opacity-50"
-          >
-            Clear Unuploaded Files
-          </button>
-
-          <button
-            type="button"
-            onClick={handleUploadAll}
-            disabled={isUploading || stagedCount === 0}
-            className="rounded-lg bg-blue-600 px-6 py-3 font-semibold text-white transition hover:bg-blue-700 disabled:cursor-not-allowed disabled:bg-blue-300"
-          >
-            {isUploading ? "Uploading..." : `Upload All (${stagedCount})`}
-          </button>
-        </div>
-      </div>
+        </section>
+      </main>
     </div>
   );
 }
