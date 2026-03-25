@@ -5,7 +5,37 @@ import { useNavigate } from 'react-router-dom';
 
 export default function Modal({ onClose }) {
   const modalRef = useRef();
-  const [activeTab, setActiveTab] = useState();
+
+  const tabSettings = {
+    PROFILE: "profile",
+    DISPLAY: "display",
+    CHAT: "chat",
+    UPLOAD: "upload"
+  };
+
+  const [toggleNight, setToggleNight] = useState("false");
+
+  function ProfileOptions() { 
+    return(
+  <>
+    <h5 className="font-semibold">Delete Account?</h5>
+    <p>This button will delete your account and your chat history. Think twice before pressing this.</p>
+    <button className="bg-slate-900 hover:bg-blue-700 text-white font-bold py-2 px-6 rounded whitespace-nowrap">Delete Account</button>
+  </>)};
+
+  function DisplayOptions() {
+    return(
+      <>
+      <h4 className="font-semibold">Display</h4>
+      <p>Toggle Night Mode?</p>
+      <button className="bg-slate-900 hover:bg-blue-700 text-white font-bold py-2 px-6 rounded whitespace-nowrap" onClick={() => {setToggleNight((prev) => !prev)}}>{toggleNight ? "Turn Night Mode on?" : "Turn off Night mode?"}</button>
+      </>
+    )
+  }
+
+  const [activeTab, setActiveTab] = useState(tabSettings.PROFILE);
+
+  
 
   const closeModal = (e) => {
     if (modalRef.current === e.target) onClose();
@@ -33,20 +63,28 @@ export default function Modal({ onClose }) {
 
         <aside className="w-full border-b border-slate-500 p-8 md:w-1/3 md:border-b-0 md:border-r">
           <nav className="flex flex-col gap-4">
-            <button className="rounded py-2 text-left text-xl hover:bg-slate-500 px-3">
-              Settings
-            </button>
-            <button className="rounded py-2 text-left text-xl hover:bg-slate-500 px-3">
+            <button className="rounded py-2 text-left text-xl hover:bg-slate-500 px-3" onClick={() => {setActiveTab(tabSettings.PROFILE)}}>
               Profile
+            </button>
+            <button className="rounded py-2 text-left text-xl hover:bg-slate-500 px-3" onClick={() => {setActiveTab(tabSettings.DISPLAY)}}>
+              Display
+            </button>
+            <button className="rounded py-2 text-left text-xl hover:bg-slate-500 px-3" onClick={() => {setActiveTab(tabSettings.CHAT)}}>
+              Chat
             </button>
           </nav>
         </aside>
 
         <main className="flex-1 p-8">
-          <h2 className="mb-4 text-2xl font-bold">Panel Content</h2>
-          <button className="rounded bg-red-500 px-4 py-2 hover:bg-red-600">
-            Action Button
-          </button>
+          { activeTab === tabSettings.PROFILE && <>
+          <ProfileOptions></ProfileOptions>
+          </>}
+          { activeTab === tabSettings.DISPLAY && <>
+          <DisplayOptions></DisplayOptions>
+          </>}
+          { activeTab === tabSettings.CHAT && <>
+          <h1>This is chat tab</h1>
+          </>}
         </main>
         
       </div>
