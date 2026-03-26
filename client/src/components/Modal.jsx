@@ -1,9 +1,14 @@
 import React, {useRef, useState} from "react";
 import { doSignOut } from "../firebase/auth";
+import { doPasswordReset } from "../firebase/auth";
 import { useAuth } from "../contexts/authContext/index.jsx";
-import { useNavigate } from 'react-router-dom';
+import { Link, useNavigate } from "react-router-dom";
+
+
 
 export default function Modal({ onClose }) {
+  const { userLoggedIn } = useAuth();
+  const navigate = useNavigate();
   const modalRef = useRef();
 
   const tabSettings = {
@@ -20,7 +25,7 @@ export default function Modal({ onClose }) {
   <>
     <h5 className="font-semibold">Delete Account?</h5>
     <p>This button will delete your account and your chat history. Think twice before pressing this.</p>
-    <button className="bg-slate-900 hover:bg-blue-700 text-white font-bold py-2 px-6 rounded whitespace-nowrap">Delete Account</button>
+    <button className="bg-slate-900 hover:bg-blue-700 text-white font-bold py-2 px-6 rounded whitespace-nowrap" onClick={doPasswordReset}>Reset Password</button>
   </>)};
 
   function DisplayOptions() {
@@ -29,6 +34,16 @@ export default function Modal({ onClose }) {
       <h4 className="font-semibold">Display</h4>
       <p>Toggle Night Mode?</p>
       <button className="bg-slate-900 hover:bg-blue-700 text-white font-bold py-2 px-6 rounded whitespace-nowrap" onClick={() => {setToggleNight((prev) => !prev)}}>{toggleNight ? "Turn Night Mode on?" : "Turn off Night mode?"}</button>
+      </>
+    )
+  }
+
+  function UploadOptions() {
+    return(
+      <>
+      <h4 className="font-semibold">Display</h4>
+      <p>You can upload documents here if you are an admin.</p>
+      <button className="bg-slate-900 hover:bg-blue-700 text-white font-bold py-2 px-6 rounded whitespace-nowrap" onClick={ () => {navigate("/uploadDocument")}}>Upload Document</button>
       </>
     )
   }
@@ -72,6 +87,9 @@ export default function Modal({ onClose }) {
             <button className="rounded py-2 text-left text-xl hover:bg-slate-500 px-3" onClick={() => {setActiveTab(tabSettings.CHAT)}}>
               Chat
             </button>
+            <button className="rounded py-2 text-left text-xl hover:bg-slate-500 px-3" onClick={() => {setActiveTab(tabSettings.UPLOAD)}}>
+              Upload
+            </button>
           </nav>
         </aside>
 
@@ -84,6 +102,9 @@ export default function Modal({ onClose }) {
           </>}
           { activeTab === tabSettings.CHAT && <>
           <h1>This is chat tab</h1>
+          </>}
+          { activeTab === tabSettings.UPLOAD && <>
+          <UploadOptions></UploadOptions>
           </>}
         </main>
         
