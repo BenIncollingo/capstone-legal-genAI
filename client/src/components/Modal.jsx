@@ -5,6 +5,44 @@ import { useAuth } from "../contexts/authContext/index.jsx";
 import { Link, useNavigate } from "react-router-dom";
 
 
+function UploadOptions({ onUpload }) {
+    return(
+      <>
+      <h4 className="font-semibold">Display</h4>
+      <p>You can upload documents here if you are an admin.</p>
+      <button className="bg-slate-900 hover:bg-blue-700 text-white font-bold py-2 px-6 rounded whitespace-nowrap" onClick={onUpload}>Upload Document</button>
+      </>
+    )
+}
+
+function ChatOptions({ onDeleteChat }) {
+  return (
+    <>
+      <h5 className="font-semibold">Delete Chat History?</h5>
+      <p>This will permanently delete the chat history associated with your account.</p>
+      <button className="bg-slate-900 hover:bg-blue-700 text-white font-bold py-2 px-6 rounded whitespace-nowrap" onClick={onDeleteChat}>Delete Chat History</button>
+    </>
+  )
+};
+
+function ProfileOptions({ onReset }) { 
+  return(
+  <>
+    <h5 className="font-semibold">Reset Password?</h5>
+    <p>This button will reset your account's password.</p>
+    <button className="bg-slate-900 hover:bg-blue-700 text-white font-bold py-2 px-6 rounded whitespace-nowrap" onClick={onReset}>Reset Password</button>
+</>)};
+
+function DisplayOptions({onViewTerms}) {
+  return(
+    <>
+    <h4 className="font-semibold">Terms</h4>
+    <p>View the terms of service.</p>
+    <button className="bg-slate-900 hover:bg-blue-700 text-white font-bold py-2 px-6 rounded whitespace-nowrap" onClick={onViewTerms}>View Terms</button>
+    </>
+  )
+}
+
 
 export default function Modal({ onClose }) {
   const { userLoggedIn } = useAuth();
@@ -13,52 +51,26 @@ export default function Modal({ onClose }) {
 
   const tabSettings = {
     PROFILE: "profile",
-    DISPLAY: "display",
+    TERMS: "terms",
     CHAT: "chat",
     UPLOAD: "upload"
   };
 
   const [toggleNight, setToggleNight] = useState("false");
 
-  function ProfileOptions() { 
-    return(
-  <>
-    <h5 className="font-semibold">Delete Account?</h5>
-    <p>This button will delete your account and your chat history. Think twice before pressing this.</p>
-    <button className="bg-slate-900 hover:bg-blue-700 text-white font-bold py-2 px-6 rounded whitespace-nowrap" onClick={doPasswordReset}>Reset Password</button>
-  </>)};
-
-  function DisplayOptions() {
-    return(
-      <>
-      <h4 className="font-semibold">Display</h4>
-      <p>Toggle Night Mode?</p>
-      <button className="bg-slate-900 hover:bg-blue-700 text-white font-bold py-2 px-6 rounded whitespace-nowrap" onClick={() => {setToggleNight((prev) => !prev)}}>{toggleNight ? "Turn Night Mode on?" : "Turn off Night mode?"}</button>
-      </>
-    )
-  }
-
-  function UploadOptions() {
-    return(
-      <>
-      <h4 className="font-semibold">Display</h4>
-      <p>You can upload documents here if you are an admin.</p>
-      <button className="bg-slate-900 hover:bg-blue-700 text-white font-bold py-2 px-6 rounded whitespace-nowrap" onClick={ () => {navigate("/uploadDocument")}}>Upload Document</button>
-      </>
-    )
+  function navigateUpload() {
+    onClose();
+    navigate("/documentUpload");
+    console.log("navigate Upload");
   }
 
   const [activeTab, setActiveTab] = useState(tabSettings.PROFILE);
 
   
-
   const closeModal = (e) => {
     if (modalRef.current === e.target) onClose();
   };
 
-  const profileClick = (e) => {
-
-  }
 
   return (
     <div
@@ -81,8 +93,8 @@ export default function Modal({ onClose }) {
             <button className="rounded py-2 text-left text-xl hover:bg-slate-500 px-3" onClick={() => {setActiveTab(tabSettings.PROFILE)}}>
               Profile
             </button>
-            <button className="rounded py-2 text-left text-xl hover:bg-slate-500 px-3" onClick={() => {setActiveTab(tabSettings.DISPLAY)}}>
-              Display
+            <button className="rounded py-2 text-left text-xl hover:bg-slate-500 px-3" onClick={() => {setActiveTab(tabSettings.TERMS)}}>
+              Terms
             </button>
             <button className="rounded py-2 text-left text-xl hover:bg-slate-500 px-3" onClick={() => {setActiveTab(tabSettings.CHAT)}}>
               Chat
@@ -95,16 +107,16 @@ export default function Modal({ onClose }) {
 
         <main className="flex-1 p-8">
           { activeTab === tabSettings.PROFILE && <>
-          <ProfileOptions></ProfileOptions>
+          <ProfileOptions onReset={doPasswordReset}></ProfileOptions>
           </>}
-          { activeTab === tabSettings.DISPLAY && <>
-          <DisplayOptions></DisplayOptions>
+          { activeTab === tabSettings.TERMS && <>
+          <DisplayOptions onViewTerms={() => {}}></DisplayOptions>
           </>}
           { activeTab === tabSettings.CHAT && <>
-          <h1>This is chat tab</h1>
+          <ChatOptions onDeleteChat={() => {console.log("onDeleteChat")}}></ChatOptions>
           </>}
           { activeTab === tabSettings.UPLOAD && <>
-          <UploadOptions></UploadOptions>
+          <UploadOptions onUpload={navigateUpload}></UploadOptions>
           </>}
         </main>
         
