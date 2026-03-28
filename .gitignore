@@ -3,6 +3,7 @@
 client/.env
 server/.env
 server/.env.yaml
+client/.env.yaml
 
 # Node modules (frontend + backend)
 node_modules/
