@@ -6,7 +6,7 @@ import dotenv from "dotenv";
 dotenv.config();
 
 const app = express();
-const port = process.env.BACKEND_PORT || 8080;
+const port = process.env.PORT || 8080;
 
 const allowedOrigins = [
   process.env.FRONTEND_URL,

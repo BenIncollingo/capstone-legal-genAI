@@ -382,6 +382,17 @@ export default function Assistant() {
                     </div>
                   );
                 })}
+
+                {isSending && (
+                  <div className="mr-auto max-w-[80%] rounded-2xl bg-zinc-100 px-4 py-3 text-sm text-zinc-900 shadow-sm">
+                    <div className="whitespace-pre-wrap">
+                      <span className="font-semibold">Waiting for response...</span>
+                      {"\n"}
+                      This may take a few minutes if the AI service is starting
+                      up.
+                    </div>
+                  </div>
+                )}
               </div>
             )}
           </main>
