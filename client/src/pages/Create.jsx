@@ -15,8 +15,6 @@ export default function Create() {
   const handleSubmit = async (e) => {
     e.preventDefault();
 
-    alert("Login attempt: ", {email, password});
-
     // Check if login credentials actually have values inside
     if (!email || !password || (email.length > MAXCREDENTIALLENGTH) || (password.length > MAXCREDENTIALLENGTH) ) {
       alert("Please enter a valid username and password.");

@@ -1,6 +1,6 @@
 import React, {useRef, useState} from "react";
 import { doSignOut } from "../firebase/auth";
-import { doPasswordReset } from "../firebase/auth";
+import { doPasswordReset, deleteUserAccount } from "../firebase/auth";
 import { useAuth } from "../contexts/authContext/index.jsx";
 import { Link, useNavigate } from "react-router-dom";
 
@@ -30,7 +30,10 @@ function ProfileOptions({ onReset }) {
   <>
     <h5 className="font-semibold">Reset Password?</h5>
     <p>This button will reset your account's password.</p>
-    <button className="bg-slate-900 hover:bg-blue-700 text-white font-bold py-2 px-6 rounded whitespace-nowrap" onClick={onReset}>Reset Password</button>
+    <button className="bg-slate-900 hover:bg-blue-700 text-white font-bold py-2 px-6 rounded whitespace-nowrap" onClick={() => {}}>Reset Password</button>
+    <h5 className="font-semibold">Delete Account?</h5>
+    <p>This button will permanently delete the your account.</p>
+    <button className="bg-slate-900 hover:bg-blue-700 text-white font-bold py-2 px-6 rounded whitespace-nowrap" onClick={onReset}>Delete Account</button>
 </>)};
 
 function DisplayOptions({onViewTerms}) {
@@ -62,6 +65,14 @@ export default function Modal({ onClose }) {
     onClose();
     navigate("/documentUpload");
     console.log("navigate Upload");
+  }
+
+  function deleteAccount() {
+    try {
+      deleteUserAccount();
+    } catch {
+
+    }
   }
 
   const [activeTab, setActiveTab] = useState(tabSettings.PROFILE);
@@ -107,7 +118,7 @@ export default function Modal({ onClose }) {
 
         <main className="flex-1 p-8">
           { activeTab === tabSettings.PROFILE && <>
-          <ProfileOptions onReset={doPasswordReset}></ProfileOptions>
+          <ProfileOptions onReset={deleteUserAccount}></ProfileOptions>
           </>}
           { activeTab === tabSettings.TERMS && <>
           <DisplayOptions onViewTerms={() => {}}></DisplayOptions>
