@@ -25,15 +25,38 @@ function ChatOptions({ onDeleteChat }) {
   )
 };
 
-function ProfileOptions({ onReset }) { 
+function ProfileOptions({ onDeleteAccount, onReset, onSet, passwordProp }) { 
+
+function handleDeleteButton() {
+
+}
+
   return(
   <>
     <h5 className="font-semibold">Reset Password?</h5>
     <p>This button will reset your account's password.</p>
-    <button className="bg-slate-900 hover:bg-blue-700 text-white font-bold py-2 px-6 rounded whitespace-nowrap" onClick={() => {}}>Reset Password</button>
+    <button className="bg-slate-900 hover:bg-blue-700 text-white font-bold py-2 px-6 rounded whitespace-nowrap" onClick={onReset}>Reset Password</button>
     <h5 className="font-semibold">Delete Account?</h5>
     <p>This button will permanently delete the your account.</p>
-    <button className="bg-slate-900 hover:bg-blue-700 text-white font-bold py-2 px-6 rounded whitespace-nowrap" onClick={onReset}>Delete Account</button>
+    <form
+    onSubmit={() => {}}
+    className="mb-4 rounded-lg border border-gray-100 bg-slate-600 px-8 pt-6 pb-8 shadow-md"
+    >
+      <label>Re-enter password to delete account:</label>
+      <input
+        className="w-full appearance-none rounded border px-3 py-2 leading-tight text-gray-700 shadow focus:outline-none focus:ring-2 focus:ring-blue-500"
+        id="email"
+        type="email"
+        placeholder="email@example.com"
+        value={passwordProp}
+        onChange={(e) => onSet(e.target.value)}
+        required
+      ></input>
+      <p hidden id="wrongPass" className="text-red-500">Wrong password.</p>
+      <button id="checkButton" className="bg-slate-400 hover:bg-blue-700 text-white font-bold py-2 px-6 rounded whitespace-nowrap">Check</button>
+
+    </form>
+    <button id="deleteAccount" disabled className="bg-slate-400 hover:bg-blue-700 text-white font-bold py-2 px-6 rounded whitespace-nowrap" onClick={onDeleteAccount}>Delete Account</button>
 </>)};
 
 function DisplayOptions({onViewTerms}) {
@@ -49,6 +72,7 @@ function DisplayOptions({onViewTerms}) {
 
 export default function Modal({ onClose }) {
   const { userLoggedIn } = useAuth();
+  const [password, setPassword] = useState("");
   const navigate = useNavigate();
   const modalRef = useRef();
 
@@ -118,7 +142,7 @@ export default function Modal({ onClose }) {
 
         <main className="flex-1 p-8">
           { activeTab === tabSettings.PROFILE && <>
-          <ProfileOptions onReset={deleteUserAccount}></ProfileOptions>
+          <ProfileOptions onDeleteAccount={deleteUserAccount} onReset={doPasswordReset} onSet={setPassword} passwordProp={password}></ProfileOptions>
           </>}
           { activeTab === tabSettings.TERMS && <>
           <DisplayOptions onViewTerms={() => {}}></DisplayOptions>
