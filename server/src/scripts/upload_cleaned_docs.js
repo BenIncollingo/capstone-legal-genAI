@@ -4,17 +4,21 @@ import { fileURLToPath } from "url";
 import fetch from "node-fetch";
 import FormData from "form-data";
 import dotenv from "dotenv";
-dotenv.config();
 
 const __filename = fileURLToPath(import.meta.url);
 const __dirname = path.dirname(__filename);
 
+dotenv.config({ path: path.resolve(__dirname, "../../.env") });
+
 const CLEAN_DIR = path.resolve(__dirname, "../../../cleaned_documents");
 
-const BASE_URL = "https://api-service-4xa2fuayfa-ue.a.run.app";
-const PROJECT_ID = process.env.AI_PROJECT_ID || "genai-legal-488518";
-const API_KEY = process.env.AI_API_KEY || "";
+const BASE_URL = process.env.INFRA_BASE_URL;
+const PROJECT_ID = process.env.PROJECT_ID;
+const API_KEY = process.env.API_KEY;
 
+console.log("BASE_URL:", BASE_URL);
+console.log("PROJECT_ID:", PROJECT_ID);
+console.log("API_KEY loaded:", API_KEY ? "yes" : "no");
 const INGEST_URL = `${BASE_URL}/ingest/${PROJECT_ID}/upload`;
 
 function getAllTxtFiles(dir) {
