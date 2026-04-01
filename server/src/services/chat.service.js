@@ -1,6 +1,9 @@
 export async function sendChatToInfra(question) {
   try {
-    const response = await fetch(`${process.env.INFRA_BASE_URL}/api/v1/chat`, {
+    const url = `${process.env.INFRA_BASE_URL}/api/v1/chat`;
+    console.log("Calling infra URL:", url);
+
+    const response = await fetch(url, {
       method: "POST",
       headers: {
         "Content-Type": "application/json",
@@ -14,6 +17,9 @@ export async function sendChatToInfra(question) {
     });
 
     if (!response.ok) {
+      const errorText = await response.text();
+      console.error("Infra response status:", response.status);
+      console.error("Infra response body:", errorText);
       throw new Error(`Request failed: ${response.status}`);
     }
 
