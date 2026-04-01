@@ -112,9 +112,6 @@ export default function DocumentsPage() {
             <h1 className="text-lg font-semibold tracking-tight">
               Document Uploads
             </h1>
-            <p className="text-sm text-zinc-500">
-              Stage files and upload them to your legal AI backend
-            </p>
           </div>
         </div>
       </div>
@@ -203,22 +200,7 @@ export default function DocumentsPage() {
               </div>
             </div>
 
-            <div className="rounded-3xl border border-amber-200 bg-amber-50 p-5">
-              <div className="flex items-start gap-3">
-                <div className="mt-0.5 flex h-9 w-9 items-center justify-center rounded-xl bg-amber-100">
-                  ⚠️
-                </div>
-                <div>
-                  <div className="text-sm font-semibold text-amber-900">
-                    Upload note
-                  </div>
-                  <p className="mt-1 text-sm text-amber-800">
-                    Files are staged locally first so you can review them before
-                    sending them to the backend.
-                  </p>
-                </div>
-              </div>
-            </div>
+            
           </aside>
         </div>
 
