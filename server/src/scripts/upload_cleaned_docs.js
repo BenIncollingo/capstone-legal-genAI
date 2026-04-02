@@ -44,6 +44,8 @@ async function uploadFile(filePath) {
 
   const form = new FormData();
   form.append("file", fs.createReadStream(filePath));
+  form.append("chunk_size", "1000");
+  form.append("chunk_overlap", "100");
   form.append(
     "metadata",
     JSON.stringify({
@@ -78,7 +80,6 @@ async function uploadFile(filePath) {
 }
 
 async function main() {
-  console.log("API key loaded:", API_KEY ? "yes" : "no");
   console.log("Upload script starting...");
   console.log("Cleaned docs folder:", CLEAN_DIR);
   console.log("Ingest URL:", INGEST_URL);
