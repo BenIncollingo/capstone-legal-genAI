@@ -132,6 +132,20 @@ index.js
 
 ## Scaling the Project
 
+As the project grows:
+- Add new backend routes inside `backend/src/routes`
+- Add matching services in `backend/src/services`
+- Add new frontend API helpers in `frontend/src/api`
+- Keep UI components reusable
+- Keep pages as route-level components
+
+---
+## Run Unit Test
+git switch unit-test
+Cd client
+npx jest unit.test.js
+
+
 - Add routes in server/src/routes
 - Add logic in server/src/services
 - Add API calls in client/src/api
