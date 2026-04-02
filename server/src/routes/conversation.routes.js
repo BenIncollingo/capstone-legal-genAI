@@ -1,12 +1,13 @@
-const express = require("express");
-const router = express.Router();
+import express from "express";
 
-const {
+import {
   createConversation,
   getConversationsByUser,
   createMessage,
   getMessagesByConversation,
-} = require("../services/conversation.service");
+} from "../services/conversation.service.js";
+
+const router = express.Router();
 
 router.post("/conversations", async (req, res) => {
   try {
@@ -64,4 +65,4 @@ router.get("/messages/:conversationId", async (req, res) => {
   }
 });
 
-module.exports = router;
+export default router;

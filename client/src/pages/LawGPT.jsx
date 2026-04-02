@@ -2,14 +2,14 @@ import { useEffect, useMemo, useRef, useState } from "react";
 import { useNavigate } from "react-router-dom";
 import { useAuth } from "../contexts/authContext/index.jsx";
 import { uploadChatToBackend } from "../api/chat.api";
-import { doSignOut } from "../firebase/auth.js";
 
-const CONVERSATIONS = [
-  { title: "example chat 1", when: "Today" },
-  { title: "example chat 2", when: "Yesterday" },
-  { title: "example chat 3", when: "Feb 8" },
-  { title: "example chat 4", when: "Feb 7" },
-];
+import {
+  fetchConversations,
+  createConversation,
+  fetchMessages,
+  createMessage,
+} from "../api/chat.api.js";
+import { doSignOut } from "../firebase/auth.js";
 
 const SUGGESTIONS = [
   {
@@ -41,14 +41,19 @@ export default function Assistant() {
   const [messages, setMessages] = useState([]);
   const [settingsOpen, setSettingsOpen] = useState(false);
   const [isLoggingOut, setIsLoggingOut] = useState(false);
+  const [conversations, setConversations] = useState([]);
+  const [selectedConversationId, setSelectedConversationId] = useState(null);
 
   const { currentUser } = useAuth();
   const navigate = useNavigate();
   const settingsRef = useRef(null);
 
+  // TEMP: replace with your real user ID from your auth/user table later
+  const userId = 1;
+
   const activeConversation = useMemo(
-    () => CONVERSATIONS[activeIdx] ?? { title: "New Chat", when: "" },
-    [activeIdx]
+    () => conversations[activeIdx] ?? { title: "New Chat" },
+    [activeIdx, conversations]
   );
 
   useEffect(() => {
@@ -63,6 +68,36 @@ export default function Assistant() {
       document.removeEventListener("mousedown", handleClickOutside);
     };
   }, []);
+
+  useEffect(() => {
+    if (!currentUser) return;
+
+    const loadConversations = async () => {
+      try {
+        const data = await fetchConversations(userId);
+        setConversations(data);
+
+        if (data.length > 0) {
+          setActiveIdx(0);
+          setSelectedConversationId(data[0].id);
+          const conversationMessages = await fetchMessages(data[0].id);
+          setMessages(
+            conversationMessages.map((msg) => ({
+              role: msg.role,
+              text: msg.content,
+            }))
+          );
+        } else {
+          setMessages([]);
+          setSelectedConversationId(null);
+        }
+      } catch (error) {
+        console.error("Failed to load conversations:", error);
+      }
+    };
+
+    loadConversations();
+  }, [currentUser]);
 
   const handleLogout = async () => {
     if (isLoggingOut) return;
@@ -80,30 +115,77 @@ export default function Assistant() {
     }
   };
 
+  const loadConversationMessages = async (conversationId, index) => {
+    try {
+      const data = await fetchMessages(conversationId);
+      setMessages(
+        data.map((msg) => ({
+          role: msg.role,
+          text: msg.content,
+        }))
+      );
+      setSelectedConversationId(conversationId);
+      setActiveIdx(index);
+    } catch (error) {
+      console.error("Failed to load messages:", error);
+    }
+  };
+
+  const handleNewChat = () => {
+    setSelectedConversationId(null);
+    setMessages([]);
+    setActiveIdx(-1);
+  };
+
   const onSend = async () => {
     const trimmed = message.trim();
     if (!trimmed) return;
 
-    setMessages((prev) => [...prev, { role: "user", text: trimmed }]);
-    setMessage("");
+    let conversationId = selectedConversationId;
+    let updatedConversations = conversations;
 
     try {
+      if (!conversationId) {
+        const newConversation = await createConversation(
+          userId,
+          trimmed.length > 30 ? `${trimmed.slice(0, 30)}...` : trimmed
+        );
+
+        updatedConversations = [newConversation, ...conversations];
+        setConversations(updatedConversations);
+        setSelectedConversationId(newConversation.id);
+        setActiveIdx(0);
+        conversationId = newConversation.id;
+      }
+
+      await createMessage(conversationId, "user", trimmed);
+
+      setMessages((prev) => [...prev, { role: "user", text: trimmed }]);
+      setMessage("");
+
       const res = await uploadChatToBackend(trimmed);
       const botReply = res?.response || "No response returned.";
 
-      setMessages((prev) => [
-        ...prev,
-        { role: "assistant", text: botReply },
-      ]);
+      await createMessage(conversationId, "assistant", botReply);
+
+      setMessages((prev) => [...prev, { role: "assistant", text: botReply }]);
+
+      const refreshedConversations = await fetchConversations(userId);
+      setConversations(refreshedConversations);
     } catch (error) {
       console.error(error);
-      setMessages((prev) => [
-        ...prev,
-        {
-          role: "assistant",
-          text: "Something went wrong getting a response.",
-        },
-      ]);
+
+      const fallback = "Something went wrong getting a response.";
+
+      if (conversationId) {
+        try {
+          await createMessage(conversationId, "assistant", fallback);
+        } catch (saveError) {
+          console.error("Failed to save fallback assistant message:", saveError);
+        }
+      }
+
+      setMessages((prev) => [...prev, { role: "assistant", text: fallback }]);
     }
   };
 
@@ -122,10 +204,7 @@ export default function Assistant() {
             <div className="p-3">
               <button
                 type="button"
-                onClick={() => {
-                  setActiveIdx(0);
-                  setMessages([]);
-                }}
+                onClick={handleNewChat}
                 className="flex w-full items-center gap-2 rounded-xl bg-white/10 px-3 py-2 text-sm font-medium hover:bg-white/15"
               >
                 <span className="text-lg leading-none">＋</span>
@@ -135,13 +214,13 @@ export default function Assistant() {
 
             <div className="flex-1 overflow-y-auto px-2 pb-2">
               <div className="space-y-1">
-                {CONVERSATIONS.map((c, i) => {
+                {conversations.map((c, i) => {
                   const active = i === activeIdx;
                   return (
                     <button
-                      key={c.title}
+                      key={c.id}
                       type="button"
-                      onClick={() => setActiveIdx(i)}
+                      onClick={() => loadConversationMessages(c.id, i)}
                       className={[
                         "w-full rounded-xl px-3 py-2 text-left transition",
                         active ? "bg-white/15" : "hover:bg-white/10",
@@ -153,7 +232,11 @@ export default function Assistant() {
                           <div className="truncate text-sm font-semibold">
                             {c.title}
                           </div>
-                          <div className="text-xs text-white/60">{c.when}</div>
+                          <div className="text-xs text-white/60">
+                            {c.updated_at
+                              ? new Date(c.updated_at).toLocaleString()
+                              : ""}
+                          </div>
                         </div>
                       </div>
                     </button>
@@ -233,7 +316,7 @@ export default function Assistant() {
                   {activeConversation.title}
                 </div>
                 <div className="text-xs text-zinc-500">
-                  {activeConversation.when || " "}
+                  {selectedConversationId ? "Saved chat" : "Unsaved new chat"}
                 </div>
               </div>
             </div>
