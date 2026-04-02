@@ -35,6 +35,41 @@ const SUGGESTIONS = [
   },
 ];
 
+function cleanSourceName(source = "") {
+  if (!source) return "Unknown source";
+
+  let cleaned = source;
+
+  try {
+    cleaned = decodeURIComponent(cleaned);
+  } catch {
+    // leave as-is if decoding fails
+  }
+
+  return cleaned
+    .replace(/_/g, " ")
+    .replace(/\s+/g, " ")
+    .replace(/Â§/g, "§")
+    .trim();
+}
+
+function extractUniqueSources(citations = []) {
+  const seen = new Map();
+
+  citations.forEach((citation) => {
+    const sourceName = cleanSourceName(citation?.source || "");
+
+    if (!seen.has(sourceName)) {
+      seen.set(sourceName, {
+        source: sourceName,
+        url: citation?.url || "",
+      });
+    }
+  });
+
+  return Array.from(seen.values());
+}
+
 export default function Assistant() {
   const [sidebarOpen, setSidebarOpen] = useState(false);
   const [activeIdx, setActiveIdx] = useState(0);
@@ -43,6 +78,7 @@ export default function Assistant() {
   const [settingsOpen, setSettingsOpen] = useState(false);
   const [isLoggingOut, setIsLoggingOut] = useState(false);
   const [showModal, setShowModal] = useState(false);
+  const [isSending, setIsSending] = useState(false);
 
   const { currentUser } = useAuth();
   const navigate = useNavigate();
@@ -84,18 +120,24 @@ export default function Assistant() {
 
   const onSend = async () => {
     const trimmed = message.trim();
-    if (!trimmed) return;
+    if (!trimmed || isSending) return;
 
     setMessages((prev) => [...prev, { role: "user", text: trimmed }]);
     setMessage("");
+    setIsSending(true);
 
     try {
       const res = await uploadChatToBackend(trimmed);
-      const botReply = res?.response || "No response returned.";
+      const botReply = res?.answer || "No response returned.";
+      const citations = Array.isArray(res?.citations) ? res.citations : [];
 
       setMessages((prev) => [
         ...prev,
-        { role: "assistant", text: botReply },
+        {
+          role: "assistant",
+          text: botReply,
+          citations,
+        },
       ]);
     } catch (error) {
       console.error(error);
@@ -104,8 +146,11 @@ export default function Assistant() {
         {
           role: "assistant",
           text: "Something went wrong getting a response.",
+          citations: [],
         },
       ]);
+    } finally {
+      setIsSending(false);
     }
   };
 
@@ -303,18 +348,59 @@ export default function Assistant() {
               </>
             ) : (
               <div className="mx-auto flex max-w-3xl flex-col gap-4">
-                {messages.map((msg, i) => (
-                  <div
-                    key={i}
-                    className={`max-w-[80%] rounded-2xl px-4 py-3 text-sm shadow-sm ${
-                      msg.role === "user"
-                        ? "ml-auto bg-blue-600 text-white"
-                        : "mr-auto bg-zinc-100 text-zinc-900"
-                    }`}
-                  >
-                    {msg.text}
+                {messages.map((msg, i) => {
+                  const uniqueSources =
+                    msg.role === "assistant"
+                      ? extractUniqueSources(msg.citations)
+                      : [];
+
+                  return (
+                    <div
+                      key={i}
+                      className={`max-w-[80%] rounded-2xl px-4 py-3 text-sm shadow-sm ${
+                        msg.role === "user"
+                          ? "ml-auto bg-blue-600 text-white"
+                          : "mr-auto bg-zinc-100 text-zinc-900"
+                      }`}
+                    >
+                      <div className="whitespace-pre-wrap">{msg.text}</div>
+
+                      {msg.role === "assistant" && uniqueSources.length > 0 && (
+                        <div className="mt-3 border-t border-zinc-200 pt-3">
+                          <details className="group">
+                            <summary className="cursor-pointer list-none text-xs font-medium text-zinc-500 hover:text-zinc-700">
+                              Sources ({uniqueSources.length})
+                            </summary>
+
+                            <div className="mt-2 space-y-2">
+                              {uniqueSources.map((item, idx) => (
+                                <div
+                                  key={`${item.source}-${idx}`}
+                                  className="rounded-xl bg-white/70 px-3 py-2 text-xs text-zinc-700"
+                                >
+                                  <div className="break-words">
+                                    {item.source}
+                                  </div>
+                                </div>
+                              ))}
+                            </div>
+                          </details>
+                        </div>
+                      )}
+                    </div>
+                  );
+                })}
+
+                {isSending && (
+                  <div className="mr-auto max-w-[80%] rounded-2xl bg-zinc-100 px-4 py-3 text-sm text-zinc-900 shadow-sm">
+                    <div className="whitespace-pre-wrap">
+                      <span className="font-semibold">Waiting for response...</span>
+                      {"\n"}
+                      This may take a few minutes if the AI service is starting
+                      up.
+                    </div>
                   </div>
-                ))}
+                )}
               </div>
             )}
           </main>
@@ -328,7 +414,8 @@ export default function Assistant() {
                     onChange={(e) => setMessage(e.target.value)}
                     placeholder="Ask a legal question..."
                     rows={1}
-                    className="min-h-[52px] w-full resize-none rounded-2xl border border-zinc-200 bg-zinc-50 px-4 py-3 text-sm outline-none focus:border-blue-400 focus:ring-2 focus:ring-blue-100"
+                    disabled={isSending}
+                    className="min-h-[52px] w-full resize-none rounded-2xl border border-zinc-200 bg-zinc-50 px-4 py-3 text-sm outline-none focus:border-blue-400 focus:ring-2 focus:ring-blue-100 disabled:cursor-not-allowed disabled:opacity-60"
                     onKeyDown={(e) => {
                       if (e.key === "Enter" && !e.shiftKey) {
                         e.preventDefault();
@@ -345,10 +432,11 @@ export default function Assistant() {
                 <button
                   type="button"
                   onClick={onSend}
-                  className="inline-flex h-[52px] w-[52px] items-center justify-center rounded-2xl bg-zinc-700 text-white shadow-sm transition hover:bg-zinc-800 active:scale-[0.98]"
+                  disabled={isSending}
+                  className="inline-flex h-[52px] w-[52px] items-center justify-center rounded-2xl bg-zinc-700 text-white shadow-sm transition hover:bg-zinc-800 active:scale-[0.98] disabled:cursor-not-allowed disabled:bg-zinc-400"
                   aria-label="Send"
                 >
-                  ➤
+                  {isSending ? "…" : "➤"}
                 </button>
               </div>
             </div>

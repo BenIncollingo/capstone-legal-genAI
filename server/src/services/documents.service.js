@@ -1,36 +1,35 @@
-import fs from "fs/promises";
-import path from "path";
-
 export async function uploadDocumentToInfra(file, metadata) {
-  if (!file) {
-    throw new Error("No file provided to service");
+  if (!file) throw new Error("No file provided");
+
+  const formData = new FormData();
+  const fileBlob = new Blob([file.buffer], { type: file.mimetype });
+
+  formData.append("file", fileBlob, file.originalname);
+  formData.append("chunk_size", "1000");
+  formData.append("chunk_overlap", "100");
+
+  const url = `${process.env.INFRA_BASE_URL}/ingest/${process.env.PROJECT_ID}/upload`;
+
+  try {
+    const infraResponse = await fetch(url, {
+      method: "POST",
+      body: formData, 
+      headers: {
+        "Authorization": `Bearer ${process.env.API_KEY}`,
+      },
+    });
+
+    if (!infraResponse.ok) {
+      const errText = await infraResponse.text();
+      throw new Error(`Infra upload failed: ${errText}`);
+    }
+
+    const data = await infraResponse.json();
+    console.log(data);
+    return data;
+
+  } catch (error) {
+    console.error(`Error: ${error.message}`);
+    throw error;
   }
-
-
-
-  //temporary use until we figure out how to upload to infra team API...
-  // root of project
-  const projectRoot = process.cwd();
-
-  // create /testInfraDB in root
-  const uploadDir = path.join(projectRoot, "testInfraDB");
-  await fs.mkdir(uploadDir, { recursive: true });
-
-  // keep original filename for now
-  const filePath = path.join(uploadDir, file.originalname);
-
-  // write buffer from multer memory storage
-  await fs.writeFile(filePath, file.buffer);
-
-  console.log(`Saved file to: ${filePath}`);
-  console.log("Metadata received:", metadata);
-
-  return {
-    originalName: file.originalname,
-    mimetype: file.mimetype,
-    size: file.size,
-    savedTo: filePath,
-    metadata: metadata || null,
-  };
 }
-
