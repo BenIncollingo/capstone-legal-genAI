@@ -13,6 +13,9 @@ export default function CreateAccountPage() {
   const [errorMessage, setErrorMessage] = useState("");
   const [successMessage, setSuccessMessage] = useState("");
 
+    // Check if login credentials actually have values inside
+    if (!email || !password || (email.length > MAXCREDENTIALLENGTH) || (password.length > MAXCREDENTIALLENGTH) ) {
+      alert("Please enter a valid username and password.");
   const MAX_CREDENTIAL_LENGTH = 30;
 
   const handleSubmit = async (e) => {

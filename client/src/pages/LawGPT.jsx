@@ -3,6 +3,7 @@ import { useNavigate } from "react-router-dom";
 import { useAuth } from "../contexts/authContext/index.jsx";
 import { uploadChatToBackend } from "../api/chat.api";
 import { doSignOut } from "../firebase/auth.js";
+import Modal from "../components/Modal.jsx";
 
 const CONVERSATIONS = [
   { title: "example chat 1", when: "Today" },
@@ -76,6 +77,7 @@ export default function Assistant() {
   const [messages, setMessages] = useState([]);
   const [settingsOpen, setSettingsOpen] = useState(false);
   const [isLoggingOut, setIsLoggingOut] = useState(false);
+  const [showModal, setShowModal] = useState(false);
   const [isSending, setIsSending] = useState(false);
 
   const { currentUser } = useAuth();
@@ -239,6 +241,12 @@ export default function Assistant() {
                         className="block w-full px-4 py-2 text-left text-sm hover:bg-zinc-100 disabled:cursor-not-allowed disabled:opacity-50"
                       >
                         {isLoggingOut ? "Logging out..." : "Log Out"}
+                      </button>
+                      <button
+                      type="button"
+                      onClick={() => setShowModal(true)}
+                      className="block w-full px-4 py-2 text-left text-sm hover:bg-zinc-100 disabled:cursor-not-allowed disabled:opacity-50">
+                        Settings
                       </button>
                     </div>
                   )}
@@ -435,6 +443,7 @@ export default function Assistant() {
           </div>
         </div>
       </div>
+      {showModal && <Modal onClose={() => setShowModal(false)} />}
     </div>
   );
 }
