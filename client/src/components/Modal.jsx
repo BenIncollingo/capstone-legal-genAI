@@ -4,6 +4,8 @@ import { getAuth } from "firebase/auth";
 import { useNavigate } from "react-router-dom";
 import { EmailAuthProvider, reauthenticateWithCredential } from "firebase/auth";
 
+/* Test comment*/
+
 function UploadOptions({ onUpload }) {
   return (
     <>
@@ -38,6 +40,7 @@ function ProfileOptions({ onDeleteAccount, onReset, onSet, passwordProp, checkPa
   const [isUnlocked, setIsUnlocked] = useState(false);
   const [showError, setShowError] = useState(false);
   const [loading, setLoading] = useState(false);
+  const [resetStatus, sentReset] = useState("false");
 
   async function handleUnlock(e) {
     e.preventDefault();
