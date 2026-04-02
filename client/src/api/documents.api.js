@@ -1,3 +1,5 @@
+import { BACKEND_API_BASE_URL } from "./config";
+
 export async function uploadDocumentToBackend(file, metadata) {
   const formData = new FormData();
   formData.append("file", file);
@@ -6,7 +8,7 @@ export async function uploadDocumentToBackend(file, metadata) {
     formData.append("metadata", JSON.stringify(metadata));
   }
 
-  const res = await fetch("/api/documents/uploadDocument", {
+  const res = await fetch(`${BACKEND_API_BASE_URL}/documents/uploadDocument`, {
     method: "POST",
     body: formData,
   });

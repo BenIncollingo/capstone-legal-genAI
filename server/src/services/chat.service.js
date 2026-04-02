@@ -1,7 +1,33 @@
-export async function sendChatToInfra(message) {
-  console.log("BACKEND SERVICE got message:", message);
+export async function sendChatToInfra(question) {
+  try {
+    const url = `${process.env.INFRA_BASE_URL}/api/v1/chat`;
+    console.log("Calling infra URL:", url);
 
-  return {
-    response: "example AI response message: wow very interesting question",
-  };
+    const response = await fetch(url, {
+      method: "POST",
+      headers: {
+        "Content-Type": "application/json",
+        "Authorization": `Bearer ${process.env.API_KEY}`
+      },
+      body: JSON.stringify({
+        question: question,
+        project_id: process.env.PROJECT_ID,
+        system_prompt: process.env.SYSTEM_PROMPT
+      }),
+    });
+
+    if (!response.ok) {
+      const errorText = await response.text();
+      console.error("Infra response status:", response.status);
+      console.error("Infra response body:", errorText);
+      throw new Error(`Request failed: ${response.status}`);
+    }
+
+    const data = await response.json();
+    console.log("Infra response:", data);
+    return data;
+  } catch (error) {
+    console.error("Infra error:", error);
+    throw error;
+  }
 }
