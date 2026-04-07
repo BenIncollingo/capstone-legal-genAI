@@ -3,6 +3,7 @@ import LawGPT from "./pages/LawGPT";
 import Login from "./pages/SignIn.jsx";
 import Create from "./pages/Create.jsx";
 import DocumentsPage from "./pages/DocumentUploadPage.jsx";
+import AdminPage from "./pages/AdminPage.jsx";
 import ForgotPassword from "./pages/ForgotPassword.jsx";
 import { AuthProvider } from "./contexts/authContext/index.jsx";
 import { useAuth } from "./contexts/authContext/index.jsx";
@@ -81,6 +82,15 @@ function App() {
             element={
               <ProtectedRoute>
                 <DocumentsPage />
+              </ProtectedRoute>
+            }
+          />
+
+          <Route
+            path="/admin"
+            element={
+              <ProtectedRoute>
+                <AdminPage />
               </ProtectedRoute>
             }
           />

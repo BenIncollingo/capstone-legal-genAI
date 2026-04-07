@@ -4,8 +4,6 @@ import { getAuth } from "firebase/auth";
 import { useNavigate } from "react-router-dom";
 import { EmailAuthProvider, reauthenticateWithCredential } from "firebase/auth";
 
-/* Test comment*/
-
 function UploadOptions({ onUpload }) {
   return (
     <>
