@@ -36,17 +36,35 @@ router.get("/conversations/:userId", async (req, res) => {
   }
 });
 
+// router.post("/messages", async (req, res) => {
+//   try {
+//     const { conversationId, role, content } = req.body;
+
+//     if (!conversationId || !role || !content) {
+//       return res.status(400).json({
+//         error: "conversationId, role, and content are required",
+//       });
+//     }
+
+//     const message = await createMessage(conversationId, role, content);
+//     res.status(201).json(message);
+//   } catch (error) {
+//     console.error("Error creating message:", error);
+//     res.status(500).json({ error: "Failed to create message" });
+//   }
+// });
+
 router.post("/messages", async (req, res) => {
   try {
-    const { conversationId, role, content } = req.body;
+    const { conversationId, userId, role, content } = req.body;
 
-    if (!conversationId || !role || !content) {
+    if (!conversationId || !userId || !role || !content) {
       return res.status(400).json({
-        error: "conversationId, role, and content are required",
+        error: "conversationId, userId, role, and content are required",
       });
     }
 
-    const message = await createMessage(conversationId, role, content);
+    const message = await createMessage(conversationId, userId, role, content);
     res.status(201).json(message);
   } catch (error) {
     console.error("Error creating message:", error);
@@ -54,10 +72,10 @@ router.post("/messages", async (req, res) => {
   }
 });
 
-router.get("/messages/:conversationId", async (req, res) => {
+router.get("/messages/:conversationId/:userId", async (req, res) => {
   try {
-    const { conversationId } = req.params;
-    const messages = await getMessagesByConversation(conversationId);
+    const { conversationId, userId } = req.params;
+    const messages = await getMessagesByConversation(conversationId, userId);
     res.json(messages);
   } catch (error) {
     console.error("Error fetching messages:", error);

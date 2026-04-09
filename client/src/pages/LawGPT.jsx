@@ -49,7 +49,7 @@ export default function Assistant() {
   const settingsRef = useRef(null);
 
   // TEMP: replace with your real user ID from your auth/user table later
-  const userId = 1;
+  const userId = currentUser?.uid;
 
   const activeConversation = useMemo(
     () => conversations[activeIdx] ?? { title: "New Chat" },
@@ -69,35 +69,72 @@ export default function Assistant() {
     };
   }, []);
 
+  // useEffect(() => {
+  //   useEffect(() => {
+  //   if (!currentUser) return;
+
+  //   const userId = currentUser.uid;
+
+  //   const loadConversations = async () => {
+  //     try {
+  //       const data = await fetchConversations(userId);
+  //       setConversations(data);
+
+  //       if (data.length > 0) {
+  //         setActiveIdx(0);
+  //         setSelectedConversationId(data[0].id);
+  //         const conversationMessages = await fetchMessages(data[0].id, userId);
+  //         setMessages(
+  //           conversationMessages.map((msg) => ({
+  //             role: msg.role,
+  //             text: msg.content,
+  //           }))
+  //         );
+  //       } else {
+  //         setMessages([]);
+  //         setSelectedConversationId(null);
+  //       }
+  //     } catch (error) {
+  //       console.error("Failed to load conversations:", error);
+  //     }
+  //   };
+
+  //   loadConversations();
+  // }, [currentUser]);
+
   useEffect(() => {
-    if (!currentUser) return;
+  if (!currentUser) return;
 
-    const loadConversations = async () => {
-      try {
-        const data = await fetchConversations(userId);
-        setConversations(data);
+  const userId = currentUser.uid;
 
-        if (data.length > 0) {
-          setActiveIdx(0);
-          setSelectedConversationId(data[0].id);
-          const conversationMessages = await fetchMessages(data[0].id);
-          setMessages(
-            conversationMessages.map((msg) => ({
-              role: msg.role,
-              text: msg.content,
-            }))
-          );
-        } else {
-          setMessages([]);
-          setSelectedConversationId(null);
-        }
-      } catch (error) {
-        console.error("Failed to load conversations:", error);
+  const loadConversations = async () => {
+    try {
+      const data = await fetchConversations(userId);
+      setConversations(data);
+
+      if (data.length > 0) {
+        setActiveIdx(0);
+        setSelectedConversationId(data[0].id);
+
+        const conversationMessages = await fetchMessages(data[0].id, userId);
+
+        setMessages(
+          conversationMessages.map((msg) => ({
+            role: msg.role,
+            text: msg.content,
+          }))
+        );
+      } else {
+        setMessages([]);
+        setSelectedConversationId(null);
       }
-    };
+    } catch (error) {
+      console.error("Failed to load conversations:", error);
+    }
+  };
 
-    loadConversations();
-  }, [currentUser]);
+  loadConversations();
+}, [currentUser]);
 
   const handleLogout = async () => {
     if (isLoggingOut) return;
@@ -117,7 +154,7 @@ export default function Assistant() {
 
   const loadConversationMessages = async (conversationId, index) => {
     try {
-      const data = await fetchMessages(conversationId);
+      const data = await fetchMessages(conversationId, currentUser.uid);
       setMessages(
         data.map((msg) => ({
           role: msg.role,
@@ -137,57 +174,108 @@ export default function Assistant() {
     setActiveIdx(-1);
   };
 
+  // const onSend = async () => {
+  //   const trimmed = message.trim();
+  //   if (!trimmed) return;
+
+  //   let conversationId = selectedConversationId;
+  //   let updatedConversations = conversations;
+
+  //   try {
+  //     if (!conversationId) {
+  //       const newConversation = await createConversation(
+  //         currentUser.uid,
+  //         trimmed.length > 30 ? `${trimmed.slice(0, 30)}...` : trimmed
+  //       );
+
+  //       updatedConversations = [newConversation, ...conversations];
+  //       setConversations(updatedConversations);
+  //       setSelectedConversationId(newConversation.id);
+  //       setActiveIdx(0);
+  //       conversationId = newConversation.id;
+  //     }
+
+  //     await createMessage(conversationId, currentUser.uid, "user", trimmed);
+
+  //     setMessages((prev) => [...prev, { role: "user", text: trimmed }]);
+  //     setMessage("");
+
+  //     const res = await uploadChatToBackend(trimmed);
+  //     const botReply = res?.response || "No response returned.";
+
+  //     await createMessage(conversationId, currentUser.uid, "assistant", botReply);
+
+  //     setMessages((prev) => [...prev, { role: "assistant", text: botReply }]);
+
+  //     const refreshedConversations = await fetchConversations(userId);
+  //     setConversations(refreshedConversations);
+  //   } catch (error) {
+  //     console.error(error);
+
+  //     const fallback = "Something went wrong getting a response.";
+
+  //     if (conversationId) {
+  //       try {
+  //         await createMessage(conversationId, currentUser.uid, "assistant", fallback);
+  //       } catch (saveError) {
+  //         console.error("Failed to save fallback assistant message:", saveError);
+  //       }
+  //     }
+
+  //     setMessages((prev) => [...prev, { role: "assistant", text: fallback }]);
+  //   }
+  // };
+
   const onSend = async () => {
-    const trimmed = message.trim();
-    if (!trimmed) return;
+  const trimmed = message.trim();
+  if (!trimmed || !currentUser?.uid) return;
 
-    let conversationId = selectedConversationId;
-    let updatedConversations = conversations;
+  const userId = currentUser.uid;
+  let conversationId = selectedConversationId;
 
-    try {
-      if (!conversationId) {
-        const newConversation = await createConversation(
-          userId,
-          trimmed.length > 30 ? `${trimmed.slice(0, 30)}...` : trimmed
-        );
+  setMessages((prev) => [...prev, { role: "user", text: trimmed }]);
+  setMessage("");
 
-        updatedConversations = [newConversation, ...conversations];
-        setConversations(updatedConversations);
-        setSelectedConversationId(newConversation.id);
-        setActiveIdx(0);
-        conversationId = newConversation.id;
-      }
+  try {
+    if (!conversationId) {
+      const newConversation = await createConversation(
+        userId,
+        trimmed.length > 30 ? `${trimmed.slice(0, 30)}...` : trimmed
+      );
 
-      await createMessage(conversationId, "user", trimmed);
-
-      setMessages((prev) => [...prev, { role: "user", text: trimmed }]);
-      setMessage("");
-
-      const res = await uploadChatToBackend(trimmed);
-      const botReply = res?.response || "No response returned.";
-
-      await createMessage(conversationId, "assistant", botReply);
-
-      setMessages((prev) => [...prev, { role: "assistant", text: botReply }]);
-
-      const refreshedConversations = await fetchConversations(userId);
-      setConversations(refreshedConversations);
-    } catch (error) {
-      console.error(error);
-
-      const fallback = "Something went wrong getting a response.";
-
-      if (conversationId) {
-        try {
-          await createMessage(conversationId, "assistant", fallback);
-        } catch (saveError) {
-          console.error("Failed to save fallback assistant message:", saveError);
-        }
-      }
-
-      setMessages((prev) => [...prev, { role: "assistant", text: fallback }]);
+      setConversations((prev) => [newConversation, ...prev]);
+      setSelectedConversationId(newConversation.id);
+      setActiveIdx(0);
+      conversationId = newConversation.id;
     }
-  };
+
+    await createMessage(conversationId, userId, "user", trimmed);
+
+    const res = await uploadChatToBackend(trimmed);
+    const botReply = res?.response || "No response returned.";
+
+    setMessages((prev) => [...prev, { role: "assistant", text: botReply }]);
+
+    await createMessage(conversationId, userId, "assistant", botReply);
+
+    const refreshedConversations = await fetchConversations(userId);
+    setConversations(refreshedConversations);
+  } catch (error) {
+    console.error(error);
+
+    const fallback = "Something went wrong getting a response.";
+
+    setMessages((prev) => [...prev, { role: "assistant", text: fallback }]);
+
+    if (conversationId) {
+      try {
+        await createMessage(conversationId, userId, "assistant", fallback);
+      } catch (saveError) {
+        console.error("Failed to save fallback assistant message:", saveError);
+      }
+    }
+  }
+};
 
   return (
     <div className="min-h-screen bg-white text-zinc-900">
@@ -432,4 +520,4 @@ export default function Assistant() {
       </div>
     </div>
   );
-}
+  }

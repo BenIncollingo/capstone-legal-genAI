@@ -19,19 +19,38 @@ export async function createConversation(userId, title = "New Chat") {
   return res.json();
 }
 
-export async function fetchMessages(conversationId) {
-  const res = await fetch(`${BASE_URL}/messages/${conversationId}`);
+// export async function fetchMessages(conversationId) {
+//   const res = await fetch(`${BASE_URL}/messages/${conversationId}`);
+//   if (!res.ok) throw new Error("Failed to fetch messages");
+//   return res.json();
+// }
+
+export async function fetchMessages(conversationId, userId) {
+  const res = await fetch(`${BASE_URL}/messages/${conversationId}/${userId}`);
   if (!res.ok) throw new Error("Failed to fetch messages");
   return res.json();
 }
 
-export async function createMessage(conversationId, role, content) {
+// export async function createMessage(conversationId, role, content) {
+//   const res = await fetch(`${BASE_URL}/messages`, {
+//     method: "POST",
+//     headers: {
+//       "Content-Type": "application/json",
+//     },
+//     body: JSON.stringify({ conversationId, role, content }),
+//   });
+
+//   if (!res.ok) throw new Error("Failed to create message");
+//   return res.json();
+// }
+
+export async function createMessage(conversationId, userId, role, content) {
   const res = await fetch(`${BASE_URL}/messages`, {
     method: "POST",
     headers: {
       "Content-Type": "application/json",
     },
-    body: JSON.stringify({ conversationId, role, content }),
+    body: JSON.stringify({ conversationId, userId, role, content }),
   });
 
   if (!res.ok) throw new Error("Failed to create message");
