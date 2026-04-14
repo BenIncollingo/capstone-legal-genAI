@@ -13,9 +13,6 @@ export default function CreateAccountPage() {
   const [errorMessage, setErrorMessage] = useState("");
   const [successMessage, setSuccessMessage] = useState("");
 
-    // Check if login credentials actually have values inside
-    if (!email || !password || (email.length > MAXCREDENTIALLENGTH) || (password.length > MAXCREDENTIALLENGTH) ) {
-      alert("Please enter a valid username and password.");
   const MAX_CREDENTIAL_LENGTH = 30;
 
   const handleSubmit = async (e) => {
@@ -74,7 +71,7 @@ export default function CreateAccountPage() {
   return (
     <div className="min-h-screen bg-white text-zinc-900">
       <div className="grid min-h-screen lg:grid-cols-[1.05fr_0.95fr]">
-        <div className="hidden lg:flex lg:flex-col lg:justify-between bg-gradient-to-b from-slate-950 to-slate-900 text-white p-10 xl:p-14">
+        <div className="hidden bg-gradient-to-b from-slate-950 to-slate-900 p-10 text-white lg:flex lg:flex-col lg:justify-between xl:p-14">
           <div>
             <div className="flex items-center gap-3">
               <div className="flex h-11 w-11 items-center justify-center rounded-2xl bg-blue-600 text-xl shadow-sm">
@@ -107,7 +104,9 @@ export default function CreateAccountPage() {
 
             <div className="mt-8 space-y-4">
               <div className="rounded-2xl border border-white/10 bg-white/5 p-4">
-                <div className="text-sm font-semibold">Built for your capstone</div>
+                <div className="text-sm font-semibold">
+                  Built for your capstone
+                </div>
                 <div className="mt-1 text-sm text-white/65">
                   A more polished product look that matches the main LawGPT UI.
                 </div>

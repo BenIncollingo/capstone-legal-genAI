@@ -1,16 +1,15 @@
 import { useEffect, useMemo, useRef, useState } from "react";
 import { useNavigate } from "react-router-dom";
 import { useAuth } from "../contexts/authContext/index.jsx";
-import { uploadChatToBackend } from "../api/chat.api";
+import {
+  uploadChatToBackend,
+  fetchConversations,
+  createConversation,
+  fetchMessages,
+  createMessage,
+} from "../api/chat.api.js";
 import { doSignOut } from "../firebase/auth.js";
 import Modal from "../components/Modal.jsx";
-
-const CONVERSATIONS = [
-  { title: "example chat 1", when: "Today" },
-  { title: "example chat 2", when: "Yesterday" },
-  { title: "example chat 3", when: "Feb 8" },
-  { title: "example chat 4", when: "Feb 7" },
-];
 
 const SUGGESTIONS = [
   {
@@ -72,11 +71,13 @@ function extractUniqueSources(citations = []) {
 
 export default function Assistant() {
   const [sidebarOpen, setSidebarOpen] = useState(false);
-  const [activeIdx, setActiveIdx] = useState(0);
+  const [activeIdx, setActiveIdx] = useState(-1);
   const [message, setMessage] = useState("");
   const [messages, setMessages] = useState([]);
   const [settingsOpen, setSettingsOpen] = useState(false);
   const [isLoggingOut, setIsLoggingOut] = useState(false);
+  const [conversations, setConversations] = useState([]);
+  const [selectedConversationId, setSelectedConversationId] = useState(null);
   const [showModal, setShowModal] = useState(false);
   const [isSending, setIsSending] = useState(false);
 
@@ -85,8 +86,8 @@ export default function Assistant() {
   const settingsRef = useRef(null);
 
   const activeConversation = useMemo(
-    () => CONVERSATIONS[activeIdx] ?? { title: "New Chat", when: "" },
-    [activeIdx]
+    () => conversations[activeIdx] ?? { title: "New Chat" },
+    [activeIdx, conversations]
   );
 
   useEffect(() => {
@@ -101,6 +102,42 @@ export default function Assistant() {
       document.removeEventListener("mousedown", handleClickOutside);
     };
   }, []);
+
+  useEffect(() => {
+    if (!currentUser?.uid) return;
+
+    const userId = currentUser.uid;
+
+    const loadConversations = async () => {
+      try {
+        const data = await fetchConversations(userId);
+        setConversations(data);
+
+        if (data.length > 0) {
+          setActiveIdx(0);
+          setSelectedConversationId(data[0].id);
+
+          const conversationMessages = await fetchMessages(data[0].id, userId);
+
+          setMessages(
+            conversationMessages.map((msg) => ({
+              role: msg.role,
+              text: msg.content,
+              citations: msg.citations || [],
+            }))
+          );
+        } else {
+          setMessages([]);
+          setSelectedConversationId(null);
+          setActiveIdx(-1);
+        }
+      } catch (error) {
+        console.error("Failed to load conversations:", error);
+      }
+    };
+
+    loadConversations();
+  }, [currentUser]);
 
   const handleLogout = async () => {
     if (isLoggingOut) return;
@@ -118,17 +155,61 @@ export default function Assistant() {
     }
   };
 
-  const onSend = async () => {
-    const trimmed = message.trim();
-    if (!trimmed || isSending) return;
-
-    setMessages((prev) => [...prev, { role: "user", text: trimmed }]);
-    setMessage("");
-    setIsSending(true);
+  const loadConversationMessages = async (conversationId, index) => {
+    if (!currentUser?.uid) return;
 
     try {
+      const data = await fetchMessages(conversationId, currentUser.uid);
+
+      setMessages(
+        data.map((msg) => ({
+          role: msg.role,
+          text: msg.content,
+          citations: msg.citations || [],
+        }))
+      );
+
+      setSelectedConversationId(conversationId);
+      setActiveIdx(index);
+    } catch (error) {
+      console.error("Failed to load messages:", error);
+    }
+  };
+
+  const handleNewChat = () => {
+    setSelectedConversationId(null);
+    setMessages([]);
+    setActiveIdx(-1);
+  };
+
+  const onSend = async () => {
+    const trimmed = message.trim();
+    if (!trimmed || !currentUser?.uid || isSending) return;
+
+    const userId = currentUser.uid;
+    let conversationId = selectedConversationId;
+
+    setIsSending(true);
+    setMessages((prev) => [...prev, { role: "user", text: trimmed }]);
+    setMessage("");
+
+    try {
+      if (!conversationId) {
+        const newConversation = await createConversation(
+          userId,
+          trimmed.length > 30 ? `${trimmed.slice(0, 30)}...` : trimmed
+        );
+
+        setConversations((prev) => [newConversation, ...prev]);
+        setSelectedConversationId(newConversation.id);
+        setActiveIdx(0);
+        conversationId = newConversation.id;
+      }
+
+      await createMessage(conversationId, userId, "user", trimmed);
+
       const res = await uploadChatToBackend(trimmed);
-      const botReply = res?.answer || "No response returned.";
+      const botReply = res?.answer || res?.response || "No response returned.";
       const citations = Array.isArray(res?.citations) ? res.citations : [];
 
       setMessages((prev) => [
@@ -139,16 +220,39 @@ export default function Assistant() {
           citations,
         },
       ]);
+
+      await createMessage(conversationId, userId, "assistant", botReply, citations);
+
+      const refreshedConversations = await fetchConversations(userId);
+      setConversations(refreshedConversations);
+
+      const updatedIndex = refreshedConversations.findIndex(
+        (conversation) => conversation.id === conversationId
+      );
+      if (updatedIndex !== -1) {
+        setActiveIdx(updatedIndex);
+      }
     } catch (error) {
       console.error(error);
+
+      const fallback = "Something went wrong getting a response.";
+
       setMessages((prev) => [
         ...prev,
         {
           role: "assistant",
-          text: "Something went wrong getting a response.",
+          text: fallback,
           citations: [],
         },
       ]);
+
+      if (conversationId) {
+        try {
+          await createMessage(conversationId, userId, "assistant", fallback, []);
+        } catch (saveError) {
+          console.error("Failed to save fallback assistant message:", saveError);
+        }
+      }
     } finally {
       setIsSending(false);
     }
@@ -169,10 +273,7 @@ export default function Assistant() {
             <div className="p-3">
               <button
                 type="button"
-                onClick={() => {
-                  setActiveIdx(0);
-                  setMessages([]);
-                }}
+                onClick={handleNewChat}
                 className="flex w-full items-center gap-2 rounded-xl bg-white/10 px-3 py-2 text-sm font-medium hover:bg-white/15"
               >
                 <span className="text-lg leading-none">＋</span>
@@ -182,13 +283,13 @@ export default function Assistant() {
 
             <div className="flex-1 overflow-y-auto px-2 pb-2">
               <div className="space-y-1">
-                {CONVERSATIONS.map((c, i) => {
+                {conversations.map((c, i) => {
                   const active = i === activeIdx;
                   return (
                     <button
-                      key={c.title}
+                      key={c.id}
                       type="button"
-                      onClick={() => setActiveIdx(i)}
+                      onClick={() => loadConversationMessages(c.id, i)}
                       className={[
                         "w-full rounded-xl px-3 py-2 text-left transition",
                         active ? "bg-white/15" : "hover:bg-white/10",
@@ -200,7 +301,11 @@ export default function Assistant() {
                           <div className="truncate text-sm font-semibold">
                             {c.title}
                           </div>
-                          <div className="text-xs text-white/60">{c.when}</div>
+                          <div className="text-xs text-white/60">
+                            {c.updated_at
+                              ? new Date(c.updated_at).toLocaleString()
+                              : ""}
+                          </div>
                         </div>
                       </div>
                     </button>
@@ -243,9 +348,10 @@ export default function Assistant() {
                         {isLoggingOut ? "Logging out..." : "Log Out"}
                       </button>
                       <button
-                      type="button"
-                      onClick={() => setShowModal(true)}
-                      className="block w-full px-4 py-2 text-left text-sm hover:bg-zinc-100 disabled:cursor-not-allowed disabled:opacity-50">
+                        type="button"
+                        onClick={() => setShowModal(true)}
+                        className="block w-full px-4 py-2 text-left text-sm hover:bg-zinc-100"
+                      >
                         Settings
                       </button>
                     </div>
@@ -286,7 +392,7 @@ export default function Assistant() {
                   {activeConversation.title}
                 </div>
                 <div className="text-xs text-zinc-500">
-                  {activeConversation.when || " "}
+                  {selectedConversationId ? "Saved chat" : "Unsaved new chat"}
                 </div>
               </div>
             </div>
@@ -443,6 +549,7 @@ export default function Assistant() {
           </div>
         </div>
       </div>
+
       {showModal && <Modal onClose={() => setShowModal(false)} />}
     </div>
   );
