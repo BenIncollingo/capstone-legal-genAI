@@ -38,6 +38,7 @@ function ProfileOptions({ onDeleteAccount, onReset, onSet, passwordProp, checkPa
   const [isUnlocked, setIsUnlocked] = useState(false);
   const [showError, setShowError] = useState(false);
   const [loading, setLoading] = useState(false);
+  const [resetStatus, sentReset] = useState("false");
 
   async function handleUnlock(e) {
     e.preventDefault();
