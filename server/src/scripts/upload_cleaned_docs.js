@@ -19,11 +19,11 @@ const API_KEY = process.env.API_KEY;
 console.log("BASE_URL:", BASE_URL);
 console.log("PROJECT_ID:", PROJECT_ID);
 console.log("API_KEY loaded:", API_KEY ? "yes" : "no");
+
 const INGEST_URL = `${BASE_URL}/ingest/${PROJECT_ID}/upload`;
 
 function getAllTxtFiles(dir) {
   let results = [];
-
   const entries = fs.readdirSync(dir, { withFileTypes: true });
 
   for (const entry of entries) {
@@ -46,14 +46,6 @@ async function uploadFile(filePath) {
   form.append("file", fs.createReadStream(filePath));
   form.append("chunk_size", "1000");
   form.append("chunk_overlap", "100");
-  form.append(
-    "metadata",
-    JSON.stringify({
-      title: path.basename(filePath),
-      source_path: relativePath,
-      team: "legal"
-    })
-  );
 
   const headers = {
     ...form.getHeaders()
