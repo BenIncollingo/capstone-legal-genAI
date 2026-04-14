@@ -1,10 +1,12 @@
 import { useRef, useState } from "react";
 import { uploadDocumentToBackend } from "../api/documents.api";
+import { useCounter } from "../contexts/Counter/CounterProvider";
 
 export default function DocumentsPage() {
   const fileInputRef = useRef(null);
   const [documents, setDocuments] = useState([]);
   const [isUploading, setIsUploading] = useState(false);
+  const { recordUpload } = useCounter();
 
   const handleOpenExplorer = () => {
     fileInputRef.current?.click();
@@ -48,6 +50,8 @@ export default function DocumentsPage() {
         const result = await uploadDocumentToBackend(doc.file, {
           title: doc.name,
         });
+
+        await recordUpload(doc.name); 
 
         setDocuments((prev) =>
           prev.map((item) =>

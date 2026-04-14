@@ -7,6 +7,7 @@ import AdminPage from "./pages/AdminPage.jsx";
 import ForgotPassword from "./pages/ForgotPassword.jsx";
 import { AuthProvider } from "./contexts/authContext/index.jsx";
 import { useAuth } from "./contexts/authContext/index.jsx";
+import { CounterProvider } from "./contexts/Counter/CounterProvider.jsx";
 
 function ProtectedRoute({ children }) {
   const { userLoggedIn, loading } = useAuth();
@@ -39,65 +40,67 @@ function PublicRoute({ children }) {
 function App() {
   return (
     <AuthProvider>
-      <BrowserRouter>
-        <Routes>
-          <Route
-            path="/"
-            element={
-              <ProtectedRoute>
-                <LawGPT />
-              </ProtectedRoute>
-            }
-          />
+      <CounterProvider>
+        <BrowserRouter>
+          <Routes>
+            <Route
+              path="/"
+              element={
+                <ProtectedRoute>
+                  <LawGPT />
+                </ProtectedRoute>
+              }
+            />
 
-          <Route
-            path="/login"
-            element={
-              <PublicRoute>
-                <Login />
-              </PublicRoute>
-            }
-          />
+            <Route
+              path="/login"
+              element={
+                <PublicRoute>
+                  <Login />
+                </PublicRoute>
+              }
+            />
 
-          <Route
-            path="/create"
-            element={
-              <PublicRoute>
-                <Create />
-              </PublicRoute>
-            }
-          />
+            <Route
+              path="/create"
+              element={
+                <PublicRoute>
+                  <Create />
+                </PublicRoute>
+              }
+            />
 
-          <Route
-            path="/reset"
-            element={
-              <PublicRoute>
-                <ForgotPassword />
-              </PublicRoute>
-            }
-          />
+            <Route
+              path="/reset"
+              element={
+                <PublicRoute>
+                  <ForgotPassword />
+                </PublicRoute>
+              }
+            />
 
-          <Route
-            path="/documentUpload"
-            element={
-              <ProtectedRoute>
-                <DocumentsPage />
-              </ProtectedRoute>
-            }
-          />
+            <Route
+              path="/documentUpload"
+              element={
+                <ProtectedRoute>
+                  <DocumentsPage />
+                </ProtectedRoute>
+              }
+            />
 
-          <Route
-            path="/admin"
-            element={
-              <ProtectedRoute>
-                <AdminPage />
-              </ProtectedRoute>
-            }
-          />
+            <Route
+              path="/admin"
+              element={
+                <ProtectedRoute>
+                  <AdminPage />
+                </ProtectedRoute>
+              }
+            />
 
-          <Route path="*" element={<Navigate to="/" replace />} />
-        </Routes>
-      </BrowserRouter>
+            <Route path="*" element={<Navigate to="/" replace />} />
+          </Routes>
+        </BrowserRouter>
+      </CounterProvider>
     </AuthProvider>
   );
 }
