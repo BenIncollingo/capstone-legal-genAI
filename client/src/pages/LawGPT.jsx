@@ -10,10 +10,10 @@ import {
 } from "../api/chat.api.js";
 import { doSignOut } from "../firebase/auth.js";
 import Modal from "../components/Modal.jsx";
-import LawGPTSidebar from "../components/lawgpt/LawGPTSidebar.jsx";
-import LawGPTHeader from "../components/lawgpt/LawGPTHeader.jsx";
-import LawGPTMessageList from "../components/lawgpt/LawGPTMessageList.jsx";
-import LawGPTChatInput from "../components/lawgpt/LawGPTChatInput.jsx";
+import LawGPTSidebar from "../components/LawGPT/LawGPTSidebar.jsx";
+import LawGPTHeader from "../components/LawGPT/LawGPTHeader.jsx";
+import LawGPTMessageList from "../components/LawGPT/LawGPTMessageList.jsx";
+import LawGPTChatInput from "../components/LawGPT/LawGPTChatInput.jsx";
 
 export default function LawGPT() {
   const [sidebarOpen, setSidebarOpen] = useState(false);
@@ -211,8 +211,8 @@ export default function LawGPT() {
   };
 
   return (
-    <div className="min-h-screen bg-white text-zinc-900">
-      <div className="flex min-h-screen">
+    <div className="h-screen overflow-hidden bg-white text-zinc-900">
+      <div className="flex h-full overflow-hidden">
         <LawGPTSidebar
           sidebarOpen={sidebarOpen}
           handleNewChat={handleNewChat}
@@ -237,7 +237,7 @@ export default function LawGPT() {
           />
         )}
 
-        <div className="flex min-w-0 flex-1 flex-col">
+        <div className="flex min-w-0 flex-1 flex-col overflow-hidden">
           <LawGPTHeader
             sidebarOpen={sidebarOpen}
             setSidebarOpen={setSidebarOpen}
@@ -245,36 +245,39 @@ export default function LawGPT() {
             selectedConversationId={selectedConversationId}
           />
 
-          <main className="mx-auto w-full max-w-6xl flex-1 px-4 py-6">
-            {messages.length === 0 ? (
-              <>
-                <div className="flex flex-col items-center pt-10 text-center">
-                  <div className="flex h-14 w-14 items-center justify-center rounded-2xl bg-blue-600 text-2xl text-white shadow-sm">
-                    ⚖️
-                  </div>
+          <main className="flex min-h-0 flex-1 flex-col overflow-hidden">
+            <div className="flex-1 overflow-y-auto px-4 py-6">
+              <div className="mx-auto w-full max-w-6xl">
+                {messages.length === 0 ? (
+                  <>
+                    <div className="flex flex-col items-center pt-10 text-center">
+                      <div className="flex h-14 w-14 items-center justify-center rounded-2xl bg-blue-600 text-2xl text-white shadow-sm">
+                        ⚖️
+                      </div>
 
-                  <h1 className="mt-5 text-3xl font-semibold tracking-tight sm:text-4xl">
-                    LegalAI Assistant
-                  </h1>
+                      <h1 className="mt-5 text-3xl font-semibold tracking-tight sm:text-4xl">
+                        LegalAI Assistant
+                      </h1>
 
-                  <p className="mt-3 max-w-2xl text-sm text-zinc-600 sm:text-base">
-                    Your AI-powered legal research companion. Ask questions, get
-                    insights, and explore legal topics.
-                  </p>
-                </div>
+                      <p className="mt-3 max-w-2xl text-sm text-zinc-600 sm:text-base">
+                        Your AI-powered legal research companion. Ask questions, get
+                        insights, and explore legal topics.
+                      </p>
+                    </div>
+                  </>
+                ) : (
+                  <LawGPTMessageList messages={messages} isSending={isSending} />
+                )}
+              </div>
+            </div>
 
-              </>
-            ) : (
-              <LawGPTMessageList messages={messages} isSending={isSending} />
-            )}
+            <LawGPTChatInput
+              message={message}
+              setMessage={setMessage}
+              onSend={onSend}
+              isSending={isSending}
+            />
           </main>
-
-          <LawGPTChatInput
-            message={message}
-            setMessage={setMessage}
-            onSend={onSend}
-            isSending={isSending}
-          />
         </div>
       </div>
 
