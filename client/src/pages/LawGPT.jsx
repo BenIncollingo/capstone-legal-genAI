@@ -10,66 +10,12 @@ import {
 } from "../api/chat.api.js";
 import { doSignOut } from "../firebase/auth.js";
 import Modal from "../components/Modal.jsx";
+import LawGPTSidebar from "../components/lawgpt/LawGPTSidebar.jsx";
+import LawGPTHeader from "../components/lawgpt/LawGPTHeader.jsx";
+import LawGPTMessageList from "../components/lawgpt/LawGPTMessageList.jsx";
+import LawGPTChatInput from "../components/lawgpt/LawGPTChatInput.jsx";
 
-const SUGGESTIONS = [
-  {
-    title: "Contract Review",
-    desc: "What are the key elements of a valid contract?",
-    icon: "📄",
-  },
-  {
-    title: "Legal Rights",
-    desc: "What are my rights as a tenant if my landlord wants to raise rent?",
-    icon: "📘",
-  },
-  {
-    title: "Business Law",
-    desc: "What's the difference between an LLC and a corporation?",
-    icon: "🛡️",
-  },
-  {
-    title: "Legal Process",
-    desc: "How does the small claims court process work?",
-    icon: "ℹ️",
-  },
-];
-
-function cleanSourceName(source = "") {
-  if (!source) return "Unknown source";
-
-  let cleaned = source;
-
-  try {
-    cleaned = decodeURIComponent(cleaned);
-  } catch {
-    // leave as-is if decoding fails
-  }
-
-  return cleaned
-    .replace(/_/g, " ")
-    .replace(/\s+/g, " ")
-    .replace(/Â§/g, "§")
-    .trim();
-}
-
-function extractUniqueSources(citations = []) {
-  const seen = new Map();
-
-  citations.forEach((citation) => {
-    const sourceName = cleanSourceName(citation?.source || "");
-
-    if (!seen.has(sourceName)) {
-      seen.set(sourceName, {
-        source: sourceName,
-        url: citation?.url || "",
-      });
-    }
-  });
-
-  return Array.from(seen.values());
-}
-
-export default function Assistant() {
+export default function LawGPT() {
   const [sidebarOpen, setSidebarOpen] = useState(false);
   const [activeIdx, setActiveIdx] = useState(-1);
   const [message, setMessage] = useState("");
@@ -171,6 +117,7 @@ export default function Assistant() {
 
       setSelectedConversationId(conversationId);
       setActiveIdx(index);
+      setSidebarOpen(false);
     } catch (error) {
       console.error("Failed to load messages:", error);
     }
@@ -180,6 +127,7 @@ export default function Assistant() {
     setSelectedConversationId(null);
     setMessages([]);
     setActiveIdx(-1);
+    setSidebarOpen(false);
   };
 
   const onSend = async () => {
@@ -190,7 +138,10 @@ export default function Assistant() {
     let conversationId = selectedConversationId;
 
     setIsSending(true);
-    setMessages((prev) => [...prev, { role: "user", text: trimmed }]);
+    setMessages((prev) => [
+      ...prev,
+      { role: "user", text: trimmed, citations: [] },
+    ]);
     setMessage("");
 
     try {
@@ -229,6 +180,7 @@ export default function Assistant() {
       const updatedIndex = refreshedConversations.findIndex(
         (conversation) => conversation.id === conversationId
       );
+
       if (updatedIndex !== -1) {
         setActiveIdx(updatedIndex);
       }
@@ -261,106 +213,20 @@ export default function Assistant() {
   return (
     <div className="min-h-screen bg-white text-zinc-900">
       <div className="flex min-h-screen">
-        <aside
-          className={[
-            "fixed inset-y-0 left-0 z-40 w-72 border-r border-zinc-200 bg-gradient-to-b from-slate-950 to-slate-900 text-white",
-            "transition-transform duration-200",
-            sidebarOpen ? "translate-x-0" : "-translate-x-full",
-            "lg:static lg:translate-x-0",
-          ].join(" ")}
-        >
-          <div className="flex h-full flex-col">
-            <div className="p-3">
-              <button
-                type="button"
-                onClick={handleNewChat}
-                className="flex w-full items-center gap-2 rounded-xl bg-white/10 px-3 py-2 text-sm font-medium hover:bg-white/15"
-              >
-                <span className="text-lg leading-none">＋</span>
-                New Chat
-              </button>
-            </div>
-
-            <div className="flex-1 overflow-y-auto px-2 pb-2">
-              <div className="space-y-1">
-                {conversations.map((c, i) => {
-                  const active = i === activeIdx;
-                  return (
-                    <button
-                      key={c.id}
-                      type="button"
-                      onClick={() => loadConversationMessages(c.id, i)}
-                      className={[
-                        "w-full rounded-xl px-3 py-2 text-left transition",
-                        active ? "bg-white/15" : "hover:bg-white/10",
-                      ].join(" ")}
-                    >
-                      <div className="flex items-start gap-2">
-                        <span className="mt-0.5 opacity-80">💬</span>
-                        <div className="min-w-0">
-                          <div className="truncate text-sm font-semibold">
-                            {c.title}
-                          </div>
-                          <div className="text-xs text-white/60">
-                            {c.updated_at
-                              ? new Date(c.updated_at).toLocaleString()
-                              : ""}
-                          </div>
-                        </div>
-                      </div>
-                    </button>
-                  );
-                })}
-              </div>
-            </div>
-
-            <div className="mt-auto border-t border-white/10 p-3">
-              <div className="flex items-center gap-3 rounded-xl bg-white/5 px-3 py-2">
-                <div className="flex h-9 w-9 items-center justify-center rounded-xl bg-blue-600">
-                  ⚖️
-                </div>
-
-                <div className="min-w-0">
-                  <div className="truncate text-sm font-semibold">
-                    {currentUser ? currentUser.email : "Not logged in"}
-                  </div>
-                  <div className="text-xs text-white/60">Legal Assistant</div>
-                </div>
-
-                <div className="relative ml-auto" ref={settingsRef}>
-                  <button
-                    type="button"
-                    onClick={() => setSettingsOpen((prev) => !prev)}
-                    className="inline-flex h-9 w-9 items-center justify-center rounded-xl hover:bg-white/10"
-                    aria-label="Settings"
-                  >
-                    ⚙️
-                  </button>
-
-                  {settingsOpen && (
-                    <div className="absolute right-0 bottom-12 z-50 w-44 rounded-xl border border-zinc-200 bg-white py-2 text-zinc-900 shadow-xl">
-                      <button
-                        type="button"
-                        onClick={handleLogout}
-                        disabled={isLoggingOut}
-                        className="block w-full px-4 py-2 text-left text-sm hover:bg-zinc-100 disabled:cursor-not-allowed disabled:opacity-50"
-                      >
-                        {isLoggingOut ? "Logging out..." : "Log Out"}
-                      </button>
-                      <button
-                        type="button"
-                        onClick={() => setShowModal(true)}
-                        className="block w-full px-4 py-2 text-left text-sm hover:bg-zinc-100"
-                      >
-                        Settings
-                      </button>
-                    </div>
-                  )}
-                </div>
-              </div>
-            </div>
-          </div>
-        </aside>
+        <LawGPTSidebar
+          sidebarOpen={sidebarOpen}
+          handleNewChat={handleNewChat}
+          conversations={conversations}
+          activeIdx={activeIdx}
+          loadConversationMessages={loadConversationMessages}
+          currentUser={currentUser}
+          settingsRef={settingsRef}
+          settingsOpen={settingsOpen}
+          setSettingsOpen={setSettingsOpen}
+          handleLogout={handleLogout}
+          isLoggingOut={isLoggingOut}
+          setShowModal={setShowModal}
+        />
 
         {sidebarOpen && (
           <button
@@ -372,31 +238,12 @@ export default function Assistant() {
         )}
 
         <div className="flex min-w-0 flex-1 flex-col">
-          <header className="border-b border-zinc-200 bg-white">
-            <div className="mx-auto flex max-w-6xl items-center gap-3 px-4 py-3">
-              <button
-                type="button"
-                className="inline-flex h-10 w-10 items-center justify-center rounded-lg hover:bg-zinc-100 lg:hidden"
-                onClick={() => setSidebarOpen((v) => !v)}
-                aria-label="Toggle sidebar"
-              >
-                <div className="space-y-1.5">
-                  <div className="h-0.5 w-5 bg-zinc-900" />
-                  <div className="h-0.5 w-5 bg-zinc-900" />
-                  <div className="h-0.5 w-5 bg-zinc-900" />
-                </div>
-              </button>
-
-              <div className="min-w-0">
-                <div className="truncate text-sm font-semibold">
-                  {activeConversation.title}
-                </div>
-                <div className="text-xs text-zinc-500">
-                  {selectedConversationId ? "Saved chat" : "Unsaved new chat"}
-                </div>
-              </div>
-            </div>
-          </header>
+          <LawGPTHeader
+            sidebarOpen={sidebarOpen}
+            setSidebarOpen={setSidebarOpen}
+            activeConversation={activeConversation}
+            selectedConversationId={selectedConversationId}
+          />
 
           <main className="mx-auto w-full max-w-6xl flex-1 px-4 py-6">
             {messages.length === 0 ? (
@@ -416,137 +263,18 @@ export default function Assistant() {
                   </p>
                 </div>
 
-                <div className="mt-10 grid gap-4 sm:grid-cols-2">
-                  {SUGGESTIONS.map((s) => (
-                    <button
-                      key={s.title}
-                      type="button"
-                      onClick={() => setMessage(s.desc)}
-                      className="group flex w-full items-start gap-4 rounded-2xl border border-zinc-200 bg-white p-5 text-left shadow-sm transition hover:border-zinc-300 hover:shadow"
-                    >
-                      <div className="flex h-11 w-11 items-center justify-center rounded-xl bg-blue-50 text-lg">
-                        {s.icon}
-                      </div>
-
-                      <div className="min-w-0">
-                        <div className="font-semibold">{s.title}</div>
-                        <div className="mt-1 text-sm text-zinc-600">
-                          {s.desc}
-                        </div>
-                      </div>
-                    </button>
-                  ))}
-                </div>
-
-                <div className="mt-8 rounded-2xl border border-amber-200 bg-amber-50 p-4">
-                  <div className="flex items-start gap-3">
-                    <div className="mt-0.5 flex h-8 w-8 items-center justify-center rounded-lg bg-amber-100">
-                      ⚠️
-                    </div>
-                    <div className="text-sm text-amber-900">
-                      <span className="font-semibold">Disclaimer:</span> This AI
-                      assistant provides general legal information only and
-                      should not be considered legal advice. Always consult with
-                      a licensed attorney for your specific situation.
-                    </div>
-                  </div>
-                </div>
               </>
             ) : (
-              <div className="mx-auto flex max-w-3xl flex-col gap-4">
-                {messages.map((msg, i) => {
-                  const uniqueSources =
-                    msg.role === "assistant"
-                      ? extractUniqueSources(msg.citations)
-                      : [];
-
-                  return (
-                    <div
-                      key={i}
-                      className={`max-w-[80%] rounded-2xl px-4 py-3 text-sm shadow-sm ${
-                        msg.role === "user"
-                          ? "ml-auto bg-blue-600 text-white"
-                          : "mr-auto bg-zinc-100 text-zinc-900"
-                      }`}
-                    >
-                      <div className="whitespace-pre-wrap">{msg.text}</div>
-
-                      {msg.role === "assistant" && uniqueSources.length > 0 && (
-                        <div className="mt-3 border-t border-zinc-200 pt-3">
-                          <details className="group">
-                            <summary className="cursor-pointer list-none text-xs font-medium text-zinc-500 hover:text-zinc-700">
-                              Sources ({uniqueSources.length})
-                            </summary>
-
-                            <div className="mt-2 space-y-2">
-                              {uniqueSources.map((item, idx) => (
-                                <div
-                                  key={`${item.source}-${idx}`}
-                                  className="rounded-xl bg-white/70 px-3 py-2 text-xs text-zinc-700"
-                                >
-                                  <div className="break-words">
-                                    {item.source}
-                                  </div>
-                                </div>
-                              ))}
-                            </div>
-                          </details>
-                        </div>
-                      )}
-                    </div>
-                  );
-                })}
-
-                {isSending && (
-                  <div className="mr-auto max-w-[80%] rounded-2xl bg-zinc-100 px-4 py-3 text-sm text-zinc-900 shadow-sm">
-                    <div className="whitespace-pre-wrap">
-                      <span className="font-semibold">Waiting for response...</span>
-                      {"\n"}
-                      This may take a few minutes if the AI service is starting
-                      up.
-                    </div>
-                  </div>
-                )}
-              </div>
+              <LawGPTMessageList messages={messages} isSending={isSending} />
             )}
           </main>
 
-          <div className="sticky bottom-0 border-t border-zinc-200 bg-white">
-            <div className="mx-auto max-w-6xl px-4 py-4">
-              <div className="flex items-end gap-3">
-                <div className="flex-1">
-                  <textarea
-                    value={message}
-                    onChange={(e) => setMessage(e.target.value)}
-                    placeholder="Ask a legal question..."
-                    rows={1}
-                    disabled={isSending}
-                    className="min-h-[52px] w-full resize-none rounded-2xl border border-zinc-200 bg-zinc-50 px-4 py-3 text-sm outline-none focus:border-blue-400 focus:ring-2 focus:ring-blue-100 disabled:cursor-not-allowed disabled:opacity-60"
-                    onKeyDown={(e) => {
-                      if (e.key === "Enter" && !e.shiftKey) {
-                        e.preventDefault();
-                        onSend();
-                      }
-                    }}
-                  />
-                  <div className="mt-2 text-xs text-zinc-500">
-                    This is an AI assistant. Always verify legal information
-                    with a licensed attorney.
-                  </div>
-                </div>
-
-                <button
-                  type="button"
-                  onClick={onSend}
-                  disabled={isSending}
-                  className="inline-flex h-[52px] w-[52px] items-center justify-center rounded-2xl bg-zinc-700 text-white shadow-sm transition hover:bg-zinc-800 active:scale-[0.98] disabled:cursor-not-allowed disabled:bg-zinc-400"
-                  aria-label="Send"
-                >
-                  {isSending ? "…" : "➤"}
-                </button>
-              </div>
-            </div>
-          </div>
+          <LawGPTChatInput
+            message={message}
+            setMessage={setMessage}
+            onSend={onSend}
+            isSending={isSending}
+          />
         </div>
       </div>
 
