@@ -11,7 +11,7 @@
     "firebase": "^12.10.0",
     "react": "^19.2.4",
     "react-dom": "^19.2.4",
-    "react-router-dom": "^7.13.0",
+    "react-router-dom": "^6.30.3",
     "react-scripts": "5.0.1",
     "serve": "^14.2.6",
     "recharts": "^3.8.1",
@@ -47,5 +47,22 @@
     "autoprefixer": "^10.4.24",
     "postcss": "^8.5.8",
     "tailwindcss": "^3.4.4"
-  }
+  },
+  "jest": {
+  "collectCoverageFrom": [
+    "src/api/chat.api.js",
+    "src/api/data.api.js",
+    "src/api/documents.api.js",
+    "src/pages/SignIn.jsx",
+    "src/pages/Create.jsx",
+    "src/pages/ForgotPassword.jsx",
+    "src/pages/DocumentUploadPage.jsx",
+    "src/pages/LawGPT.jsx",
+    "src/pages/testHome.jsx",
+    "src/components/DataButton.jsx"
+  ],
+  "transformIgnorePatterns": [
+    "node_modules/(?!(react-router-dom|react-router)/)"
+  ]
 }
+  }

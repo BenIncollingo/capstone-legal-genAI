@@ -139,6 +139,9 @@ As the project grows:
 - Keep UI components reusable
 - Keep pages as route-level components
 
+## Run test
+cd client
+npm test
 ---
 ## Run Unit Test
 git switch unit-test
