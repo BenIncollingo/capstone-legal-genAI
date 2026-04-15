@@ -1,8 +1,8 @@
 import React, { useState } from "react";
 import { doCreateUserWithEmailAndPassword } from "../firebase/auth.js";
 import { useNavigate } from "react-router-dom";
-import AuthShell from "../components/auth/AuthShell.jsx";
-import CreateAccountFormCard from "../components/auth/CreateAccountFormCard.jsx";
+import AuthShell from "../components/Auth/AuthShell.jsx";
+import CreateAccountFormCard from "../components/Auth/CreateAccountFormCard.jsx";
 
 export default function CreateAccountPage() {
   const navigate = useNavigate();

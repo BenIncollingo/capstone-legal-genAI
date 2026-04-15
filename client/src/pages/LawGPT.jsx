@@ -9,7 +9,6 @@ import {
   createMessage,
 } from "../api/chat.api.js";
 import { doSignOut } from "../firebase/auth.js";
-import Modal from "../components/Modal.jsx";
 import LawGPTSidebar from "../components/LawGPT/LawGPTSidebar.jsx";
 import LawGPTHeader from "../components/LawGPT/LawGPTHeader.jsx";
 import LawGPTMessageList from "../components/LawGPT/LawGPTMessageList.jsx";
@@ -24,7 +23,6 @@ export default function LawGPT() {
   const [isLoggingOut, setIsLoggingOut] = useState(false);
   const [conversations, setConversations] = useState([]);
   const [selectedConversationId, setSelectedConversationId] = useState(null);
-  const [showModal, setShowModal] = useState(false);
   const [isSending, setIsSending] = useState(false);
 
   const { currentUser } = useAuth();
@@ -101,6 +99,11 @@ export default function LawGPT() {
     }
   };
 
+  const handleOpenSettings = () => {
+    setSettingsOpen(false);
+    navigate("/settings");
+  };
+
   const loadConversationMessages = async (conversationId, index) => {
     if (!currentUser?.uid) return;
 
@@ -172,7 +175,13 @@ export default function LawGPT() {
         },
       ]);
 
-      await createMessage(conversationId, userId, "assistant", botReply, citations);
+      await createMessage(
+        conversationId,
+        userId,
+        "assistant",
+        botReply,
+        citations
+      );
 
       const refreshedConversations = await fetchConversations(userId);
       setConversations(refreshedConversations);
@@ -202,7 +211,10 @@ export default function LawGPT() {
         try {
           await createMessage(conversationId, userId, "assistant", fallback, []);
         } catch (saveError) {
-          console.error("Failed to save fallback assistant message:", saveError);
+          console.error(
+            "Failed to save fallback assistant message:",
+            saveError
+          );
         }
       }
     } finally {
@@ -225,7 +237,7 @@ export default function LawGPT() {
           setSettingsOpen={setSettingsOpen}
           handleLogout={handleLogout}
           isLoggingOut={isLoggingOut}
-          setShowModal={setShowModal}
+          onOpenSettings={handleOpenSettings}
         />
 
         {sidebarOpen && (
@@ -249,22 +261,20 @@ export default function LawGPT() {
             <div className="flex-1 overflow-y-auto px-4 py-6">
               <div className="mx-auto w-full max-w-6xl">
                 {messages.length === 0 ? (
-                  <>
-                    <div className="flex flex-col items-center pt-10 text-center">
-                      <div className="flex h-14 w-14 items-center justify-center rounded-2xl bg-blue-600 text-2xl text-white shadow-sm">
-                        ⚖️
-                      </div>
-
-                      <h1 className="mt-5 text-3xl font-semibold tracking-tight sm:text-4xl">
-                        LegalAI Assistant
-                      </h1>
-
-                      <p className="mt-3 max-w-2xl text-sm text-zinc-600 sm:text-base">
-                        Your AI-powered legal research companion. Ask questions, get
-                        insights, and explore legal topics.
-                      </p>
+                  <div className="flex flex-col items-center pt-10 text-center">
+                    <div className="flex h-14 w-14 items-center justify-center rounded-2xl bg-blue-600 text-2xl text-white shadow-sm">
+                      ⚖️
                     </div>
-                  </>
+
+                    <h1 className="mt-5 text-3xl font-semibold tracking-tight sm:text-4xl">
+                      LegalAI Assistant
+                    </h1>
+
+                    <p className="mt-3 max-w-2xl text-sm text-zinc-600 sm:text-base">
+                      Your AI-powered legal research companion. Ask questions,
+                      get insights, and explore legal topics.
+                    </p>
+                  </div>
                 ) : (
                   <LawGPTMessageList messages={messages} isSending={isSending} />
                 )}
@@ -280,8 +290,6 @@ export default function LawGPT() {
           </main>
         </div>
       </div>
-
-      {showModal && <Modal onClose={() => setShowModal(false)} />}
     </div>
   );
 }

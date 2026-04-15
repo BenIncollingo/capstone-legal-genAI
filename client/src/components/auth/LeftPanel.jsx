@@ -1,4 +1,4 @@
-import AuthBrandBlock from "./AuthBrandBlock.jsx";
+import Header from "./Header.jsx";
 
 export default function AuthHeroPanel({
   badge,
@@ -9,7 +9,7 @@ export default function AuthHeroPanel({
   return (
     <div className="hidden min-h-screen bg-gradient-to-b from-slate-950 to-slate-900 p-10 text-white lg:flex lg:flex-col lg:justify-between xl:p-14">
       <div>
-        <AuthBrandBlock />
+        <Header />
       </div>
 
       <div className="max-w-xl">
@@ -41,8 +41,6 @@ export default function AuthHeroPanel({
           </div>
         )}
       </div>
-
-      <div className="text-xs text-white/45">&copy;2026 LegalAI Assistant</div>
     </div>
   );
 }

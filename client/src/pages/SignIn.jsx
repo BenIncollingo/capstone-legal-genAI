@@ -1,8 +1,8 @@
 import React, { useState } from "react";
 import { doSignInWithEmailAndPassword } from "../firebase/auth.js";
 import { useNavigate } from "react-router-dom";
-import AuthShell from "../components/auth/AuthShell.jsx";
-import SignInFormCard from "../components/auth/SignInFormCard.jsx";
+import AuthShell from "../components/Auth/AuthShell.jsx";
+import SignInFormCard from "../components/Auth/SignInFormCard.jsx";
 
 export default function SignIn() {
   const navigate = useNavigate();

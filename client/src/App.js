@@ -2,9 +2,10 @@ import { BrowserRouter, Routes, Route, Navigate } from "react-router-dom";
 import LawGPT from "./pages/LawGPT";
 import Login from "./pages/SignIn.jsx";
 import Create from "./pages/Create.jsx";
-import DocumentsPage from "./pages/DocumentUploadPage.jsx";
-import AdminPage from "./pages/AdminPage.jsx";
+import DocumentsPage from "./pages/DocumentUpload.jsx";
+import AdminPage from "./pages/DocumentLibrary.jsx";
 import ForgotPassword from "./pages/ForgotPassword.jsx";
+import SettingsPage from "./pages/Settings.jsx";
 import { AuthProvider } from "./contexts/authContext/index.jsx";
 import { useAuth } from "./contexts/authContext/index.jsx";
 import { CounterProvider } from "./contexts/Counter/CounterProvider.jsx";
@@ -89,10 +90,19 @@ function App() {
             />
 
             <Route
-              path="/admin"
+              path="/documentLibrary"
               element={
                 <ProtectedRoute>
                   <AdminPage />
+                </ProtectedRoute>
+              }
+            />
+
+             <Route
+              path="/settings"
+              element={
+                <ProtectedRoute>
+                  <SettingsPage />
                 </ProtectedRoute>
               }
             />

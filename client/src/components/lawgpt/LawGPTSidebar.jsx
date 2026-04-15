@@ -10,7 +10,7 @@ export default function LawGPTSidebar({
   setSettingsOpen,
   handleLogout,
   isLoggingOut,
-  setShowModal,
+  onOpenSettings,
 }) {
   return (
     <aside
@@ -102,7 +102,7 @@ export default function LawGPTSidebar({
                   </button>
                   <button
                     type="button"
-                    onClick={() => setShowModal(true)}
+                    onClick={onOpenSettings}
                     className="block w-full px-4 py-2 text-left text-sm hover:bg-zinc-100"
                   >
                     Settings
