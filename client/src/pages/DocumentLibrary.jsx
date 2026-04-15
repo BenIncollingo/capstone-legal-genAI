@@ -6,7 +6,6 @@ export default function DocumentLibraryPage() {
   const { stats } = useCounter();
 
   const recentFiles = stats?.recentFiles || [];
-  const totalUploads = stats?.total || 0;
 
   return (
     <div className="min-h-screen bg-zinc-50 text-zinc-900">

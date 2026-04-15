@@ -1,4 +1,4 @@
-export default function AuthBrandBlock({ mobile = false }) {
+export default function Header({ mobile = false }) {
   return (
     <div className={mobile ? "mb-8 lg:hidden" : ""}>
       <div className="flex items-center gap-3">
@@ -17,7 +17,9 @@ export default function AuthBrandBlock({ mobile = false }) {
           >
             LegalAI Assistant
           </div>
-          <div className={mobile ? "text-sm text-zinc-500" : "text-sm text-white/65"}>
+          <div
+            className={mobile ? "text-sm text-zinc-500" : "text-sm text-white/65"}
+          >
             Employment law information support
           </div>
         </div>
