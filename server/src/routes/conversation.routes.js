@@ -36,24 +36,6 @@ router.get("/conversations/:userId", async (req, res) => {
   }
 });
 
-// router.post("/messages", async (req, res) => {
-//   try {
-//     const { conversationId, role, content } = req.body;
-
-//     if (!conversationId || !role || !content) {
-//       return res.status(400).json({
-//         error: "conversationId, role, and content are required",
-//       });
-//     }
-
-//     const message = await createMessage(conversationId, role, content);
-//     res.status(201).json(message);
-//   } catch (error) {
-//     console.error("Error creating message:", error);
-//     res.status(500).json({ error: "Failed to create message" });
-//   }
-// });
-
 router.post("/messages", async (req, res) => {
   try {
     const { conversationId, userId, role, content } = req.body;

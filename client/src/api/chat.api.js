@@ -24,7 +24,7 @@ export async function uploadChatToBackend(userChat) {
 }
 
 export async function fetchConversations(userId) {
-  const res = await fetch(`${BASE_URL}/conversations/${userId}`);
+  const res = await fetch(`${BASE_URL}/db/conversations/${userId}`);
 
   if (!res.ok) {
     throw new Error("Failed to fetch conversations");
@@ -34,7 +34,7 @@ export async function fetchConversations(userId) {
 }
 
 export async function createConversation(userId, title = "New Chat") {
-  const res = await fetch(`${BASE_URL}/conversations`, {
+  const res = await fetch(`${BASE_URL}/db/conversations`, {
     method: "POST",
     headers: {
       "Content-Type": "application/json",
@@ -50,7 +50,7 @@ export async function createConversation(userId, title = "New Chat") {
 }
 
 export async function fetchMessages(conversationId, userId) {
-  const res = await fetch(`${BASE_URL}/messages/${conversationId}/${userId}`);
+  const res = await fetch(`${BASE_URL}/db/messages/${conversationId}/${userId}`);
 
   if (!res.ok) {
     throw new Error("Failed to fetch messages");
@@ -60,7 +60,7 @@ export async function fetchMessages(conversationId, userId) {
 }
 
 export async function createMessage(conversationId, userId, role, content, citations = []) {
-  const res = await fetch(`${BASE_URL}/messages`, {
+  const res = await fetch(`${BASE_URL}/db/messages`, {
     method: "POST",
     headers: {
       "Content-Type": "application/json",
