@@ -84,9 +84,12 @@ async function main() {
   }
 
   console.log(`Found ${files.length} cleaned txt files.`);
-  console.log("Testing first file only...\n");
-
-  await uploadFile(files[0]);
+  console.log("Uploading all cleaned txt files...\n");
+  
+  for (const file of files) {
+    await uploadFile(file);
+    await new Promise((resolve) => setTimeout(resolve, 200));
+  }
 }
 
 main().catch((err) => {
