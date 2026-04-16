@@ -11,6 +11,7 @@ export default function LawGPTSidebar({
   handleLogout,
   isLoggingOut,
   onOpenSettings,
+  handleDeleteConversation,
 }) {
   return (
     <aside
@@ -39,29 +40,46 @@ export default function LawGPTSidebar({
               const active = i === activeIdx;
 
               return (
-                <button
+                <div
                   key={c.id}
-                  type="button"
-                  onClick={() => loadConversationMessages(c.id, i)}
                   className={[
-                    "w-full rounded-xl px-3 py-2 text-left transition",
+                    "flex items-center gap-2 rounded-xl px-2 py-1 transition",
                     active ? "bg-white/15" : "hover:bg-white/10",
                   ].join(" ")}
                 >
-                  <div className="flex items-start gap-2">
-                    <span className="mt-0.5 opacity-80">💬</span>
-                    <div className="min-w-0">
-                      <div className="truncate text-sm font-semibold">
-                        {c.title}
-                      </div>
-                      <div className="text-xs text-white/60">
-                        {c.updated_at
-                          ? new Date(c.updated_at).toLocaleString()
-                          : ""}
+                  <button
+                    type="button"
+                    onClick={() => loadConversationMessages(c.id, i)}
+                    className="min-w-0 flex-1 rounded-xl px-1 py-1 text-left"
+                  >
+                    <div className="flex items-start gap-2">
+                      <span className="mt-0.5 opacity-80">💬</span>
+                      <div className="min-w-0">
+                        <div className="truncate text-sm font-semibold">
+                          {c.title}
+                        </div>
+                        <div className="text-xs text-white/60">
+                          {c.updated_at
+                            ? new Date(c.updated_at).toLocaleString()
+                            : ""}
+                        </div>
                       </div>
                     </div>
-                  </div>
-                </button>
+                  </button>
+
+                  <button
+                    type="button"
+                    onClick={(e) => {
+                      e.stopPropagation();
+                      handleDeleteConversation(c.id);
+                    }}
+                    className="flex h-9 w-9 shrink-0 items-center justify-center rounded-lg text-sm text-white/60 transition hover:bg-red-500/20 hover:text-red-400"
+                    aria-label={`Delete ${c.title}`}
+                    title="Delete conversation"
+                  >
+                    🗑️
+                  </button>
+                </div>
               );
             })}
           </div>

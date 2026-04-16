@@ -5,6 +5,7 @@ import {
   getConversationsByUser,
   createMessage,
   getMessagesByConversation,
+  deleteConversation,
 } from "../services/conversation.service.js";
 
 const router = express.Router();
@@ -62,6 +63,35 @@ router.get("/messages/:conversationId/:userId", async (req, res) => {
   } catch (error) {
     console.error("Error fetching messages:", error);
     res.status(500).json({ error: "Failed to fetch messages" });
+  }
+});
+
+
+router.delete("/conversations/:conversationId/:userId", async (req, res) => {
+  try {
+    const { conversationId, userId } = req.params;
+
+    if (!conversationId || !userId) {
+      return res.status(400).json({
+        error: "conversationId and userId are required",
+      });
+    }
+
+    const deletedConversation = await deleteConversation(conversationId, userId);
+
+    if (!deletedConversation) {
+      return res.status(404).json({
+        error: "Conversation not found or unauthorized",
+      });
+    }
+
+    res.status(200).json({
+      message: "Conversation deleted successfully",
+      conversation: deletedConversation,
+    });
+  } catch (error) {
+    console.error("Error deleting conversation:", error);
+    res.status(500).json({ error: "Failed to delete conversation" });
   }
 });
 

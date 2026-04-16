@@ -7,6 +7,7 @@ import {
   createConversation,
   fetchMessages,
   createMessage,
+  deleteConversation
 } from "../api/chat.api.js";
 import { doSignOut } from "../firebase/auth.js";
 import LawGPTSidebar from "../components/LawGPT/LawGPTSidebar.jsx";
@@ -133,6 +134,27 @@ export default function LawGPT() {
     setSidebarOpen(false);
   };
 
+  const handleDeleteConversation = async (conversationId) => {
+  const confirmed = window.confirm("Delete this saved chat?");
+  if (!confirmed) return;
+
+  try {
+    await deleteConversation(conversationId, currentUser.uid);
+
+    setConversations((prev) =>
+      prev.filter((conversation) => conversation.id !== conversationId)
+    );
+
+    if (conversations[activeIdx]?.id === conversationId) {
+      setActiveIdx(null);
+      setMessages([]);
+    }
+  } catch (error) {
+    console.error("Error deleting conversation:", error);
+    alert("Failed to delete conversation.");
+  }
+};
+
   const onSend = async () => {
     const trimmed = message.trim();
     if (!trimmed || !currentUser?.uid || isSending) return;
@@ -238,6 +260,7 @@ export default function LawGPT() {
           handleLogout={handleLogout}
           isLoggingOut={isLoggingOut}
           onOpenSettings={handleOpenSettings}
+          handleDeleteConversation={handleDeleteConversation}
         />
 
         {sidebarOpen && (

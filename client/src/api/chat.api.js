@@ -80,3 +80,18 @@ export async function createMessage(conversationId, userId, role, content, citat
 
   return res.json();
 }
+
+export async function deleteConversation(conversationId, userId) {
+  const res = await fetch(`${BASE_URL}/db/conversations/${conversationId}/${userId}`, {
+    method: "DELETE",
+    headers: {
+      "Content-Type": "application/json",
+    },
+  });
+
+  if (!res.ok) {
+    throw new Error("Failed to delete conversation");
+  }
+
+  return res.json();
+}

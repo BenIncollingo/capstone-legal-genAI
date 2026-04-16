@@ -77,3 +77,52 @@ export const getMessagesByConversation = async (conversationId, userId) => {
 
   return result.rows;
 };
+
+
+export const deleteConversation = async (conversationId, userId) => {
+  const client = await pool.connect();
+
+  try {
+    await client.query("BEGIN");
+
+    const ownershipCheck = await client.query(
+      `
+      SELECT *
+      FROM conversations
+      WHERE id = $1 AND user_id = $2
+      `,
+      [conversationId, userId]
+    );
+
+    if (ownershipCheck.rows.length === 0) {
+      await client.query("ROLLBACK");
+      return null;
+    }
+
+    await client.query(
+      `
+      DELETE FROM messages
+      WHERE conversation_id = $1
+      `,
+      [conversationId]
+    );
+
+    const deletedConversationResult = await client.query(
+      `
+      DELETE FROM conversations
+      WHERE id = $1 AND user_id = $2
+      RETURNING *
+      `,
+      [conversationId, userId]
+    );
+
+    await client.query("COMMIT");
+
+    return deletedConversationResult.rows[0];
+  } catch (error) {
+    await client.query("ROLLBACK");
+    throw error;
+  } finally {
+    client.release();
+  }
+};
