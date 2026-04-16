@@ -1,7 +1,7 @@
 import React, { useState } from "react";
 import { doPasswordReset } from "../firebase/auth.js";
-import AuthShell from "../components/Auth/AuthShell.jsx";
-import ForgotPasswordFormCard from "../components/Auth/ForgotPasswordFormCard.jsx";
+import AuthShell from "../components/auth/AuthShell.jsx";
+import ForgotPasswordFormCard from "../components/auth/ForgotPasswordFormCard.jsx";
 
 export default function ForgotPassword() {
   const [email, setEmail] = useState("");
