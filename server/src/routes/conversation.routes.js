@@ -39,7 +39,7 @@ router.get("/conversations/:userId", async (req, res) => {
 
 router.post("/messages", async (req, res) => {
   try {
-    const { conversationId, userId, role, content } = req.body;
+    const { conversationId, userId, role, content, citations } = req.body;
 
     if (!conversationId || !userId || !role || !content) {
       return res.status(400).json({
@@ -47,7 +47,14 @@ router.post("/messages", async (req, res) => {
       });
     }
 
-    const message = await createMessage(conversationId, userId, role, content);
+    const message = await createMessage(
+      conversationId,
+      userId,
+      role,
+      content,
+      citations || []
+    );
+
     res.status(201).json(message);
   } catch (error) {
     console.error("Error creating message:", error);

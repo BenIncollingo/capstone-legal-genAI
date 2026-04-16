@@ -27,7 +27,13 @@ export const getConversationsByUser = async (userId) => {
   return result.rows;
 };
 
-export const createMessage = async (conversationId, userId, role, content) => {
+export const createMessage = async (
+  conversationId,
+  userId,
+  role,
+  content,
+  citations = []
+) => {
   const ownershipCheck = await pool.query(
     `
     SELECT id
@@ -43,11 +49,11 @@ export const createMessage = async (conversationId, userId, role, content) => {
 
   const result = await pool.query(
     `
-    INSERT INTO messages (conversation_id, role, content)
-    VALUES ($1, $2, $3)
+    INSERT INTO messages (conversation_id, role, content, citations)
+    VALUES ($1, $2, $3, $4)
     RETURNING *
     `,
-    [conversationId, role, content]
+    [conversationId, role, content, JSON.stringify(citations || [])]
   );
 
   await pool.query(
@@ -75,9 +81,11 @@ export const getMessagesByConversation = async (conversationId, userId) => {
     [conversationId, userId]
   );
 
-  return result.rows;
+  return result.rows.map((row) => ({
+    ...row,
+    citations: row.citations || [],
+  }));
 };
-
 
 export const deleteConversation = async (conversationId, userId) => {
   const client = await pool.connect();

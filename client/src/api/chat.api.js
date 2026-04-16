@@ -58,28 +58,33 @@ export async function fetchMessages(conversationId, userId) {
 
   return res.json();
 }
+  export async function createMessage(
+    conversationId,
+    userId,
+    role,
+    content,
+    citations = []
+  ) {
+    const res = await fetch(`${BASE_URL}/db/messages`, {
+      method: "POST",
+      headers: {
+        "Content-Type": "application/json",
+      },
+      body: JSON.stringify({
+        conversationId,
+        userId,
+        role,
+        content,
+        citations,
+      }),
+    });
 
-export async function createMessage(conversationId, userId, role, content, citations = []) {
-  const res = await fetch(`${BASE_URL}/db/messages`, {
-    method: "POST",
-    headers: {
-      "Content-Type": "application/json",
-    },
-    body: JSON.stringify({
-      conversationId,
-      userId,
-      role,
-      content,
-      citations,
-    }),
-  });
+    if (!res.ok) {
+      throw new Error("Failed to create message");
+    }
 
-  if (!res.ok) {
-    throw new Error("Failed to create message");
+    return res.json();
   }
-
-  return res.json();
-}
 
 export async function deleteConversation(conversationId, userId) {
   const res = await fetch(`${BASE_URL}/db/conversations/${conversationId}/${userId}`, {
