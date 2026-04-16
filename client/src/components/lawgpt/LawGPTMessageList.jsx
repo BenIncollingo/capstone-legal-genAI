@@ -9,6 +9,14 @@ export default function LawGPTMessageList({ messages, isSending }) {
             ? extractUniqueSources(msg.citations)
             : [];
 
+        const topScore =
+          msg.role === "assistant" &&
+          Array.isArray(msg.citations) &&
+          msg.citations.length > 0 &&
+          typeof msg.citations[0]?.score === "number"
+            ? msg.citations[0].score
+            : null;
+
         return (
           <div
             key={i}
@@ -20,11 +28,19 @@ export default function LawGPTMessageList({ messages, isSending }) {
           >
             <div className="whitespace-pre-wrap">{msg.text}</div>
 
+            {msg.role === "assistant" && topScore !== null && (
+              <div className="mt-2 text-xs text-zinc-500">
+                Accuracy: {topScore.toFixed(4)}
+              </div>
+            )}
+
             {msg.role === "assistant" && uniqueSources.length > 0 && (
               <div className="mt-3 border-t border-zinc-200 pt-3">
                 <details className="group">
                   <summary className="cursor-pointer list-none text-xs font-medium text-zinc-500 hover:text-zinc-700">
-                    Sources ({uniqueSources.length})
+                    {uniqueSources.length === 1
+                      ? "Source (1)"
+                      : `Sources (${uniqueSources.length})`}
                   </summary>
 
                   <div className="mt-2 space-y-2">

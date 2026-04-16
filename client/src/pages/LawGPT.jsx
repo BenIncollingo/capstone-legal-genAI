@@ -186,6 +186,7 @@ export default function LawGPT() {
       const res = await uploadChatToBackend(trimmed);
       const botReply = res?.answer || res?.response || "No response returned.";
       const citations = Array.isArray(res?.citations) ? res.citations : [];
+      console.log(res);
 
       setMessages((prev) => [
         ...prev,

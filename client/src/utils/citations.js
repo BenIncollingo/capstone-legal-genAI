@@ -26,6 +26,7 @@ export function extractUniqueSources(citations = []) {
       seen.set(sourceName, {
         source: sourceName,
         url: citation?.url || "",
+        score: citation?.score,
       });
     }
   });
