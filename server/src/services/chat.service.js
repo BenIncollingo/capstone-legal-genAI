@@ -12,6 +12,7 @@ export async function sendChatToInfra(question) {
       body: JSON.stringify({
         question: question,
         project_id: process.env.PROJECT_ID,
+        min_score: 0.4,
         system_prompt: process.env.SYSTEM_PROMPT
       }),
     });
