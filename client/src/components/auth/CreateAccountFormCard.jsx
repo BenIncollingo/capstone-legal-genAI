@@ -1,3 +1,4 @@
+//React compononent in auth pages.  This is the form for creating an account
 import { Link } from "react-router-dom";
 
 export default function CreateAccountFormCard({

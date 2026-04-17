@@ -1,3 +1,4 @@
+////React compononent in auth pages.  This is the form for the forgot password sequence
 import { Link } from "react-router-dom";
 
 export default function ForgotPasswordFormCard({

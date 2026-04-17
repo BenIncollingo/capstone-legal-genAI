@@ -1,3 +1,4 @@
+////React compononent in auth pages.  This is header on the left panel
 export default function Header({ mobile = false }) {
   return (
     <div className={mobile ? "mb-8 lg:hidden" : ""}>

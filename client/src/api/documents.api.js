@@ -1,3 +1,6 @@
+//frontend file containing all API calls to our backend regarding document uploads
+
+
 import { BACKEND_API_BASE_URL } from "./config";
 
 //Function calls our /documents/uploadDocument endpoint 

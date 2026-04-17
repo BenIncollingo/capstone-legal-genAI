@@ -1,3 +1,4 @@
+// //React compononent in auth pages.  This is the actual left panel shell that goes into AuthShell
 import Header from "./Header.jsx";
 
 export default function LeftPanel({

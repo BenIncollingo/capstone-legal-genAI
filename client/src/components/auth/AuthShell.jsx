@@ -1,3 +1,6 @@
+//React compononent for the auth pages (signin, create, and forgot password pages)
+//this is a shell for the left side of the screen in the auth pages
+
 import Header from "./Header.jsx";
 import LeftPanel from "./LeftPanel.jsx";
 
