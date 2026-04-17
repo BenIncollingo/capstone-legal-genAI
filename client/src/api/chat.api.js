@@ -68,36 +68,7 @@ export async function fetchMessages(conversationId, userId) {
 
   return res.json(); //returns an object containing all the messsages in the conversation (includes sources and score)
 }
-  export async function createMessage(
-    conversationId,
-    userId,
-    role,
-    content,
-    citations = []
-  ) {
-    const res = await fetch(`${BASE_URL}/db/messages`, {
-      method: "POST",
-      headers: {
-        "Content-Type": "application/json",
-      },
-      body: JSON.stringify({
-        conversationId,
-        userId,
-        role,
-        content,
-        citations,
-      }),
-    });
 
-<<<<<<< HEAD
-    if (!res.ok) {
-      throw new Error("Failed to create message");
-    }
-
-    return res.json();
-  }
-
-=======
 //Function calls our /db/messages endpoint 
 //This function is called whenever a user writes sometihng or the bot responds and saves the message in a conversation
 export async function createMessage(conversationId, userId, role, content, citations = []) {
@@ -124,7 +95,6 @@ export async function createMessage(conversationId, userId, role, content, citat
 
 //Function calls our /db/conversations/:conversationId/:userId endpoint
 //this function deletes the conversation as well as all the messages within this conversation
->>>>>>> code-cleanup
 export async function deleteConversation(conversationId, userId) {
   const res = await fetch(`${BASE_URL}/db/conversations/${conversationId}/${userId}`, { //DELETE req
     method: "DELETE",
