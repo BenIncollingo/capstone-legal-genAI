@@ -1,5 +1,5 @@
 //frontend file containing all API calls to our backend regarding chats, conversations, and messages
-
+//this is an eric test change
 import { BACKEND_API_BASE_URL } from "./config";
 
 const BASE_URL = BACKEND_API_BASE_URL;
