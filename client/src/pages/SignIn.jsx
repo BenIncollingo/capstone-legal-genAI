@@ -1,3 +1,5 @@
+//This is the sign in page
+
 import React, { useState } from "react";
 import { doSignInWithEmailAndPassword } from "../firebase/auth.js";
 import { useNavigate } from "react-router-dom";
@@ -14,10 +16,13 @@ export default function SignIn() {
 
   const MAX_CREDENTIAL_LENGTH = 30;
 
+
+  //function to handle submit to sign user in
   const handleSubmit = async (e) => {
     e.preventDefault();
     setErrorMessage("");
 
+    //display error if the user forgets something then quit
     if (
       !email ||
       !password ||
@@ -28,20 +33,22 @@ export default function SignIn() {
       return;
     }
 
+    //quit if already if process already started
     if (isSigningIn) return;
 
-    setIsSigningIn(true);
+    setIsSigningIn(true); //set to true when process starts
 
     try {
-      await doSignInWithEmailAndPassword(email.trim(), password);
-      navigate("/");
-    } catch (error) {
+      await doSignInWithEmailAndPassword(email.trim(), password); //service function in ../firebase/auth.js to sign user in
+      navigate("/"); // once user is signed in, navigate to LawGPT page
+    } catch (error) { //display error and quit on fail
       setErrorMessage(error.message || "Failed to sign in.");
     } finally {
-      setIsSigningIn(false);
+      setIsSigningIn(false); //regardless of outcome, set to false because process is over
     }
   };
 
+  //uses auth shell on left hand side, and then the sign in form card on the right which takes in all form data and handleSubmit function
   return (
     <AuthShell
       heroProps={{

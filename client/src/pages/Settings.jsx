@@ -1,3 +1,5 @@
+//this is the settings page
+
 import React, { useState } from "react";
 import { doPasswordReset, deleteUserAccount } from "../firebase/auth";
 import { getAuth, EmailAuthProvider, reauthenticateWithCredential } from "firebase/auth";
@@ -22,12 +24,14 @@ export default function SettingsPage() {
     { key: "documents", label: "Documents" },
   ];
 
+  //function to check password for account deletion process
   async function handleCheckPassword() {
     try {
+      //get users auth instance
       const authInstance = getAuth();
       const currentUser = authInstance.currentUser;
 
-      if (!currentUser || !currentUser.email) {
+      if (!currentUser || !currentUser.email) { //if there is no authenticated user (not signed in) then quit
         console.error("No authenticated user");
         return false;
       }
@@ -37,9 +41,9 @@ export default function SettingsPage() {
         password
       );
 
-      await reauthenticateWithCredential(currentUser, credential);
+      await reauthenticateWithCredential(currentUser, credential); //attempt to reauthenticate with current user (do this to make sure the current user is the one deleting their account)
       return true;
-    } catch (err) {
+    } catch (err) { //catch error on fail then quit
       console.error("Re-auth failed:", err.code, err.message);
       return false;
     }
@@ -53,25 +57,28 @@ export default function SettingsPage() {
     navigate("/documentLibrary");
   }
 
+
+  //fucntion to handle the actual account deletion
   async function handleDelete() {
     const confirmed = window.confirm("Are you sure? This cannot be undone.");
     if (!confirmed) return;
 
-    try {
-      await deleteUserAccount();
-      navigate("/login");
-    } catch (err) {
+    try { 
+      await deleteUserAccount(); //serice function to delete users accoutn - found in ../firebase/auth.js
+      navigate("/login"); //on success navigate to the sign in page
+    } catch (err) { //catch error on fail
       console.error(err);
     }
   }
 
+  //function to handle password reset
   async function handleResetPassword() {
-    if (!user?.email) return;
+    if (!user?.email) return; //if the user email not found then quit
 
     try {
-      await doPasswordReset(user.email);
-      alert("Password reset email sent.");
-    } catch (err) {
+      await doPasswordReset(user.email); //service function to send password reset email - ../firease/auth.js
+      alert("Password reset email sent."); //notify user on success
+    } catch (err) { //catch error on fail
       console.error(err);
       alert("Failed to send password reset email.");
     }

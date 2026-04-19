@@ -1,3 +1,6 @@
+//This is the react file for the Sign Up process
+//it uses the components in  ../components/auth folder
+
 import React, { useState } from "react";
 import { doCreateUserWithEmailAndPassword } from "../firebase/auth.js";
 import { useNavigate } from "react-router-dom";
@@ -17,11 +20,14 @@ export default function CreateAccountPage() {
 
   const MAX_CREDENTIAL_LENGTH = 30;
 
+
+  //function to submit users information to firebase - this function (along with all info inputted into form) get sent to the form card component
   const handleSubmit = async (e) => {
     e.preventDefault();
     setErrorMessage("");
     setSuccessMessage("");
 
+    //display error and quit if the users input does not meet the credentials needed
     if (
       !email ||
       !password ||
@@ -33,23 +39,25 @@ export default function CreateAccountPage() {
       return;
     }
 
+    //if the password and password confirmation dont match, display error and quit
     if (password !== confirmPassword) {
       setErrorMessage("Passwords do not match.");
       return;
     }
 
+    //if the account is already in the process of being create (user clicked it again), quit
     if (isCreating) return;
 
-    setIsCreating(true);
+    setIsCreating(true); //set to true while the creation process is taking place
 
     try {
-      await doCreateUserWithEmailAndPassword(email.trim(), password);
-      setSuccessMessage("Account created! Redirecting...");
+      await doCreateUserWithEmailAndPassword(email.trim(), password); //call service function in ../firebase/auth.js to actually create account in firebase
+      setSuccessMessage("Account created! Redirecting..."); //display success
 
-      setTimeout(() => {
+      setTimeout(() => { //automatically redirect to login page after account was created
         navigate("/login");
       }, 1200);
-    } catch (error) {
+    } catch (error) { //catch any errors on fail and display error meesage depending on error code
       switch (error.code) {
         case "auth/email-already-in-use":
           setErrorMessage("Email already in use.");
@@ -64,10 +72,11 @@ export default function CreateAccountPage() {
           setErrorMessage("Failed to create account.");
       }
     } finally {
-      setIsCreating(false);
+      setIsCreating(false); //regardles of outcome set to false because the process is over
     }
   };
 
+  //the left side of the screen uses the AuthShell component and right side uses the create account form component
   return (
     <AuthShell
       heroProps={{

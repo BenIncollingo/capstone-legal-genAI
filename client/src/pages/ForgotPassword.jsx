@@ -1,3 +1,5 @@
+//this is the forgot password page
+
 import React, { useState } from "react";
 import { doPasswordReset } from "../firebase/auth.js";
 import AuthShell from "../components/auth/AuthShell.jsx";
@@ -11,28 +13,31 @@ export default function ForgotPassword() {
 
   const MAX_CREDENTIAL_LENGTH = 30;
 
+
+  //function to handle the submit
   const handleSubmit = async (e) => {
     e.preventDefault();
     setErrorMessage("");
     setSuccessMessage("");
 
+    //if there was no email provided, display error and quit
     if (!email || email.length > MAX_CREDENTIAL_LENGTH) {
       setErrorMessage("Please enter a valid email.");
       return;
     }
 
-    if (isResetting) return;
+    if (isResetting) return; //if already in the prcoess of resetting, quit
 
-    setIsResetting(true);
+    setIsResetting(true); // the to true while process starts
 
     try {
-      await doPasswordReset(email.trim());
-      setSuccessMessage("Password reset email sent.");
+      await doPasswordReset(email.trim()); //service function in ../fireavse/auth.js to sent the reset email to the user
+      setSuccessMessage("Password reset email sent."); //display success
       setEmail("");
     } catch (error) {
-      setErrorMessage(error.message || "Failed to send reset email.");
+      setErrorMessage(error.message || "Failed to send reset email."); //display fail on error
     } finally {
-      setIsResetting(false);
+      setIsResetting(false); //regardless of outcome, the process is done so set to false.
     }
   };
 
