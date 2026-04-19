@@ -1,3 +1,6 @@
+//This is the sidebar component for the LawGPT page
+//it handles all the conversations on the side, the new chat buttons and the settings buttons, and the account display
+
 export default function LawGPTSidebar({
   sidebarOpen,
   handleNewChat,

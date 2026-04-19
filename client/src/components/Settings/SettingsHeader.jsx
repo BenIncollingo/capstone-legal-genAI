@@ -1,4 +1,6 @@
-export default function SettingsHero() {
+//This is the header compopnent for the settings page.
+
+export default function SettingsHeader() {
   return (
     <section className="rounded-3xl bg-gradient-to-r from-slate-950 to-slate-900 px-6 py-6 text-white shadow-sm">
       <div className="flex items-start gap-4">

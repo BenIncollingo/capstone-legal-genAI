@@ -1,3 +1,6 @@
+//This is the compononent in the settings page that allows the user to manage their account
+//they have the option to delete their accoutn or change their password
+
 import React, { useState } from "react";
 
 export default function ProfileSettingsPanel({

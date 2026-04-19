@@ -2,7 +2,7 @@ import React, { useState } from "react";
 import { doPasswordReset, deleteUserAccount } from "../firebase/auth";
 import { getAuth, EmailAuthProvider, reauthenticateWithCredential } from "firebase/auth";
 import { useNavigate } from "react-router-dom";
-import SettingsHero from "../components/Settings/SettingsHero.jsx";
+import SettingsHeader from "../components/Settings/SettingsHeader.jsx";
 import SettingsTabs from "../components/Settings/SettingsTabs.jsx";
 import ProfileSettingsPanel from "../components/Settings/ProfileSettingsPanel.jsx";
 import TermsPanel from "../components/Settings/TermsPanel.jsx";
@@ -80,7 +80,7 @@ export default function SettingsPage() {
   return (
     <div className="min-h-screen bg-zinc-50 text-zinc-900">
       <main className="mx-auto w-full max-w-6xl px-4 py-6">
-        <SettingsHero />
+        <SettingsHeader />
 
         <div className="mt-6 grid gap-6 lg:grid-cols-[280px_minmax(0,1fr)]">
           <SettingsTabs

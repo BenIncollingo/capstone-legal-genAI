@@ -1,3 +1,5 @@
+//this is the component for the staging area.  its contains the StagedDocumentItem component and is used in the Document upload page
+
 import StagedDocumentItem from "./StagedDocumentItem.jsx";
 
 export default function StagingArea({

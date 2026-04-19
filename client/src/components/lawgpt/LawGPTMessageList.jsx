@@ -1,3 +1,6 @@
+//this is the componeont that lists all the messages on the LawGPT page
+// it formats all of the responses from the infra team and also saes
+
 import { extractUniqueSources } from "../../utils/citations.js";
 
 export default function LawGPTMessageList({ messages, isSending }) {
@@ -65,7 +68,7 @@ export default function LawGPTMessageList({ messages, isSending }) {
           <div className="whitespace-pre-wrap">
             <span className="font-semibold">Waiting for response...</span>
             {"\n"}
-            This may take a few minutes if the AI service is starting up.
+            We are processing your request now.
           </div>
         </div>
       )}

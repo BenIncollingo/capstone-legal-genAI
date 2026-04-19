@@ -1,3 +1,5 @@
+//This is the panel in our project that displays our applications terms in the settings page
+
 export default function TermsPanel() {
   return (
     <div className="space-y-6">

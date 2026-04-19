@@ -1,9 +1,13 @@
+//this is the componeont for the documents in the staging area ready to be uploaded
+//this compononent is used in the StagingArea components
+
 export default function StagedDocumentItem({
   doc,
   formatSize,
   handleRemoveDocument,
   isUploading,
 }) {
+  //these are the styles for status in each part of the process - when its staged its blue, when its uploading its yellow/amber, when its uploaded its green and its red on fail
   const statusStyles = {
     staged: "bg-blue-100 text-blue-700",
     uploading: "bg-amber-100 text-amber-700",

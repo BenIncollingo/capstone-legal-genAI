@@ -1,3 +1,5 @@
+//This is the component in the settings page that allows the user to navigate to the docuemnt upload or document library pages
+
 export default function NavigationPanel({ onUpload, onLibrary }) {
   return (
     <div className="space-y-6">

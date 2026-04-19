@@ -1,3 +1,5 @@
+// component in the document library page
+// this is the componoent for the boxes in the list of document names
 export default function DocumentLibraryItem({ name }) {
   return (
     <li className="flex items-center gap-3 rounded-2xl border border-zinc-200 bg-zinc-50 px-4 py-3">

@@ -1,3 +1,5 @@
+//this is the document upload panel component and it is used in the dicument upload page. 
+//it allows the user to open their file explorer and select files to be uploaded.
 export default function DocumentUploadPanel({
   fileInputRef,
   handleOpenExplorer,

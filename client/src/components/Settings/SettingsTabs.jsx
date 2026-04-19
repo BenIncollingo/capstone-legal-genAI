@@ -1,3 +1,5 @@
+//This is the lefthand panel that has all the tabs for each settings section in the settings page
+
 export default function SettingsTabs({ tabs, activeTab, setActiveTab }) {
   return (
     <aside className="rounded-3xl border border-zinc-200 bg-white p-4 shadow-sm">

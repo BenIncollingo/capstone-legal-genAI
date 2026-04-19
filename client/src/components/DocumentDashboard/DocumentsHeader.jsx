@@ -1,3 +1,6 @@
+//This is a component for both the DocumentUpload page and DocumentLibray page
+// This is the header component, it takes in a title and brief description for the page and is reused for the upload and libary pages
+
 export default function DocumentsHero({ title, description }) {
   return (
     <section className="rounded-3xl bg-gradient-to-r from-slate-950 to-slate-900 px-6 py-6 text-white shadow-sm">

@@ -1,3 +1,5 @@
+//This is the header of the lawGPT page that displays the chat title
+//this is used in the LawGPT page
 export default function LawGPTHeader({
   sidebarOpen,
   setSidebarOpen,

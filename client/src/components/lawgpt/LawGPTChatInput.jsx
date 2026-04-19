@@ -1,3 +1,5 @@
+//this is the component for the user input area. 
+//it is used in the LawGPT page and it contains the text input area and the send button.
 export default function LawGPTChatInput({
   message,
   setMessage,

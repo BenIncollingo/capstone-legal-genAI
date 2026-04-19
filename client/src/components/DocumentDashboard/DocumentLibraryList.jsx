@@ -1,3 +1,5 @@
+// This is a component for the Document Library page
+// This is the section of the document library page that is list of all the DocumentLibraryItems
 import DocumentLibraryItem from "./DocumentLibraryItem.jsx";
 
 export default function DocumentLibraryList({ files }) {
