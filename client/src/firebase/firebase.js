@@ -1,8 +1,14 @@
+//this file initializes and configures the Firebase connection for the application
+//it connects the app to Firebase services for authentication and database access
+
 import { initializeApp } from "firebase/app";
 import { getAnalytics } from "firebase/analytics";
 import { getAuth } from "firebase/auth";
-import { getFirestore } from "firebase/firestore"; 
+import { getFirestore } from "firebase/firestore";
 
+
+//firebase project configuration values loaded from environment variables
+//these values identify and connect this app to the correct Firebase project
 const firebaseConfig = {
   apiKey: process.env.REACT_APP_FIREBASE_API_KEY,
   authDomain: process.env.REACT_APP_FIREBASE_AUTH_DOMAIN,
@@ -12,13 +18,15 @@ const firebaseConfig = {
   appId: process.env.REACT_APP_FIREBASE_APP_ID
 };
 
-console.log(process.env.REACT_APP_FIREBASE_API_KEY);
-
-console.log(process.env.REACT_APP_FIREBASE_PROJECT_ID);
-
+//initialize Firebase application instance
 const app = initializeApp(firebaseConfig);
-const analytics = getAnalytics(app);
-const auth = getAuth(app);
-const db = getFirestore(app);
 
+
+//initialize Firebase services used by the application
+const analytics = getAnalytics(app); //tracks usage analytics, not used currecntly
+const auth = getAuth(app); //handles user authentication
+const db = getFirestore(app); //connects to Firestore database
+
+
+//export initialized services so they can be used throughout the project
 export { app, auth, db };

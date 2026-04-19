@@ -1,3 +1,5 @@
+//this is a utility function for cleaning citations when they come back from the infra team.
+
 export function cleanSourceName(source = "") {
   if (!source) return "Unknown source";
 

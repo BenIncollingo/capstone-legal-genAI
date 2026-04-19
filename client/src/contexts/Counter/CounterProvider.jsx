@@ -1,4 +1,6 @@
-// CounterContext.js
+//this file creates a context for tracking document upload statistics
+//it stores the total number of uploads and a list of recently uploaded files
+
 import React, { createContext, useContext, useState, useEffect } from 'react';
 import { db } from '../../firebase/firebase';
 import { doc, onSnapshot, updateDoc, increment, arrayUnion, setDoc } from 'firebase/firestore';
