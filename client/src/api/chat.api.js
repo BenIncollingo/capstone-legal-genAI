@@ -109,3 +109,22 @@ export async function deleteConversation(conversationId, userId) {
 
   return res.json(); //returns status to react
 }
+
+//Function calls our /chat/warmup endpoint
+//This warms up the infra backend right after user login
+export async function warmupBackend() {
+  const res = await fetch(`${BACKEND_API_BASE_URL}/chat/warmup`, {
+    method: "GET"
+  });
+
+  const data = await res.json();
+
+  if (!res.ok) {
+    const error = new Error(`Warmup request failed: ${res.status}`);
+    error.details = data;
+    throw error; //throw error on fail
+  }
+
+  console.log("Received from backend warmup route:", data);
+  return data; //return warmup status to react if needed
+}

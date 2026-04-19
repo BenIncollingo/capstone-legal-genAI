@@ -37,3 +37,36 @@ export async function sendChatToInfra(question) {
     throw error;
   }
 }
+
+//this function gets called from the chat.routes.js /api/chat/warmup endpoint
+//it uses fetch to call the infra teams warmup endpoint
+export async function sendWarmupToInfra() {
+  try {
+    const url = `${process.env.INFRA_BASE_URL}/warmup`; //full url of infra warmup endpoint
+    console.log("Calling infra warmup URL:", url);
+
+    //calling the infra warmup endpoint
+    const response = await fetch(url, {
+      method: "GET"
+    });
+
+    const data = await response.json();
+
+    //if infra is not ready, return the real status and details
+    if (!response.ok) {
+      console.error("Warmup response status:", response.status);
+      console.error("Warmup response body:", data);
+
+      const error = new Error(`Warmup failed: ${response.status}`);
+      error.status = response.status;
+      error.details = data;
+      throw error;
+    }
+
+    console.log("Warmup response:", data);
+    return data; //return warmup response on success
+  } catch (error) {
+    console.error("Warmup error:", error);
+    throw error;
+  }
+}

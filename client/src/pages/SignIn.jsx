@@ -2,6 +2,7 @@
 
 import React, { useState } from "react";
 import { doSignInWithEmailAndPassword } from "../firebase/auth.js";
+import { warmupBackend } from "../api/chat.api.js";
 import { useNavigate } from "react-router-dom";
 import AuthShell from "../components/auth/AuthShell.jsx";
 import SignInFormCard from "../components/auth/SignInFormCard.jsx";
@@ -15,7 +16,6 @@ export default function SignIn() {
   const [errorMessage, setErrorMessage] = useState("");
 
   const MAX_CREDENTIAL_LENGTH = 30;
-
 
   //function to handle submit to sign user in
   const handleSubmit = async (e) => {
@@ -33,14 +33,22 @@ export default function SignIn() {
       return;
     }
 
-    //quit if already if process already started
+    //quit if process already started
     if (isSigningIn) return;
 
     setIsSigningIn(true); //set to true when process starts
 
     try {
       await doSignInWithEmailAndPassword(email.trim(), password); //service function in ../firebase/auth.js to sign user in
-      navigate("/"); // once user is signed in, navigate to LawGPT page
+
+      try {
+        await warmupBackend(); //call backend warmup route before navigating to LawGPT page
+      } catch (warmupError) {
+        console.error("Warmup failed:", warmupError);
+      }
+
+      navigate("/"); //once user is signed in, navigate to LawGPT page
+
     } catch (error) { //display error and quit on fail
       setErrorMessage(error.message || "Failed to sign in.");
     } finally {
