@@ -1,5 +1,5 @@
 //this is the componeont that lists all the messages on the LawGPT page
-// it formats all of the responses from the infra team and also saes
+//this displays the messages with the sourcres, accuracy score, and the citations from the sources
 
 import { extractUniqueSources } from "../../utils/citations.js";
 
@@ -29,7 +29,9 @@ export default function LawGPTMessageList({ messages, isSending }) {
                 : "mr-auto bg-zinc-100 text-zinc-900"
             }`}
           >
-            <div className="whitespace-pre-wrap">{msg.text}</div>
+            <div className="whitespace-pre-wrap">
+              {msg.text}
+            </div>
 
             {msg.role === "assistant" && topScore !== null && (
               <div className="mt-2 text-xs text-zinc-500">
@@ -46,13 +48,30 @@ export default function LawGPTMessageList({ messages, isSending }) {
                       : `Sources (${uniqueSources.length})`}
                   </summary>
 
-                  <div className="mt-2 space-y-2">
+                  <div className="mt-2 space-y-3">
                     {uniqueSources.map((item, idx) => (
                       <div
-                        key={`${item.source}-${idx}`}
+                        key={`${item.source}-${item.content}-${idx}`}
                         className="rounded-xl bg-white/70 px-3 py-2 text-xs text-zinc-700"
                       >
-                        <div className="break-words">{item.source}</div>
+                        {/*filename*/}
+                        <div className="break-words font-semibold text-zinc-900">
+                          {item.source}
+                        </div>
+
+                        {/*content directly under filename*/}
+                        {item.content && (
+                          <div className="mt-1 whitespace-pre-wrap break-words text-zinc-600">
+                            {item.content}
+                          </div>
+                        )}
+
+                        {/*score*/}
+                        {typeof item.score === "number" && (
+                          <div className="mt-2 text-[11px] text-zinc-500">
+                            Score: {item.score.toFixed(4)}
+                          </div>
+                        )}
                       </div>
                     ))}
                   </div>

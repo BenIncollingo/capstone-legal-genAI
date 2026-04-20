@@ -23,10 +23,15 @@ export function extractUniqueSources(citations = []) {
 
   citations.forEach((citation) => {
     const sourceName = cleanSourceName(citation?.source || "");
+    const content = (citation?.content || "").trim();
 
-    if (!seen.has(sourceName)) {
-      seen.set(sourceName, {
+    //uniqueness is filename + content
+    const uniqueKey = `${sourceName}|||${content}`;
+
+    if (!seen.has(uniqueKey)) {
+      seen.set(uniqueKey, {
         source: sourceName,
+        content,
         url: citation?.url || "",
         score: citation?.score,
       });

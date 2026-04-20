@@ -76,7 +76,7 @@ export default function LawGPTSidebar({
                       e.stopPropagation();
                       handleDeleteConversation(c.id);
                     }}
-                    className="flex h-9 w-9 shrink-0 items-center justify-center rounded-lg text-sm text-white/60 transition hover:bg-red-500/20 hover:text-red-400"
+                    className="flex h-9 w-9 shrink-0 items-center justify-center rounded-lg text-sm text-white/60 transition hover:bg-red-500/35 hover:text-red-400"
                     aria-label={`Delete ${c.title}`}
                     title="Delete conversation"
                   >

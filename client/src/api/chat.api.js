@@ -23,7 +23,7 @@ export async function uploadChatToBackend(userChat) {
     throw new Error(`API request failed: ${res.status}`); //throw an error on fail
   }
   const data = await res.json();
-  console.log("Recieved from backend after frontend call (infra response): " + data);
+  console.log("Recieved from backend after frontend call (infra response): " + JSON.stringify(data));
   return data; //return the data to the react page
 }
 
