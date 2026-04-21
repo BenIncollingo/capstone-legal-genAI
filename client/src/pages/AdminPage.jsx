@@ -40,7 +40,7 @@ export default function AdminPage() {
                                         {name}
                                     </div>
                                     <button className="text-xl font-bold" onClick={() => {deleteFile(name)}
-                                } className="right-6 items-end text-xl font-bold">X</button>
+                                } className="right-6 items-end text-xl text-red-600 font-semibold">x</button>
                                 </li>
                             ))}
                         </ul>

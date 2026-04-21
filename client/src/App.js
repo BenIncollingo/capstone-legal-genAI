@@ -9,6 +9,7 @@ import { AuthProvider } from "./contexts/authContext/index.jsx";
 import { useAuth } from "./contexts/authContext/index.jsx";
 import { CounterProvider } from "./contexts/Counter/CounterProvider.jsx";
 
+
 function ProtectedRoute({ children }) {
   const { userLoggedIn, loading } = useAuth();
 
