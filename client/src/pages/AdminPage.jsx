@@ -2,6 +2,7 @@ import dash from "../exampleDash.png";
 import { LineChart, Line, XAxis, YAxis, CartesianGrid, Tooltip } from 'recharts';
 import React, { useEffect, useState } from 'react';
 import { useCounter } from "../contexts/Counter/CounterProvider";// Adjust path as needed
+import { deleteFile } from "../api/delete.api";
 
 
 export default function AdminPage() {
@@ -33,8 +34,13 @@ export default function AdminPage() {
                         <h2 className="text-lg font-semibold mb-4 border-b pb-2">Recent Files</h2>
                         <ul className="divide-y divide-slate-100">
                             {stats.recentFiles?.map((name, i) => (
-                                <li key={i} className="py-3 text-sm text-slate-600 flex items-center">
-                                    <span className="mr-3 text-slate-400">📄</span> {name}
+                                <li key={i} className="py-3 text-sm text-slate-600 flex justify-between items-center">
+                                    <div className="flex items-center">
+                                        <span className="mr-3 text-slate-400">📄</span>
+                                        {name}
+                                    </div>
+                                    <button className="text-xl font-bold" onClick={() => {deleteFile(name)}
+                                } className="right-6 items-end text-xl font-bold">X</button>
                                 </li>
                             ))}
                         </ul>
