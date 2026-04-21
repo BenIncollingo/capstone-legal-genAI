@@ -50,10 +50,13 @@ export default function LawGPTMessageList({ messages, isSending }) {
 
                   <div className="mt-2 space-y-3">
                     {uniqueSources.map((item, idx) => (
-                      <div
+                     <a
                         key={`${item.source}-${item.content}-${idx}`}
-                        className="rounded-xl bg-white/70 px-3 py-2 text-xs text-zinc-700"
-                      >
+                        href={item.url}
+                        target="_blank"
+                        rel="noopener noreferrer"
+                        className="block rounded-xl bg-white/70 px-3 py-2 text-xs text-zinc-700 transition hover:bg-zinc-200 hover:text-zinc-800"
+                     >
                         {/*filename*/}
                         <div className="break-words font-semibold text-zinc-900">
                           {item.source}
@@ -72,7 +75,7 @@ export default function LawGPTMessageList({ messages, isSending }) {
                             Score: {item.score.toFixed(4)}
                           </div>
                         )}
-                      </div>
+                      </a>
                     ))}
                   </div>
                 </details>
