@@ -45,4 +45,34 @@ router.post("/uploadDocument", upload.single("file"), async (req, res) => {
   }
 });
 
+
+//endpoint to delte files from infra team document vector DB - /api/documents/deleteDocument
+router.post("/deleteDocument", async (req, res) => {
+  try {
+    console.log("route hit: /api/documents/deleteDocument");
+
+    const { source } = req.body; 
+
+    if (!source) { //respond with error on misconfigured call
+      return res.status(400).json({
+        message: "Missing source in request body",
+      });
+    }
+
+    const response = await deleteDocumentFromInfra(source); //call service function that calls infra delete endpoint
+
+    return res.status(200).json({ //return with status and confirmation on succeess
+      message: "Document deleted successfully",
+      data: response,
+    });
+  } catch (error) { //catch any error on fail
+    console.error("Error in deleteDocument route:", error);
+
+    return res.status(500).json({
+      message: "Failed to delete document",
+      error: error.message,
+    });
+  }
+});
+
 export default router;

@@ -1,13 +1,23 @@
 //This is the document library page, very simple, just calls a few componeonts to display everything
 
+import { useEffect, useState } from "react";
 import { useCounter } from "../contexts/Counter/CounterProvider";
 import DocumentsHero from "../components/DocumentDashboard/DocumentsHeader.jsx";
 import DocumentLibraryList from "../components/DocumentDashboard/DocumentLibraryList.jsx";
 
 export default function DocumentLibraryPage() {
   const { stats } = useCounter(); //fetches files from ../contexts/Counter/CounterProvider
+  const recentFiles = stats?.recentFiles || [];
 
-  const recentFiles = stats?.recentFiles || []; //organizes stats and then passes into DocumentLibraryList
+  const [libraryFiles, setLibraryFiles] = useState([]);
+
+  useEffect(() => {
+    setLibraryFiles(recentFiles);
+  }, [recentFiles]);
+
+  const handleDeleteSuccess = (deletedName) => {
+    setLibraryFiles((prev) => prev.filter((file) => file !== deletedName));
+  };
 
   return (
     <div className="min-h-screen bg-zinc-50 text-zinc-900">
@@ -18,7 +28,10 @@ export default function DocumentLibraryPage() {
         />
 
         <div className="mt-6">
-          <DocumentLibraryList files={recentFiles} />
+          <DocumentLibraryList
+            files={libraryFiles}
+            onDeleteSuccess={handleDeleteSuccess}
+          />
         </div>
       </main>
     </div>

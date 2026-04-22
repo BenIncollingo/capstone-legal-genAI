@@ -32,3 +32,30 @@ export async function uploadDocumentToBackend(file, metadata) {
 
   return data; //return status to react component
 }
+
+
+//Function calls our /documents/deleteDocument endpoint
+//this funciton is sued if a user wants to deltee a document from the infra vector DB library
+export async function deleteDocument(source) {
+  if (!source) {
+    throw new Error("No document source provided");
+  }
+
+  const response = await fetch(
+    `${BACKEND_API_BASE_URL}/documents/deleteDocument`,
+    {
+      method: "POST",
+      headers: {
+        "Content-Type": "application/json",
+      },
+      body: JSON.stringify({ source }),
+    }
+  );
+
+  if (!response.ok) {
+    const errorText = await response.text();
+    throw new Error(errorText || "Failed to delete document");
+  }
+
+  return await response.json();
+}

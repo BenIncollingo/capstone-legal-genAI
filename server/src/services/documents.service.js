@@ -37,3 +37,39 @@ export async function uploadDocumentToInfra(file, metadata) {
     throw error;
   }
 }
+
+export async function deleteDocumentFromInfra(source) {
+  if (!source) {
+    throw new Error("No document source provided");
+  }
+
+  const url =
+    `${process.env.INFRA_BASE_URL}/query/${process.env.PROJECT_ID}/document` +
+    `?source=${encodeURIComponent(source)}`;
+
+  try {
+    const infraResponse = await fetch(url, {
+      method: "DELETE",
+      headers: {
+        Authorization: `Bearer ${process.env.API_KEY}`,
+      },
+    });
+
+    if (!infraResponse.ok) {
+      const errText = await infraResponse.text();
+      throw new Error(`Infra delete failed: ${errText}`);
+    }
+
+    // some delete endpoints return JSON, some return empty text
+    const contentType = infraResponse.headers.get("content-type") || "";
+
+    if (contentType.includes("application/json")) {
+      return await infraResponse.json();
+    }
+
+    return { message: "Document deleted successfully" };
+  } catch (error) {
+    console.error("Error deleting document from infra:", error);
+    throw error;
+  }
+}

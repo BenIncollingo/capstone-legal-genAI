@@ -2,7 +2,7 @@
 // This is the section of the document library page that is list of all the DocumentLibraryItems
 import DocumentLibraryItem from "./DocumentLibraryItem.jsx";
 
-export default function DocumentLibraryList({ files }) {
+export default function DocumentLibraryList({ files, onDeleteSuccess }) {
   return (
     <section className="rounded-3xl border border-zinc-200 bg-white p-6 shadow-sm">
       <div className="mb-5 flex items-center justify-between gap-3">
@@ -24,7 +24,11 @@ export default function DocumentLibraryList({ files }) {
       ) : (
         <ul className="space-y-3">
           {files.map((file, i) => (
-            <DocumentLibraryItem key={`${file}-${i}`} name={file} />
+            <DocumentLibraryItem
+              key={`${file}-${i}`}
+              name={file}
+              onDeleteSuccess={onDeleteSuccess}
+            />
           ))}
         </ul>
       )}
