@@ -57,5 +57,7 @@ export async function deleteDocument(source) {
     throw new Error(errorText || "Failed to delete document");
   }
 
+  console.log("Hopefully this worked: " + response);
+
   return await response.json();
 }

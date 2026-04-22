@@ -3,7 +3,14 @@
 
 import React, { createContext, useContext, useState, useEffect } from 'react';
 import { db } from '../../firebase/firebase';
-import { doc, onSnapshot, updateDoc, increment, arrayUnion, setDoc } from 'firebase/firestore';
+import {
+  doc,
+  onSnapshot,
+  increment,
+  arrayUnion,
+  arrayRemove,
+  setDoc
+} from 'firebase/firestore';
 
 const CounterContext = createContext();
 
@@ -26,25 +33,48 @@ export const CounterProvider = ({ children }) => {
 
   // Function to call after a successful external API upload
   const recordUpload = async (fileName) => {
-    console.log("recordUpload was called with:", fileName); 
+    console.log("recordUpload was called with:", fileName);
     const statsRef = doc(db, 'stats', 'global_counter');
-    
+
     try {
-      // setDoc with merge: true creates the doc if it doesn't exist 
-      // OR updates it if it does.
-      await setDoc(statsRef, {
-        total: increment(1),
-        recentFiles: arrayUnion(fileName)
-      }, { merge: true });
-      
+      await setDoc(
+        statsRef,
+        {
+          total: increment(1),
+          recentFiles: arrayUnion(fileName),
+        },
+        { merge: true }
+      );
+
       console.log("Firestore updated!");
     } catch (error) {
       console.error("Update failed: ", error);
     }
   };
 
+  // Function to call after a successful delete
+  const removeUpload = async (fileName) => {
+    console.log("removeUpload was called with:", fileName);
+    const statsRef = doc(db, 'stats', 'global_counter');
+
+    try {
+      await setDoc(
+        statsRef,
+        {
+          total: increment(-1),
+          recentFiles: arrayRemove(fileName),
+        },
+        { merge: true }
+      );
+
+      console.log("Firestore delete update successful!");
+    } catch (error) {
+      console.error("Delete update failed: ", error);
+    }
+  };
+
   return (
-    <CounterContext.Provider value={{ stats, recordUpload }}>
+    <CounterContext.Provider value={{ stats, recordUpload, removeUpload }}>
       {children}
     </CounterContext.Provider>
   );

@@ -1,11 +1,10 @@
-// component in the document library page
-// this is the componoent for the boxes in the list of document names
-
 import { useState } from "react";
-import { deleteDocument } from "../../api/documents.api.js"; // adjust path if needed
+import { deleteDocument } from "../../api/documents.api.js";
+import { useCounter } from "../../contexts/Counter/CounterProvider";
 
 export default function DocumentLibraryItem({ name, onDeleteSuccess }) {
   const [isDeleting, setIsDeleting] = useState(false);
+  const { removeUpload } = useCounter();
 
   const handleDelete = async (e) => {
     e.stopPropagation();
@@ -15,8 +14,14 @@ export default function DocumentLibraryItem({ name, onDeleteSuccess }) {
 
     try {
       setIsDeleting(true);
+
+      // first delete from backend / infra
       await deleteDocument(name);
 
+      // then remove from firestore tracker
+      await removeUpload(name);
+
+      // then remove from local UI state
       if (onDeleteSuccess) {
         onDeleteSuccess(name);
       }

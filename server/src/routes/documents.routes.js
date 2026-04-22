@@ -2,7 +2,7 @@
 
 import { Router } from "express";
 import multer from "multer";
-import { uploadDocumentToInfra } from "../services/documents.service.js";
+import { uploadDocumentToInfra, deleteDocumentFromInfra } from "../services/documents.service.js";
 
 const router = Router();
 const upload = multer({ storage: multer.memoryStorage() }); //multer is a library that allows to store files in a buffer before uploading - acts as middleware for uploading files
