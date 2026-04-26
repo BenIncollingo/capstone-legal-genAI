@@ -1,4 +1,4 @@
-# LegalAI – Document-Grounded Chat Application
+# [LegalAI](https://lgl-frontend-248972960755.us-east1.run.app/) – Document-Grounded Chat Application
 
 LegalAI is a full-stack web application built with a React frontend and an Express.js backend. The application allows users to upload legal documents, ask questions through an AI chatbot, and receive responses grounded in the uploaded documents with citations.
 
